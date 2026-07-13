@@ -2,6 +2,7 @@
 //
 // A Quickshell power menu: Lock, Sleep, Log Out, Restart, Shut Down.
 
+import Quickshell
 import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
