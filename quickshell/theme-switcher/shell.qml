@@ -1,20 +1,6 @@
 // shell.qml
 //
 // A Quickshell popup that wraps ~/dotfiles/switcher.sh.
-// Shows every theme in ~/dotfiles/themes/, previews each theme's wallpaper,
-// and re-skins itself using
-// ~/dotfiles/themes/<theme>/theme-switcher/colors/theme_colors.json.
-//
-// Run it directly to test:
-//   quickshell -p ~/.config/theme-switcher
-// (assumes this file lives at ~/.config/theme-switcher/shell.qml, matching
-// the rest of your dotfiles' one-folder-per-app layout)
-//
-// Bind a hotkey to the same command in Hyprland (see modules/binds.lua) and
-// you get an on-demand theme picker.
-//
-// Controls: click a theme, or use arrow keys + Enter. Escape, the ✕, or
-// clicking outside the card all close the picker without switching.
 
 import Quickshell
 import Quickshell.Io

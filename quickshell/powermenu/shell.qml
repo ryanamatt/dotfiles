@@ -1,27 +1,7 @@
 // shell.qml
 //
 // A Quickshell power menu: Lock, Sleep, Log Out, Restart, Shut Down.
-// Re-skins itself from the same per-theme color file the theme-switcher
-// uses, so it always matches whatever theme is currently active:
-//   ~/dotfiles/themes/<theme>/theme-switcher/colors/theme_colors.json
-//
-// Run it directly to test:
-//   quickshell -p ~/.config/powermenu
-// (assumes this file lives at ~/.config/powermenu/shell.qml, matching
-// the rest of your dotfiles' one-folder-per-app layout)
-//
-// Bind a hotkey to the same command in Hyprland (see modules/binds.lua).
-//
-// Controls:
-//   Mouse   — hover an action to focus it, click to open its confirm
-//             prompt, click Yes/No to run or cancel.
-//   ←/→/↑/↓ — move focus between actions; while confirming, toggle
-//             between No and Yes.
-//   Enter   — open the confirm prompt for the focused action; while
-//             confirming, activates whichever of No/Yes is highlighted.
-//   Esc     — back out of the confirm prompt, or close the menu.
 
-import Quickshell
 import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
