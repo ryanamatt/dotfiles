@@ -1,0 +1,238 @@
+Windward Theme Reference
+
+CONCEPT
+
+  A maritime / open-ocean aesthetic built around the colors of a tall
+  ship cutting through deep water under a bright sky — extended into a
+  full cohesive palette.
+
+  The feeling: standing at the rail of a clipper ship mid-voyage — deep
+  teal-black water below, sun-bleached canvas sails overhead, a wide pale
+  sky, brass fittings gone warm with salt air, and the rust-red warning
+  of a hull that's seen weather. Foam breaks white against the bow.
+  Distant coastline fades to olive-grey on the horizon. A world in
+  motion, always heading somewhere.
+
+
+FULL PALETTE
+
+  Name              Hex         RGB                Role
+-----------------------------------------------------------------------------
+  abyss             #0a1a1d     ( 10,  26,  29)    Primary background
+  deep              #123338     ( 18,  51,  56)    Alt background / surfaces
+  shadow            #1e4b4f     ( 30,  75,  79)    Segment midtone / borders
+  dusk              #2d6b66     ( 45, 107, 102)    Hover states / inactive
+  mist              #7fa89f     (127, 168, 159)    Dimmed text / secondary
+  foam              #4fa88f     ( 79, 168, 143)    cursor / accent
+  sky               #8fc4d9     (143, 196, 217)    Lighter sky-blue
+  canvas            #ede3c8     (237, 227, 200)    Primary foreground / text
+  teal              #1f7a6c     ( 31, 122, 108)    active / border
+  dark blue         #1e3e70     (30,   62, 112)    inactive / border
+  aqua              #5fd9c4     ( 95, 217, 196)    Bright accent / highlights
+  brass             #c9a24a     (201, 162,  74)    Operators / warnings / trim
+  silver            #b8c4c0     (184, 196, 192)    Muted text
+  kelp              #6fbf73     (111, 191, 115)    Success / ok states
+  cyan              #a8d8e0     (168, 216, 224)    Escape sequences / info
+  rust              #c9603f     (201,  96,  63)    Errors / critical / urgent
+  ember             #d9884a     (217, 136,  74)    Warm shift (sun-warmed wood)
+
+  -- derived / readability tones (lifted/desaturated for legibility) --
+  parchment         #14282a     ( 20,  40,  42)    Note-writing surface
+                                                    (editor pane bg) — a
+                                                    desaturated near-black
+                                                    with only a whisper of
+                                                    teal. Raw abyss is too
+                                                    dark/saturated to read
+                                                    body text against for
+                                                    long; parchment fixes
+                                                    that while sidebar/tabs/
+                                                    status bar intentionally
+                                                    stay on raw abyss/deep,
+                                                    so notes read as a
+                                                    distinct "page" against
+                                                    the surrounding chrome.
+  mist-text         #9dbdb5     (157, 189, 181)    Muted/secondary text
+                                                    (lifted mist — use
+                                                    where it's actually
+                                                    read, not just an icon)
+  border-soft       #2a4f4f     ( 42,  79,  79)    Inactive borders, hr,
+                                                    table lines, dividers
+                                                    (re-tuned against
+                                                    parchment, which is
+                                                    lighter than abyss)
+  border-strong     #3a6863     ( 58, 104,  99)    Hover/visible borders
+  teal-accent       #2a9683     ( 42, 150, 131)    teal lifted toward
+                                                    aqua — primary
+                                                    interactive accent
+                                                    where text-size
+                                                    contrast matters
+  link-heading      #4fd0b8     ( 79, 208, 184)    teal-accent lifted
+                                                    further — links, h2,
+                                                    focus glow
+
+
+SEMANTIC ROLES
+
+  Role                        Color       Hex
+---------------------------------------------------
+  Primary background          abyss       #0a1a1d
+  Surface / widget bg         deep        #123338
+  Alt surface                 shadow      #1e4b4f
+  Active border / selection   teal        #1f7a6c
+  Inactive border             shadow      #1e4b4f
+  Primary text                canvas      #ede3c8
+  Secondary / dimmed text     mist        #7fa89f
+  Cursor                      foam        #4fa88f
+  Commands (fish)             aqua        #5fd9c4
+  Keywords (fish)             foam        #4fa88f
+  Strings (fish)              sky         #8fc4d9
+  Comments (fish)             dusk        #2d6b66
+  Operators                   brass       #c9a24a
+  Escape sequences            cyan        #a8d8e0
+  Autosuggestions             #234d47     (very dim dusk)
+  Success / ok                kelp        #6fbf73
+  Warning                     brass       #c9a24a
+  Error / critical            rust        #c9603f
+  Hover state                 dusk        #2d6b66
+  Selected / toggled on       teal        #1f7a6c
+  Shadow / glow color         teal @25% alpha   rgba(1f7a6c40)
+  URL color                   aqua        #5fd9c4
+  Git dirty indicators        brass       #c9a24a
+  Battery charging            kelp        #6fbf73
+  Battery critical             rust        #c9603f
+  Network disconnected        mist        #7fa89f
+
+
+TERMINAL 16-COLOR PALETTE (ANSI)
+
+  Index   Name              Hex         Notes
+---------------------------------------------------------
+  0       black             #0a1a1d     abyss
+  1       red               #c9603f     rust error
+  2       green             #6fbf73     kelp success
+  3       yellow            #b3923f     muted brass
+  4       blue              #4f83a8     sea-shifted blue
+  5       magenta           #1f7a6c     ★ hyprland anchor (teal)
+  6       cyan              #6fb8b0     mist-teal
+  7       white             #b8c4c0     silver
+  8       bright black      #2d6b66     dusk
+  9       bright red        #e08066     lighter rust
+  10      bright green      #8fe093     lighter kelp
+  11      bright yellow     #c9a24a     windward brass
+  12      bright blue       #7da8c9     lighter sea-blue
+  13      bright magenta    #5fd9c4     aqua
+  14      bright cyan       #a8d8e0     light cyan
+  15      bright white      #ede3c8     canvas
+
+
+TRANSPARENCY & BLUR
+
+  App               Opacity     Blur
+---------------------------------------------------------------
+  kitty             0.80        blur 20 (kitty background_blur)
+  Hyprland active   1.00        —
+  Hyprland inactive 0.85        size 8, passes 3, vibrancy 0.2
+  swaync center     0.92 alpha  via layer rule blur
+  waybar            0.85 alpha  via layer rule blur
+  hyprlock bg       0.40 bright blur_passes 4, blur_size 8
+
+
+TYPOGRAPHY
+
+  App               Font
+--------------------------------------------------------------
+  kitty             (your existing font — see kitty.conf)
+  waybar            Iosevka Nerd Font Propo
+  swaync            Geist, JetBrainsMono Nerd Font Propo
+  rofi              Iosevka Nerd Font Propo 11
+  hyprlock          Iosevka Nerd Font Propo
+  fish              Iosevka Nerd Font Propo (terminal inherits kitty)
+  starship          Iosevka Nerd Font Propo (terminal inherits kitty)
+
+  All fonts require a complete Nerd Font variant for glyph support.
+  Download from: https://www.nerdfonts.com
+
+
+BORDERS & ROUNDING
+
+  Hyprland active border    #1f7a6c   2px
+  Hyprland inactive border  #1e4b4f   2px
+  Hyprland rounding         12px      power 3.0
+  Window shadow             rgba(1f7a6c40)   range 20, render_power 2
+  kitty border              #1f7a6c (active)   #2d6b66 (inactive)
+  swaync panel border       rgba(1f7a6c, 0.30)
+  swaync notifications      rgba(1f7a6c, 0.18)
+  rofi window border        1px solid teal   border-radius 14px
+  waybar bottom border      1px solid rgba(1f7a6c, 0.50)
+  waybar bar radius         0 0 12px 12px
+
+
+KEY GLYPHS (Nerd Font / Unicode)
+
+  Note: pick the closest glyph available in your installed Nerd Font
+  set — nautical icon coverage varies by font version, so verify each
+  codepoint renders before wiring it into configs.
+
+  ⚓   anchor              — starship prompt character (success)
+  ⛈   storm bolt          — starship prompt character (error)
+  ⛵   sail                — starship vim normal mode
+  󰘬   git branch          — starship git_branch
+  🧭   compass             — starship directory prefix
+  󱂵   home                — starship home symbol (~)
+  ✦   foam star           — flavor text throughout
+  ⬡   windward hex        — ASCII art window glyph
+  󰣇   arch linux          — OS glyph
+  󰌽   kernel              — fastfetch kernel
+  󱦟   uptime              — fastfetch uptime
+  󰏗   packages            — fastfetch / git stash
+  󰘓   memory              — fastfetch memory
+  󰋊   disk                — fastfetch disk
+  󰁹   battery full        — waybar / fastfetch battery
+  󰀂   network             — fastfetch local ip
+  󱂬   windows             — fastfetch WM / rofi window mode
+    terminal            — fastfetch terminal / fish abbr
+  󰃠   brightness full     — waybar / swaync backlight
+
+
+EXTENDING THE THEME TO NEW APPS
+
+  When theming a new application, follow this decision tree:
+
+  Background?       → abyss #0a1a1d or deep #123338
+  Surface/card?     → deep #123338 or shadow #1e4b4f
+  Text?             → canvas #ede3c8 (primary)  mist #7fa89f (secondary)
+  Accent/highlight? → teal #1f7a6c (strong)  foam #4fa88f (soft)
+  Bright accent?    → aqua #5fd9c4
+  Border?           → teal #1f7a6c (active)  shadow #1e4b4f (inactive)
+  Hover?            → dusk #2d6b66
+  Success?          → kelp #6fbf73
+  Warning?          → brass #c9a24a
+  Error?            → rust #c9603f
+  Info?             → cyan #a8d8e0
+  Shadow/glow?      → rgba(1f7a6c, 0.25–0.40)
+
+  Readability note (added after the Obsidian theme build):
+  raw mist/dusk/shadow/teal/abyss read beautifully on a terminal
+  bar or status line where the surrounding chrome is small and the
+  eye isn't lingering, but they get muddy fast — or in abyss's case,
+  tiring to read against — as body text, long-form borders, or any
+  surface read continuously for more than a second (reading apps,
+  editors, docs). For those contexts, swap in the derived tones
+  instead:
+    main reading surface   → parchment #14282a    (not raw abyss)
+    secondary/muted text   → mist-text #9dbdb5    (not raw mist)
+    inactive borders/hr    → border-soft #2a4f4f  (not raw shadow)
+    visible/hover borders  → border-strong #3a6863 (not raw dusk)
+    accent needing to read
+      at text size (links,
+      headings, focus rings) → teal-accent #2a9683 or
+                                 link-heading #4fd0b8 (not raw teal)
+  Rule of thumb: if it's a UI accent glanced at (status icon, bar
+  segment) use the raw palette; if it's read continuously (body
+  text, link color, a border you have to find, the page you write
+  on) use the lifted/desaturated tone.
+
+  Rule: pure black (#000000) and pure white (#ffffff) are never used.
+  The darkest point is abyss #0a1a1d, lightest is canvas #ede3c8.
+  Every color has a teal/sea undertone — even the golds and reds lean
+  slightly cool/green rather than warm/orange.

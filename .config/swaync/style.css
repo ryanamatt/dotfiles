@@ -1,0 +1,376 @@
+@import "colors/theme_colors.css";
+
+/* --- Reset & globals --- */
+* {
+	all: unset;
+
+	--border-radius:    16px;
+	--border-radius-s:   8px;
+	--border-radius-xl: 18px;
+
+	--shadow: 2px 4px 16px rgba(0, 0, 0, 0.5);
+	--glow:   0 0 8px alpha(#b00ea2, 0.35);
+
+	font-family: "Geist", "JetBrainsMono Nerd Font Propo";
+	font-weight: 700;
+}
+
+/* --- Blank / transparent backdrop --- */
+.blank-window {
+	background: transparent;
+}
+
+/* --- Notifications --- */
+
+.notification {
+	padding: 5px;
+}
+
+.notification-background {
+	background: @notification-bg;
+	border-radius: var(--border-radius);
+	border: 1px solid alpha(#b00ea2, 0.18);
+	margin: 8px;
+	padding: 0;
+	box-shadow: var(--shadow);
+}
+
+.notification-background .close-button {
+	margin: 6px;
+	padding: 2px;
+	border-radius: 6px;
+	background: transparent;
+	color: @text;
+	transition: 200ms;
+}
+
+.notification-background .close-button:hover {
+	background: @hover;
+	color: #d966f5;
+}
+
+/* Critical — glowing red border */
+.notification.critical {
+	border: 2px solid @urgent;
+	border-radius: var(--border-radius);
+	box-shadow: 0 0 10px alpha(#e05c7a, 0.4);
+}
+
+.notification-content {
+	color: @text;
+	margin: 10px;
+	font-weight: 700;
+}
+
+.notification-content .text-box {
+	margin: 0 0 0 15px;
+}
+
+.notification-content .time {
+	padding: 2px;
+	font-size: 0.95rem;
+	font-weight: 800;
+	color: @text-alt;
+}
+
+.notification-content .summary {
+	font-size: 1rem;
+	font-weight: 800;
+	padding: 2px 0;
+	margin-bottom: 2px;
+	color: @text;
+}
+
+.notification-content .body {
+	color: @text-alt;
+	font-size: 0.8rem;
+}
+
+/* Inline reply */
+.notification-row .inline-reply-entry,
+.notification-row .inline-reply-button {
+	margin: 5px -5px -5px -5px;
+	padding: 10px 15px;
+	border-radius: var(--border-radius);
+	background: @background-alt;
+	color: @text;
+}
+
+.notification-row .inline-reply-entry {
+	margin-right: 10px;
+}
+
+.notification-row .inline-reply-button:hover {
+	background: @selected;
+}
+
+.notification-alt-actions {
+	padding: 5px 0;
+}
+
+.notification-action {
+	font-weight: 700;
+	border-radius: var(--border-radius);
+	background: @hover;
+	color: @text;
+	margin: 0 5px;
+	padding: 10px 0;
+	transition: 200ms;
+}
+
+.notification-action:hover,
+.notification-action:active {
+	background: @selected;
+	color: #0d0010;
+}
+
+/* --- Control Center --- */
+
+.control-center {
+	background: @center-bg;
+	border-radius: var(--border-radius);
+	border: 1px solid alpha(#b00ea2, 0.3);
+	box-shadow: var(--glow), var(--shadow);
+	margin: 5px;
+	padding: 5px 5px 0 5px;
+}
+
+.control-center .notification-background {
+	background: @center-notification-bg;
+	box-shadow: var(--shadow);
+}
+
+/* Hide close buttons inside control center */
+.control-center .notification-background .close-button,
+.notification-group-close-button {
+	opacity: 0;
+}
+
+/* Notification groups */
+.notification-group {
+	transition: 200ms;
+}
+
+.notification-group:not(.collapsed) {
+	margin: 8px;
+}
+
+.notification-group-headers,
+.notification-group-buttons {
+	color: @text;
+	font-weight: bold;
+	background: @background;
+	border-radius: var(--border-radius);
+	padding: 4px 8px;
+}
+
+.notification-group-headers > label {
+	margin: 0 3px;
+	font-size: 1rem;
+}
+
+.notification-group-icon {
+	color: @text;
+}
+
+.notification-group-buttons .image-button {
+	background: transparent;
+	color: @text;
+	padding: 4px;
+	border-radius: var(--border-radius);
+	transition: 200ms;
+}
+
+.notification-group-buttons .image-button:hover {
+	background: @hover;
+}
+
+/* Empty state */
+.control-center-list-placeholder {
+	color: @text-alt;
+}
+
+/*--- Widgets --- */
+
+.widget {
+	margin: 5px;
+	color: @text;
+}
+
+/* --- MPRIS --- */
+.widget-mpris {
+	border-radius: var(--border-radius);
+	box-shadow: var(--shadow);
+}
+
+.mpris-background {
+	border-radius: 14px;
+	margin: 3px;
+}
+
+.widget-mpris-album-art {
+	border-radius: var(--border-radius);
+	margin: 6px 4px;
+}
+
+.mpris-overlay {
+	border-radius: var(--border-radius);
+	padding: 10px;
+	background: @background;
+}
+
+/* Controls container */
+.mpris-overlay > box:last-child {
+	border-radius: var(--border-radius-xl);
+	padding: 0 5px;
+	background: alpha(@hover, 0.6);
+}
+
+.widget-mpris-title {
+	font-weight: 700;
+	font-size: 1.2rem;
+	margin: 0 3px;
+	color: @text;
+}
+
+.widget-mpris-subtitle {
+	color: @text-alt;
+	font-weight: 700;
+	font-size: 0.9rem;
+	margin: 0 3px;
+}
+
+/* Playback buttons */
+.widget-mpris-player button {
+	padding: 5px;
+	margin: 0 2.5px;
+	color: @text;
+	transition: 200ms;
+}
+
+.widget-mpris-player button:hover {
+	border-radius: var(--border-radius-s);
+	background: @hover;
+	color: #d966f5;
+}
+
+/* --- Do Not Disturb --- */
+.widget-dnd {
+	padding: 10px 15px;
+	border-radius: var(--border-radius);
+	background: @background-alt;
+	box-shadow: var(--shadow);
+	color: @text;
+}
+
+.widget-dnd > label {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.widget-dnd switch {
+	background: @hover;
+	border-radius: var(--border-radius-s);
+	box-shadow: none;
+	padding: 2px;
+	transition: 200ms;
+}
+
+.widget-dnd switch slider {
+	background: @text;
+	border-radius: var(--border-radius-s);
+}
+
+.widget-dnd switch:hover {
+	background: alpha(@selected, 0.6);
+}
+
+.widget-dnd switch:checked {
+	background: @selected;
+	box-shadow: 0 0 6px alpha(#b00ea2, 0.5);
+}
+
+/* --- Buttons grid --- */
+.widget-buttons-grid {
+	border-radius: var(--border-radius);
+	padding: 5px 15px;
+	margin-bottom: 5px;
+	background: @background-alt;
+	box-shadow: var(--shadow);
+}
+
+.widget-buttons-grid button {
+	padding: 10px;
+	margin: 3px;
+	min-width: 2rem;
+	background: @hover;
+	border-radius: var(--border-radius);
+	transition: 200ms;
+}
+
+.widget-buttons-grid button > label {
+	font-family: "JetBrainsMono Nerd Font Propo";
+	font-size: 16px;
+	color: @text;
+}
+
+.widget-buttons-grid button:hover {
+	background: alpha(@selected, 0.5);
+	box-shadow: 0 0 6px alpha(#b00ea2, 0.4);
+}
+
+/* Toggled-on state — lit up in mallow */
+.widget-buttons-grid button:checked {
+	background: @selected;
+	box-shadow: 0 0 8px alpha(#b00ea2, 0.6);
+}
+
+.widget-buttons-grid button:checked > label {
+	color: #0d0010;
+}
+
+/* --- Volume & Backlight sliders --- */
+.widget-volume,
+.widget-backlight {
+	padding: 8px 14px;
+	margin: 5px 0;
+	border-radius: 12px;
+	color: @text;
+	font-weight: 800;
+	background: @background-alt;
+}
+
+.widget-volume label,
+.widget-backlight label {
+	font-size: 1.1rem;
+}
+
+.widget-volume slider,
+.widget-backlight slider {
+	border-radius: 24px;
+	margin: -8px;
+	background: #ac74ad;
+	box-shadow: 0 0 6px alpha(#ac74ad, 0.5),
+	            inset 0 1px 2px rgba(255, 255, 255, 0.1),
+	            0 4px 4px rgba(0, 0, 0, 0.4);
+	opacity: 1;
+}
+
+.widget-volume trough,
+.widget-backlight trough {
+	background: @hover;
+	margin-left: 8px;
+	border-radius: 12px;
+}
+
+.widget-volume highlight,
+.widget-backlight highlight {
+	padding: 3.5px;
+	border-radius: 12px;
+	background: alpha(#ac74ad, 0.5);
+}
+
+/* --- Notifications list --- */
+.widget-notifications {
+	margin: 0;
+}

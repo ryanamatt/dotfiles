@@ -1,0 +1,26 @@
+text=auto eol=lf
+
+# binary
+*.jpg binary
+*.jpeg binary
+*.png binary
+*.ico binary
+*.svg binary
+
+# Scripts & Config Files are test
+*.sh text eol=lf
+*.lua text eol=lf
+*.py text eol=lf
+*.awk text eol=lf
+*.json text eol=lf
+*.jsonc text eol=lf
+*.css text eol=lf
+*.toml text eol=lf
+*.conf text eol=lf
+*.config text eol=lf
+*.fish text eol=lf
+fish_variables text eol=lf
+*.rasi text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.qml text eol=lf

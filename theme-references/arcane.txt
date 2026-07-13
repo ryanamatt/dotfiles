@@ -1,0 +1,231 @@
+Arcane Theme Reference
+
+CONCEPT
+
+  A fantasy / otherworldly aesthetic built around two anchor colors from
+  the existing system setup, extended into a full cohesive palette.
+
+  The feeling: a void between dimensions — deep purple-black darkness,
+  arcane magic glowing in magenta and lavender, gold runes, mint-green
+  success signals, and rose-red warnings. Stars scattered through empty
+  space. Crystal towers. A world that exists just past the edge of sleep.
+
+
+FULL PALETTE
+
+  Name              Hex         RGB                Role
+-----------------------------------------------------------------------------
+  void              #0d0010     ( 13,   0,  16)    Primary background
+  deep              #1a0028     ( 26,   0,  40)    Alt background / surfaces
+  shadow            #2a0e3a     ( 42,  14,  58)    Segment midtone / borders
+  dusk              #3b1f4a     ( 59,  31,  74)    Hover states / inactive
+  mist              #8a6f99     (138, 111, 153)    Dimmed text / secondary
+  mallow            #ac74ad     (172, 116, 173)    cursor / accent
+  bloom             #c98fca     (201, 143, 202)    Lighter lavender
+  petal             #e8c5e9     (232, 197, 233)    Primary foreground / text
+  magenta           #b00ea2     (176,  14, 162)    active / border
+  dark purple       #470542     (71,    5,  66)    inactive / border
+  fae               #d966f5     (217, 102, 245)    Bright accent / highlights
+  gold              #f5c842     (245, 200,  66)    Operators / warnings / runes
+  silver            #c8b8d4     (200, 184, 212)    Muted text
+  green             #5ecfa0     ( 94, 207, 160)    Success / ok states
+  cyan              #9de8e8     (157, 232, 232)    Escape sequences / info
+  red               #e05c7a     (224,  92, 122)    Errors / critical / urgent
+  orange            #d9824a     (217, 130,  74)    Ember (shifted warm)
+
+  -- derived / readability tones (lifted/desaturated for legibility) --
+  paper             #15131c     ( 21,  19,  28)    Note-writing surface
+                                                    (editor pane bg) — a
+                                                    desaturated near-black
+                                                    with only a whisper of
+                                                    purple. Raw void is too
+                                                    saturated to read body
+                                                    text against for long;
+                                                    paper fixes that while
+                                                    sidebar/tabs/status bar
+                                                    intentionally stay on
+                                                    raw void/deep, so notes
+                                                    read as a distinct
+                                                    "page" against the
+                                                    surrounding chrome.
+  mist-text         #a08bb0     (160, 139, 176)    Muted/secondary text
+                                                    (lifted mist — use
+                                                    where it's actually
+                                                    read, not just an icon)
+  border-soft       #443a52     ( 68,  58,  82)    Inactive borders, hr,
+                                                    table lines, dividers
+                                                    (re-tuned against
+                                                    paper, which is
+                                                    lighter than void)
+  border-strong     #5a4d6b     ( 90,  77, 107)    Hover/visible borders
+  fae-accent        #c93dd6     (201,  61, 214)    magenta lifted toward
+                                                    fae — primary
+                                                    interactive accent
+                                                    where text-size
+                                                    contrast matters
+  link-heading      #e58af8     (229, 138, 248)    fae lifted further —
+                                                    links, h2, focus glow
+
+
+SEMANTIC ROLES
+
+  Role                        Color       Hex
+---------------------------------------------------
+  Primary background          void        #0d0010
+  Surface / widget bg         deep        #1a0028
+  Alt surface                 shadow      #2a0e3a
+  Active border / selection   magenta     #b00ea2
+  Inactive border             shadow      #2a0e3a
+  Primary text                petal       #e8c5e9
+  Secondary / dimmed text     mist        #8a6f99
+  Cursor                      mallow      #ac74ad
+  Commands (fish)             fae         #d966f5
+  Keywords (fish)             mallow      #ac74ad
+  Strings (fish)              bloom       #c98fca
+  Comments (fish)             dusk        #3b1f4a
+  Operators                   gold        #f5c842
+  Escape sequences            cyan        #9de8e8
+  Autosuggestions             #4d3860     (very dim dusk)
+  Success / ok                green       #5ecfa0
+  Warning                     gold        #f5c842
+  Error / critical            red         #e05c7a
+  Hover state                 dusk        #3b1f4a
+  Selected / toggled on       magenta     #b00ea2
+  Shadow / glow color         magenta @25% alpha   rgba(b00ea240)
+  URL color                   fae         #d966f5
+  Git dirty indicators        gold        #f5c842
+  Battery charging            green       #5ecfa0
+  Battery critical            red         #e05c7a
+  Network disconnected        mist        #8a6f99
+
+
+TERMINAL 16-COLOR PALETTE (ANSI)
+
+  Index   Name              Hex         Notes
+---------------------------------------------------------
+  0       black             #0d0010     void
+  1       red               #e05c7a     rose error
+  2       green             #5ecfa0     mint success
+  3       yellow            #c8963a     muted gold
+  4       blue              #5a7ab0     void-shifted blue
+  5       magenta           #b00ea2     ★ hyprland anchor
+  6       cyan              #5ec8c8     mist teal
+  7       white             #c8b8d4     silver
+  8       bright black      #3b1f4a     dusk
+  9       bright red        #f07090     lighter rose
+  10      bright green      #7de8b0     lighter mint
+  11      bright yellow     #f5c842     arcane gold
+  12      bright blue       #7da0d8     lighter void-blue
+  13      bright magenta    #d966f5     fae purple
+  14      bright cyan       #9de8e8     light teal
+  15      bright white      #e8c5e9     petal
+
+
+TRANSPARENCY & BLUR
+
+  App               Opacity     Blur
+---------------------------------------------------------------
+  kitty             0.80        blur 20 (kitty background_blur)
+  Hyprland active   1.00        —
+  Hyprland inactive 0.85        size 8, passes 3, vibrancy 0.2
+  swaync center     0.92 alpha  via layer rule blur
+  waybar            0.85 alpha  via layer rule blur
+  hyprlock bg       0.40 bright blur_passes 4, blur_size 8
+
+
+TYPOGRAPHY
+
+  App               Font
+--------------------------------------------------------------
+  kitty             (your existing font — see kitty.conf)
+  waybar            Iosevka Nerd Font Propo
+  swaync            Geist, JetBrainsMono Nerd Font Propo
+  rofi              Iosevka Nerd Font Propo 11
+  hyprlock          Iosevka Nerd Font Propo
+  fish              Iosevka Nerd Font Propo (terminal inherits kitty)
+  starship          Iosevka Nerd Font Propo (terminal inherits kitty)
+
+  All fonts require a complete Nerd Font variant for glyph support.
+  Download from: https://www.nerdfonts.com
+
+
+BORDERS & ROUNDING
+
+  Hyprland active border    #b00ea2   2px
+  Hyprland inactive border  #2a0e3a   2px
+  Hyprland rounding         12px      power 3.0
+  Window shadow             rgba(b00ea240)   range 20, render_power 2
+  kitty border              #b00ea2 (active)   #3b1f4a (inactive)
+  swaync panel border       rgba(b00ea2, 0.30)
+  swaync notifications      rgba(b00ea2, 0.18)
+  rofi window border        1px solid magenta   border-radius 14px
+  waybar bottom border      1px solid rgba(b00ea2, 0.50)
+  waybar bar radius         0 0 12px 12px
+
+
+KEY GLYPHS (Nerd Font)
+
+  󰧲   arcane flower        — starship prompt character (success)
+  󱐌   lightning          — starship prompt character (error)
+  󰮓   crystal            — starship vim normal mode
+  󰘬   git branch         — starship git_branch
+  󱞊   portal/rune        — starship directory prefix
+  󱂵   home               — starship home symbol (~)
+  ✦   fae star           — flavor text throughout
+  ⬡   arcane hex         — ASCII art window glyph
+  󰣇   arch linux         — OS glyph
+  󰌽   kernel             — fastfetch kernel
+  󱦟   uptime             — fastfetch uptime
+  󰏗   packages           — fastfetch / git stash
+  󰘓   memory             — fastfetch memory
+  󰋊   disk               — fastfetch disk
+  󰁹   battery full       — waybar / fastfetch battery
+  󰀂   network            — fastfetch local ip
+  󱂬   windows            — fastfetch WM / rofi window mode
+    terminal           — fastfetch terminal / fish abbr
+  󰃠   brightness full    — waybar / swaync backlight
+
+
+EXTENDING THE THEME TO NEW APPS
+
+  When theming a new application, follow this decision tree:
+
+  Background?       → void #0d0010 or deep #1a0028
+  Surface/card?     → deep #1a0028 or shadow #2a0e3a
+  Text?             → petal #e8c5e9 (primary)  mist #8a6f99 (secondary)
+  Accent/highlight? → magenta #b00ea2 (strong)  mallow #ac74ad (soft)
+  Bright accent?    → fae #d966f5
+  Border?           → magenta #b00ea2 (active)  shadow #2a0e3a (inactive)
+  Hover?            → dusk #3b1f4a
+  Success?          → green #5ecfa0
+  Warning?          → gold #f5c842
+  Error?            → red #e05c7a
+  Info?             → cyan #9de8e8
+  Shadow/glow?      → rgba(b00ea2, 0.25–0.40)
+
+  Readability note (added after the Obsidian theme build):
+  raw mist/dusk/shadow/magenta/void read beautifully on a terminal
+  bar or status line where the surrounding chrome is small and the
+  eye isn't lingering, but they get muddy fast — or in void's case,
+  tiring to read against — as body text, long-form borders, or any
+  surface read continuously for more than a second (reading apps,
+  editors, docs). For those contexts, swap in the derived tones
+  instead:
+    main reading surface   → paper #15131c      (not raw void)
+    secondary/muted text   → mist-text #a08bb0  (not raw mist)
+    inactive borders/hr    → border-soft #443a52 (not raw shadow)
+    visible/hover borders  → border-strong #5a4d6b (not raw dusk)
+    accent needing to read
+      at text size (links,
+      headings, focus rings) → fae-accent #c93dd6 or
+                                 link-heading #e58af8 (not raw magenta)
+  Rule of thumb: if it's a UI accent glanced at (status icon, bar
+  segment) use the raw palette; if it's read continuously (body
+  text, link color, a border you have to find, the page you write
+  on) use the lifted/desaturated tone.
+
+  Rule: pure black (#000000) and pure white (#ffffff) are never used.
+  The darkest point is void #0d0010, lightest is petal #e8c5e9.
+  Every color has a purple undertone — even the greens and cyans lean
+  slightly cool/purple rather than warm/yellow.
+

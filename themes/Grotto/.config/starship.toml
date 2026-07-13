@@ -1,0 +1,201 @@
+# Grotto Shell
+#
+# Requires: Nerd Fonts (any complete variant, e.g. JetBrainsMono Nerd Font)
+# Install : Copy to ~/.config/starship.toml
+
+# --- Prompt layout ---
+# Line 1:  [glyph] [os]  [directory]  [git_branch] [git_status]
+#          [language runtimes ...]
+# Line 2:  [time]  [status/character]
+
+format = """
+$os\
+$username\
+$hostname\
+[  ](fg:#2f5245)\
+$directory\
+[](fg:#2f5245 bg:#1e3a30)\
+$git_branch\
+$git_status\
+[](fg:#1e3a30 bg:none)\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$java\
+$lua\
+$package\
+$cmd_duration\
+$line_break\
+$time\
+$status\
+$character"""
+
+# --- Palette ---
+palette = "grotto"
+
+[palettes.grotto]
+hollow      = "#0a1512"      # near-black with a green cast
+deep        = "#122620"      # dark moss background
+shade       = "#1e3a30"      # medium-dark green
+dusk        = "#2f5245"      # segment mid-tone
+petal       = "#c97a97"      # kitty cursor — dusty pink
+bloom       = "#e3aec8"      # lighter pastel pink
+foam        = "#eaf5ec"      # pale mist white (text on dark)
+blossom     = "#d1467e"      # hyprland border — vivid pink
+orchid      = "#ff74ab"      # bright fuchsia-pink
+gold        = "#e8b84b"      # grotto gold accent
+silver      = "#b9c9bf"      # muted sage-silver
+haze        = "#7fa08f"      # desaturated mid-green
+coral       = "#d9506f"      # error rose-red
+leaf        = "#8fd08c"      # success fern (bright, grounded)
+mist        = "#a9d8d4"      # info spray-cyan
+
+# --- OS / entry glyph ---
+[os]
+format = "[$symbol]($style) "
+style = "bold fg:blossom"
+disabled = false
+
+[os.symbols]
+Arch        = "󰣇"
+Unknown     = "󰬯"   # generic fallback
+
+# --- Username ---
+[username]
+format = "[$user]($style)"
+style_user = "bold fg:bloom"
+style_root = "bold fg:coral"
+show_always = false
+
+# --- Hostname ---
+[hostname]
+format = "[@$hostname]($style) "
+style = "fg:haze"
+ssh_only = true
+
+# --- Directory ---
+[directory]
+format = "[ 󱞊 $path ]($style)[$read_only]($read_only_style)"
+style = "bold fg:foam bg:#2f5245"
+read_only = " 󰌾 "
+read_only_style = "fg:coral bg:#2f5245"
+truncation_length = 4
+truncation_symbol = "󰇘 "
+home_symbol = "󱂵 ~"
+
+[directory.substitutions]
+"Documents" = "󰈙 Docs"
+"Downloads" = " DL"
+"Music"     = "󰝚 Music"
+"Pictures"  = "󰋩 Pics"
+"Videos"    = "󰕧 Vids"
+"Desktop"   = "󰟀 Desktop"
+".config"   = "󱁿 cfg"
+".local"    = "󰮂 local"
+"src"       = "󰅩 src"
+"projects"  = "󰏗 projects"
+
+# --- Git Branch ---
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+symbol = "󰘬 "
+style = "bold fg:orchid bg:#1e3a30"
+truncation_length = 24
+truncation_symbol = "󰇘"
+
+# --- Git Status ---
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "fg:gold bg:#1e3a30"
+conflicted  = " 󱗃 "
+ahead       = " ⇡${count}"
+behind      = " ⇣${count}"
+diverged    = " 󰹺 ⇡${ahead_count}⇣${behind_count}"
+untracked   = " 󰐗${count}"
+stashed     = " 󰏗 "
+modified    = " 󰝶${count}"
+staged      = " 󰸞${count}"
+renamed     = " 󰑕${count}"
+deleted     = " 󰩺${count}"
+
+# --- Fill (right-align runtimes) ---
+[fill]
+symbol = " "
+style = "fg:hollow"
+
+# --- Language runtimes ---
+[python]
+format = "[ $symbol$version ]($style)"
+symbol = "󰌠 "
+style = "fg:petal"
+version_format = "v${major}.${minor}"
+
+[nodejs]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "fg:leaf"
+version_format = "v${major}.${minor}"
+
+[rust]
+format = "[ $symbol$version ]($style)"
+symbol = "󱘗 "
+style = "fg:bloom"
+version_format = "v${major}.${minor}"
+
+[golang]
+format = "[ $symbol$version ]($style)"
+symbol = "󰟓 "
+style = "fg:mist"
+version_format = "v${major}.${minor}"
+
+[java]
+format = "[ $symbol$version ]($style)"
+symbol = "󰬷 "
+style = "fg:gold"
+version_format = "v${major}.${minor}"
+
+[lua]
+format = "[ $symbol$version ]($style)"
+symbol = "󰢱 "
+style = "fg:petal"
+version_format = "v${major}.${minor}"
+
+[package]
+format = "[ 󰏗 $version ]($style)"
+style = "fg:silver"
+version_format = "v${raw}"
+
+# --- Command duration ---
+[cmd_duration]
+format = "[ 󱞩 $duration ]($style)"
+style = "fg:haze"
+min_time = 2_000
+show_milliseconds = false
+
+# --- Time (second line, left) ---
+[time]
+format = "[󱑃 $time ]($style)"
+style = "fg:haze"
+time_format = "%H:%M"
+disabled = false
+
+# --- Exit status ---
+[status]
+format = "[$symbol$status ]($style)"
+symbol = " "          # skull — the crossing failed
+success_symbol = ""    # hidden on success
+not_executable_symbol = "󰌾 "
+not_found_symbol = "󰩺 "
+sigint_symbol = "󰆐 "
+style = "bold fg:coral"
+map_symbol = true
+disabled = false
+
+# --- Prompt character ---
+[character]
+format = "$symbol "
+success_symbol = "[󰈸](bold fg:blossom)"   # waterfall droplet on success
+error_symbol   = "[⚡](bold fg:coral)"      # storm bolt on error
+vimcmd_symbol  = "[🌿](bold fg:orchid)"     # fern on vim normal mode

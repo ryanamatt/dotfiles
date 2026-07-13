@@ -1,0 +1,20 @@
+{
+  "background": "#0a1a1d",
+  "backgroundAlt": "#123338",
+  "surface": "#1e4b4f",
+  "surfaceAlt": "#2d6b66",
+  "foreground": "#ede3c8",
+  "foregroundMuted": "#9dbdb5",
+  "accent": "#1f7a6c",
+  "accentAlt": "#5fd9c4",
+  "border": "#1e4b4f",
+  "borderActive": "#1f7a6c",
+  "borderSoft": "#2a4f4f",
+  "borderStrong": "#3a6863",
+  "hover": "#2d6b66",
+  "success": "#6fbf73",
+  "warning": "#c9a24a",
+  "error": "#c9603f",
+  "info": "#a8d8e0",
+  "shadow": "#401f7a6c"
+}

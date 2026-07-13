@@ -1,0 +1,31 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR __fish_initialized:4300
+SETUVAR fish_color_autosuggestion:24402f
+SETUVAR fish_color_cancel:d9506f
+SETUVAR fish_color_color_comment:2f5245
+SETUVAR fish_color_command:ff74ab
+SETUVAR fish_color_end:7fa08f
+SETUVAR fish_color_error:d9506f\x01underline
+SETUVAR fish_color_escape:a9d8d4
+SETUVAR fish_color_history_current:c97a97\x1ebold
+SETUVAR fish_color_keyword:c97a97
+SETUVAR fish_color_normal:eaf5ec
+SETUVAR fish_color_operator:e8b84b
+SETUVAR fish_color_param:eaf5ec
+SETUVAR fish_color_quote:e3aec8
+SETUVAR fish_color_redirection:a9d8d4
+SETUVAR fish_color_search_match:foam\x1e\x2d\x2dbackground\x1e1e3a30
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbackground\x1e1e3a30
+SETUVAR fish_color_valid_path:eaf5ec\x01underline
+SETUVAR fish_pager_color_completion:eaf5ec
+SETUVAR fish_pager_color_description:7fa08f\x1eitalic
+SETUVAR fish_pager_color_prefix:ff74ab\x1ebold\x01underline
+SETUVAR fish_pager_color_progess:7fa08f\x1eitalic
+SETUVAR fish_pager_color_secondary_completion:eaf5ec\x1e\x2d\x2dbackground\x1e122620
+SETUVAR fish_pager_color_secondary_description:7fa08f\x1eitalic\x1e\x2d\x2dbackground\x1e122620
+SETUVAR fish_pager_color_secondary_prefix:ff74ab\x1ebold
+SETUVAR fish_pager_selected_completion:0a1512\x1e\x2d\x2dbackground\x1ed1467e
+SETUVAR fish_pager_selected_description:0a1512\x1e\x2d\x2dbackground\x1ed1467e\x1eitalic
+SETUVAR fish_pager_selected_prefix:0a1512\x1e\x2d\x2dbackground\x1ed1467e\x1ebold
+SETUVAR fish_user_paths:/home/ryan/\x2elocal/bin

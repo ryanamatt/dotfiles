@@ -1,0 +1,50 @@
+/* Windward Theme */
+
+/* --- Backgrounds --- */
+@define-color bg0        #0a1a1d;   /* abyss — near-black with teal cast   */
+@define-color bg1        #123338;   /* deep sea-green                      */
+@define-color bg2        #17393d;   /* mid shadow (derived)                */
+@define-color bg3        #1e4b4f;   /* shadow                              */
+@define-color bg4        #2d6b66;   /* dusk — segment mid-tone             */
+
+/* --- Foregrounds --- */
+@define-color fg         #ede3c8;   /* canvas — pale sail-cream            */
+@define-color silver     #b8c4c0;   /* muted grey-green                    */
+@define-color mist       #7fa89f;   /* desaturated mid-teal                */
+
+/* --- Accent colours (keep gruvbox semantic names for style.css) --- */
+@define-color red        #c9603f;   /* rust error                          */
+@define-color orange     #d9884a;   /* ember (shifted warm)                */
+@define-color yellow     #c9a24a;   /* windward brass                      */
+@define-color green      #6fbf73;   /* kelp success                        */
+@define-color aqua       #6fb8b0;   /* mist-teal                           */
+@define-color blue       #7da8c9;   /* sea blue (teal-shifted)             */
+@define-color purple     #4fa88f;   /* foam — kitty cursor                 */
+@define-color dark-purple #1f7a6c;  /* hyprland border — deep anchor teal  */
+@define-color fae        #5fd9c4;   /* bright aqua highlight               */
+
+/* --- Greys (kept for any downstream use) --- */
+@define-color grey0      #7fa89f;
+@define-color grey1      #4f8a80;
+@define-color grey2      #234d47;
+
+/* --- Text --- */
+@define-color text              #ede3c8;   /* canvas — primary readable text   */
+@define-color text-alt          #7fa89f;   /* mist  — secondary / body text    */
+
+/* --- Backgrounds --- */
+@define-color background        #123338;   /* deep sea-green — widget surfaces */
+@define-color background-alt    #17393d;   /* mid shadow — alt widget bg       */
+
+/* --- Notification surfaces --- */
+@define-color notification-bg         #123338;
+@define-color center-bg               alpha(#0a1a1d, 0.92);
+@define-color center-notification-bg  #17393d;
+
+/* --- Interactive states --- */
+@define-color hover             #2d6b66;   /* dusk — button/item hover         */
+@define-color selected          #1f7a6c;   /* teal anchor — active/toggled     */
+
+/* --- Semantic accents --- */
+@define-color urgent            #c9603f;   /* rust — critical notifications    */
+@define-color accent            #4fa88f;   /* foam — cursor sea-green          */

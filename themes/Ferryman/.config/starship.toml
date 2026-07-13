@@ -1,0 +1,201 @@
+# Ferryman Shell
+#
+# Requires: Nerd Fonts (any complete variant, e.g. JetBrainsMono Nerd Font)
+# Install : Copy to ~/.config/starship.toml
+
+# --- Prompt layout ---
+# Line 1:  [glyph] [os]  [directory]  [git_branch] [git_status]
+#          [language runtimes ...]
+# Line 2:  [time]  [status/character]
+
+format = """
+$os\
+$username\
+$hostname\
+[  ](fg:#1f3c54)\
+$directory\
+[](fg:#1f3c54 bg:#16293d)\
+$git_branch\
+$git_status\
+[](fg:#16293d bg:none)\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$java\
+$lua\
+$package\
+$cmd_duration\
+$line_break\
+$time\
+$status\
+$character"""
+
+# --- Palette ---
+palette = "ferryman"
+
+[palettes.ferryman]
+styx        = "#050a10"      # near-black with a cold blue tinge
+deep        = "#0d1b2b"      # dark blue background
+shadow      = "#16293d"      # medium-dark blue
+dusk        = "#1f3c54"      # segment mid-tone
+wisp        = "#5a7a94"      # kitty cursor — soft slate blue
+frost       = "#a8c8d9"      # lighter fog-blue
+pale        = "#dceaf2"      # icy blue-white (text on dark)
+lantern     = "#f2a83c"      # hyprland border — lantern amber
+flame       = "#ffcf6b"      # bright flame highlight
+rune        = "#f5c842"      # ferryman rune accent
+silver      = "#b8c4cc"      # muted silver-frost
+mist        = "#7e93a8"      # desaturated mid-blue
+red         = "#c9455a"      # error blood
+green       = "#7de0b0"      # success wraith-mint (cold, not typical green)
+cyan        = "#a8e8ec"      # info rime
+
+# --- OS / entry glyph ---
+[os]
+format = "[$symbol]($style) "
+style = "bold fg:lantern"
+disabled = false
+
+[os.symbols]
+Arch        = "󰣇"
+Unknown     = "󰬯"   # crystal ball fallback
+
+# --- Username ---
+[username]
+format = "[$user]($style)"
+style_user = "bold fg:frost"
+style_root = "bold fg:red"
+show_always = false
+
+# --- Hostname ---
+[hostname]
+format = "[@$hostname]($style) "
+style = "fg:mist"
+ssh_only = true
+
+# --- Directory ---
+[directory]
+format = "[ 󱞊 $path ]($style)[$read_only]($read_only_style)"
+style = "bold fg:pale bg:#1f3c54"
+read_only = " 󰌾 "
+read_only_style = "fg:red bg:#1f3c54"
+truncation_length = 4
+truncation_symbol = "󰇘 "
+home_symbol = "󱂵 ~"
+
+[directory.substitutions]
+"Documents" = "󰈙 Docs"
+"Downloads" = " DL"
+"Music"     = "󰝚 Music"
+"Pictures"  = "󰋩 Pics"
+"Videos"    = "󰕧 Vids"
+"Desktop"   = "󰟀 Desktop"
+".config"   = "󱁿 cfg"
+".local"    = "󰮂 local"
+"src"       = "󰅩 src"
+"projects"  = "󰏗 projects"
+
+# --- Git Branch ---
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+symbol = "󰘬 "
+style = "bold fg:flame bg:#16293d"
+truncation_length = 24
+truncation_symbol = "󰇘"
+
+# --- Git Status ---
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "fg:rune bg:#16293d"
+conflicted  = " 󱗃 "
+ahead       = " ⇡${count}"
+behind      = " ⇣${count}"
+diverged    = " 󰹺 ⇡${ahead_count}⇣${behind_count}"
+untracked   = " 󰐗${count}"
+stashed     = " 󰏗 "
+modified    = " 󰝶${count}"
+staged      = " 󰸞${count}"
+renamed     = " 󰑕${count}"
+deleted     = " 󰩺${count}"
+
+# --- Fill (right-align runtimes) ---
+[fill]
+symbol = " "
+style = "fg:styx"
+
+# --- Language runtimes ---
+[python]
+format = "[ $symbol$version ]($style)"
+symbol = "󰌠 "
+style = "fg:wisp"
+version_format = "v${major}.${minor}"
+
+[nodejs]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "fg:green"
+version_format = "v${major}.${minor}"
+
+[rust]
+format = "[ $symbol$version ]($style)"
+symbol = "󱘗 "
+style = "fg:frost"
+version_format = "v${major}.${minor}"
+
+[golang]
+format = "[ $symbol$version ]($style)"
+symbol = "󰟓 "
+style = "fg:cyan"
+version_format = "v${major}.${minor}"
+
+[java]
+format = "[ $symbol$version ]($style)"
+symbol = "󰬷 "
+style = "fg:rune"
+version_format = "v${major}.${minor}"
+
+[lua]
+format = "[ $symbol$version ]($style)"
+symbol = "󰢱 "
+style = "fg:wisp"
+version_format = "v${major}.${minor}"
+
+[package]
+format = "[ 󰏗 $version ]($style)"
+style = "fg:silver"
+version_format = "v${raw}"
+
+# --- Command duration ---
+[cmd_duration]
+format = "[ 󱞩 $duration ]($style)"
+style = "fg:mist"
+min_time = 2_000
+show_milliseconds = false
+
+# --- Time (second line, left) ---
+[time]
+format = "[󱑃 $time ]($style)"
+style = "fg:mist"
+time_format = "%H:%M"
+disabled = false
+
+# --- Exit status ---
+[status]
+format = "[$symbol$status ]($style)"
+symbol = " "          # skull — the crossing failed
+success_symbol = ""    # hidden on success
+not_executable_symbol = "󰌾 "
+not_found_symbol = "󰩺 "
+sigint_symbol = "󰆐 "
+style = "bold fg:red"
+map_symbol = true
+disabled = false
+
+# --- Prompt character ---
+[character]
+format = "$symbol "
+success_symbol = "[⚱](bold fg:lantern)"   # lantern flame on success
+error_symbol   = "[☠](bold fg:red)"        # skull on error
+vimcmd_symbol  = "[⛧](bold fg:flame)"      # rune sigil on vim normal mode

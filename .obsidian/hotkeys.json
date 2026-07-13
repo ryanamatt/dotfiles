@@ -1,0 +1,10 @@
+{
+  "pdf-plus:toggle-auto-copy": [
+    {
+      "modifiers": [
+        "Alt"
+      ],
+      "key": "C"
+    }
+  ]
+}

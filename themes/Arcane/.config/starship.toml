@@ -1,0 +1,201 @@
+# Arcane Shell
+#
+# Requires: Nerd Fonts (any complete variant, e.g. JetBrainsMono Nerd Font)
+# Install : Copy to ~/.config/starship.toml
+
+# --- Prompt layout ---
+# Line 1:  [glyph] [os]  [directory]  [git_branch] [git_status]
+#          [language runtimes ...]
+# Line 2:  [time]  [status/character]
+
+format = """
+$os\
+$username\
+$hostname\
+[  ](fg:#3b1f4a)\
+$directory\
+[](fg:#3b1f4a bg:#2a0e3a)\
+$git_branch\
+$git_status\
+[](fg:#2a0e3a bg:none)\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$java\
+$lua\
+$package\
+$cmd_duration\
+$line_break\
+$time\
+$status\
+$character"""
+
+# --- Palette ---
+palette = "arcane"
+
+[palettes.arcane]
+void        = "#0d0010"      # near-black with a purple tinge
+deep        = "#1a0028"      # dark plum background
+shadow      = "#2a0e3a"      # medium-dark purple
+dusk        = "#3b1f4a"      # segment mid-tone
+mallow      = "#ac74ad"      # kitty cursor — muted violet
+bloom       = "#c98fca"      # lighter lavender
+petal       = "#e8c5e9"      # pale blush lavender (text on dark)
+magenta     = "#b00ea2"      # hyprland border — vivid magenta
+fae         = "#d966f5"      # bright fae-light purple
+gold        = "#f5c842"      # arcane gold accent
+silver      = "#c8b8d4"      # muted silver-lilac
+mist        = "#8a6f99"      # desaturated mid-purple
+red         = "#e05c7a"      # error rose
+green       = "#7de8b0"      # success mint (otherworldly, not typical green)
+cyan        = "#9de8e8"      # info teal
+
+# --- OS / entry glyph ---
+[os]
+format = "[$symbol]($style) "
+style = "bold fg:magenta"
+disabled = false
+
+[os.symbols]
+Arch        = "󰣇"
+Unknown     = "󰬯"   # crystal ball fallback
+
+# --- Username ---
+[username]
+format = "[$user]($style)"
+style_user = "bold fg:bloom"
+style_root = "bold fg:red"
+show_always = false
+
+# --- Hostname ---
+[hostname]
+format = "[@$hostname]($style) "
+style = "fg:mist"
+ssh_only = true
+
+# --- Directory ---
+[directory]
+format = "[ 󱞊 $path ]($style)[$read_only]($read_only_style)"
+style = "bold fg:petal bg:#3b1f4a"
+read_only = " 󰌾 "
+read_only_style = "fg:red bg:#3b1f4a"
+truncation_length = 4
+truncation_symbol = "󰇘 "
+home_symbol = "󱂵 ~"
+
+[directory.substitutions]
+"Documents" = "󰈙 Docs"
+"Downloads" = " DL"
+"Music"     = "󰝚 Music"
+"Pictures"  = "󰋩 Pics"
+"Videos"    = "󰕧 Vids"
+"Desktop"   = "󰟀 Desktop"
+".config"   = "󱁿 cfg"
+".local"    = "󰮂 local"
+"src"       = "󰅩 src"
+"projects"  = "󰏗 projects"
+
+# --- Git Branch ---
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+symbol = "󰘬 "
+style = "bold fg:fae bg:#2a0e3a"
+truncation_length = 24
+truncation_symbol = "󰇘"
+
+# --- Git Status ---
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "fg:gold bg:#2a0e3a"
+conflicted  = " 󱗃 "
+ahead       = " ⇡${count}"
+behind      = " ⇣${count}"
+diverged    = " 󰹺 ⇡${ahead_count}⇣${behind_count}"
+untracked   = " 󰐗${count}"
+stashed     = " 󰏗 "
+modified    = " 󰝶${count}"
+staged      = " 󰸞${count}"
+renamed     = " 󰑕${count}"
+deleted     = " 󰩺${count}"
+
+# --- Fill (right-align runtimes) ---
+[fill]
+symbol = " "
+style = "fg:void"
+
+# --- Language runtimes ---
+[python]
+format = "[ $symbol$version ]($style)"
+symbol = "󰌠 "
+style = "fg:mallow"
+version_format = "v${major}.${minor}"
+
+[nodejs]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "fg:green"
+version_format = "v${major}.${minor}"
+
+[rust]
+format = "[ $symbol$version ]($style)"
+symbol = "󱘗 "
+style = "fg:bloom"
+version_format = "v${major}.${minor}"
+
+[golang]
+format = "[ $symbol$version ]($style)"
+symbol = "󰟓 "
+style = "fg:cyan"
+version_format = "v${major}.${minor}"
+
+[java]
+format = "[ $symbol$version ]($style)"
+symbol = "󰬷 "
+style = "fg:gold"
+version_format = "v${major}.${minor}"
+
+[lua]
+format = "[ $symbol$version ]($style)"
+symbol = "󰢱 "
+style = "fg:mallow"
+version_format = "v${major}.${minor}"
+
+[package]
+format = "[ 󰏗 $version ]($style)"
+style = "fg:silver"
+version_format = "v${raw}"
+
+# --- Command duration ---
+[cmd_duration]
+format = "[ 󱞩 $duration ]($style)"
+style = "fg:mist"
+min_time = 2_000
+show_milliseconds = false
+
+# --- Time (second line, left) ---
+[time]
+format = "[󱑃 $time ]($style)"
+style = "fg:mist"
+time_format = "%H:%M"
+disabled = false
+
+# --- Exit status ---
+[status]
+format = "[$symbol$status ]($style)"
+symbol = " "          # skull — the spell failed
+success_symbol = ""    # hidden on success
+not_executable_symbol = "󰌾 "
+not_found_symbol = "󰩺 "
+sigint_symbol = "󰆐 "
+style = "bold fg:red"
+map_symbol = true
+disabled = false
+
+# --- Prompt character ---
+[character]
+format = "$symbol "
+success_symbol = "[󰧲](bold fg:magenta)"   # arcane flower on success
+error_symbol   = "[󱐌](bold fg:red)"       # lightning on error
+vimcmd_symbol  = "[󰮓](bold fg:fae)"       # crystal on vim normal mode

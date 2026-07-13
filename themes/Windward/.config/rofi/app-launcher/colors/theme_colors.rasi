@@ -1,0 +1,19 @@
+/** Windward Shell **/
+
+* {
+
+    /* Backgrounds */
+    background:         #0a1a1dff;   /* abyss — near-black teal cast      */
+    background-alt:     #123338ff;   /* deep sea-green                    */
+    background-alt2:    #1e4b4fff;   /* shadow / dusk                     */
+
+    /* Foregrounds */
+    foreground:         #ede3c8ff;   /* canvas — primary text             */
+    foreground-alt:     #7fa89fff;   /* mist  — secondary / dimmed text   */
+
+    /* Semantic roles */
+    selected:           #1f7a6cff;   /* teal — hyprland anchor active item */
+    active:             #4fa88fff;   /* foam — alternate active           */
+    urgent:             #c9603fff;   /* rust — urgent / error             */
+
+}

@@ -1,0 +1,239 @@
+Ferryman Theme Reference
+
+CONCEPT
+
+  A death-and-water aesthetic built around a hooded reaper poling a
+  boat through frozen marsh mist, one lantern the only warm thing for
+  miles — extended into a full cohesive palette.
+
+  The feeling: the crossing itself — a cold, ink-blue void of fog and
+  reeds, a silhouette darker than the night around it, and a single
+  amber lantern swinging at the prow, throwing everything it touches
+  into gold. Runes still glow like old gold under frost. Ice-pale
+  breath-fog drifts at the waterline. Somewhere behind the mist, the
+  far shore.
+
+
+FULL PALETTE
+
+  Name              Hex         RGB                Role
+-----------------------------------------------------------------------------
+  styx              #050a10     (  5,  10,  16)    Primary background
+  deep              #0d1b2b     ( 13,  27,  43)    Alt background / surfaces
+  shadow            #16293d     ( 22,  41,  61)    Segment midtone / borders
+  dusk              #1f3c54     ( 31,  60,  84)    Hover states / inactive
+  mist              #7e93a8     (126, 147, 168)    Dimmed text / secondary
+  wisp              #5a7a94     ( 90, 122, 148)    cursor / accent
+  frost             #a8c8d9     (168, 200, 217)    Lighter fog-blue
+  pale              #dceaf2     (220, 234, 242)    Primary foreground / text
+  lantern           #f2a83c     (242, 168,  60)    active / border
+  dark blue         #142035     ( 20,  32,  53)    inactive / border
+  flame             #ffcf6b     (255, 207, 107)    Bright accent / highlights
+  rune              #f5c842     (245, 200,  66)    Operators / warnings / runes
+  silver            #b8c4cc     (184, 196, 204)    Muted text
+  wraith            #5ecf9a     ( 94, 207, 154)    Success / ok states
+  rime              #8fd9e0     (143, 217, 224)    Escape sequences / info
+  blood             #c9455a     (201,  69,  90)    Errors / critical / urgent
+  cinder            #d97a4a     (217, 122,  74)    Ember (shifted warm)
+
+  -- derived / readability tones (lifted/desaturated for legibility) --
+  hollow            #0f1a24     ( 15,  26,  36)    Note-writing surface
+                                                    (editor pane bg) — a
+                                                    desaturated near-black
+                                                    with only a whisper of
+                                                    blue. Raw styx is too
+                                                    dark/saturated to read
+                                                    body text against for
+                                                    long; hollow fixes that
+                                                    while sidebar/tabs/
+                                                    status bar intentionally
+                                                    stay on raw styx/deep,
+                                                    so notes read as a
+                                                    distinct "page" against
+                                                    the surrounding chrome.
+  mist-text         #93a8ba     (147, 168, 186)    Muted/secondary text
+                                                    (lifted mist — use
+                                                    where it's actually
+                                                    read, not just an icon)
+  border-soft       #2a3f52     ( 42,  63,  82)    Inactive borders, hr,
+                                                    table lines, dividers
+                                                    (re-tuned against
+                                                    hollow, which is
+                                                    lighter than styx)
+  border-strong     #3d5870     ( 61,  88, 112)    Hover/visible borders
+  lantern-accent    #f5b354     (245, 179,  84)    lantern lifted toward
+                                                    flame — primary
+                                                    interactive accent
+                                                    where text-size
+                                                    contrast matters
+  link-heading      #ffc978     (255, 201, 120)    lantern-accent lifted
+                                                    further — links, h2,
+                                                    focus glow
+
+
+SEMANTIC ROLES
+
+  Role                        Color       Hex
+---------------------------------------------------
+  Primary background          styx        #050a10
+  Surface / widget bg         deep        #0d1b2b
+  Alt surface                 shadow      #16293d
+  Active border / selection   lantern     #f2a83c
+  Inactive border             shadow      #16293d
+  Primary text                pale        #dceaf2
+  Secondary / dimmed text     mist        #7e93a8
+  Cursor                      wisp        #5a7a94
+  Commands (fish)             flame       #ffcf6b
+  Keywords (fish)             wisp        #5a7a94
+  Strings (fish)              frost       #a8c8d9
+  Comments (fish)             dusk        #1f3c54
+  Operators                   rune        #f5c842
+  Escape sequences            rime        #8fd9e0
+  Autosuggestions             #253d52     (very dim dusk)
+  Success / ok                wraith      #5ecf9a
+  Warning                     rune        #f5c842
+  Error / critical            blood       #c9455a
+  Hover state                 dusk        #1f3c54
+  Selected / toggled on       lantern     #f2a83c
+  Shadow / glow color         lantern @25% alpha   rgba(f2a83c40)
+  URL color                   flame       #ffcf6b
+  Git dirty indicators        rune        #f5c842
+  Battery charging            wraith      #5ecf9a
+  Battery critical             blood      #c9455a
+  Network disconnected        mist        #7e93a8
+
+
+TERMINAL 16-COLOR PALETTE (ANSI)
+
+  Index   Name              Hex         Notes
+---------------------------------------------------------
+  0       black             #050a10     styx
+  1       red               #c9455a     blood error
+  2       green             #5ecf9a     wraith success
+  3       yellow            #b3923a     muted rune
+  4       blue              #4a6f94     sea-shifted blue
+  5       magenta           #f2a83c     ★ hyprland anchor (lantern)
+  6       cyan              #6fb8c4     mist-rime
+  7       white             #b8c4cc     silver
+  8       bright black      #1f3c54     dusk
+  9       bright red        #de6b7a     lighter blood
+  10      bright green      #7de0b0     lighter wraith
+  11      bright yellow     #f5c842     ferryman rune
+  12      bright blue       #7fa8cc     lighter sea-blue
+  13      bright magenta    #ffcf6b     flame
+  14      bright cyan       #a8e8ec     light rime
+  15      bright white      #dceaf2     pale
+
+
+TRANSPARENCY & BLUR
+
+  App               Opacity     Blur
+---------------------------------------------------------------
+  kitty             0.80        blur 20 (kitty background_blur)
+  Hyprland active   1.00        —
+  Hyprland inactive 0.85        size 8, passes 3, vibrancy 0.2
+  swaync center     0.92 alpha  via layer rule blur
+  waybar            0.85 alpha  via layer rule blur
+  hyprlock bg       0.40 bright blur_passes 4, blur_size 8
+
+
+TYPOGRAPHY
+
+  App               Font
+--------------------------------------------------------------
+  kitty             (your existing font — see kitty.conf)
+  waybar            Iosevka Nerd Font Propo
+  swaync            Geist, JetBrainsMono Nerd Font Propo
+  rofi              Iosevka Nerd Font Propo 11
+  hyprlock          Iosevka Nerd Font Propo
+  fish              Iosevka Nerd Font Propo (terminal inherits kitty)
+  starship          Iosevka Nerd Font Propo (terminal inherits kitty)
+
+  All fonts require a complete Nerd Font variant for glyph support.
+  Download from: https://www.nerdfonts.com
+
+
+BORDERS & ROUNDING
+
+  Hyprland active border    #f2a83c   2px
+  Hyprland inactive border  #16293d   2px
+  Hyprland rounding         12px      power 3.0
+  Window shadow             rgba(f2a83c40)   range 20, render_power 2
+  kitty border              #f2a83c (active)   #1f3c54 (inactive)
+  swaync panel border       rgba(f2a83c, 0.30)
+  swaync notifications      rgba(f2a83c, 0.18)
+  rofi window border        1px solid lantern   border-radius 14px
+  waybar bottom border      1px solid rgba(f2a83c, 0.50)
+  waybar bar radius         0 0 12px 12px
+
+
+KEY GLYPHS (Nerd Font / Unicode)
+
+  Note: pick the closest glyph available in your installed Nerd Font
+  set — coverage for scythe/lantern-style icons varies by font
+  version, so verify each codepoint renders before wiring it into
+  configs.
+
+  ⚱   lantern flame       — starship prompt character (success)
+  ☠   skull              — starship prompt character (error)
+  ⛧   rune sigil         — starship vim normal mode
+  󰘬   git branch         — starship git_branch
+  🕯   candle/wick         — starship directory prefix
+  󱂵   home               — starship home symbol (~)
+  ✦   drifting star      — flavor text throughout
+  ⬡   ferryman hex       — ASCII art window glyph
+  󰣇   arch linux         — OS glyph
+  󰌽   kernel             — fastfetch kernel
+  󱦟   uptime             — fastfetch uptime
+  󰏗   packages           — fastfetch / git stash
+  󰘓   memory             — fastfetch memory
+  󰋊   disk               — fastfetch disk
+  󰁹   battery full       — waybar / fastfetch battery
+  󰀂   network            — fastfetch local ip
+  󱂬   windows            — fastfetch WM / rofi window mode
+    terminal           — fastfetch terminal / fish abbr
+  󰃠   brightness full    — waybar / swaync backlight
+
+
+EXTENDING THE THEME TO NEW APPS
+
+  When theming a new application, follow this decision tree:
+
+  Background?       → styx #050a10 or deep #0d1b2b
+  Surface/card?     → deep #0d1b2b or shadow #16293d
+  Text?             → pale #dceaf2 (primary)  mist #7e93a8 (secondary)
+  Accent/highlight? → lantern #f2a83c (strong)  wisp #5a7a94 (soft)
+  Bright accent?    → flame #ffcf6b
+  Border?           → lantern #f2a83c (active)  shadow #16293d (inactive)
+  Hover?            → dusk #1f3c54
+  Success?          → wraith #5ecf9a
+  Warning?          → rune #f5c842
+  Error?            → blood #c9455a
+  Info?             → rime #8fd9e0
+  Shadow/glow?      → rgba(f2a83c, 0.25–0.40)
+
+  Readability note (added after the Obsidian theme build):
+  raw mist/dusk/shadow/lantern/styx read beautifully on a terminal
+  bar or status line where the surrounding chrome is small and the
+  eye isn't lingering, but they get muddy fast — or in styx's case,
+  tiring to read against — as body text, long-form borders, or any
+  surface read continuously for more than a second (reading apps,
+  editors, docs). For those contexts, swap in the derived tones
+  instead:
+    main reading surface   → hollow #0f1a24        (not raw styx)
+    secondary/muted text   → mist-text #93a8ba     (not raw mist)
+    inactive borders/hr    → border-soft #2a3f52   (not raw shadow)
+    visible/hover borders  → border-strong #3d5870 (not raw dusk)
+    accent needing to read
+      at text size (links,
+      headings, focus rings) → lantern-accent #f5b354 or
+                                 link-heading #ffc978 (not raw lantern)
+  Rule of thumb: if it's a UI accent glanced at (status icon, bar
+  segment) use the raw palette; if it's read continuously (body
+  text, link color, a border you have to find, the page you write
+  on) use the lifted/desaturated tone.
+
+  Rule: pure black (#000000) and pure white (#ffffff) are never used.
+  The darkest point is styx #050a10, lightest is pale #dceaf2.
+  Every color has a cold blue undertone — even the amber lantern
+  tones sit against, rather than blend into, the surrounding chill.
