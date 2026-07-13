@@ -2,13 +2,14 @@ if status is-interactive
 
 if command -q fastfetch
     fastfetch
+    set -g fish_greeting ""
 else
     set fish_greeting
 end
 
 # Editor
-set -gx EDITOR nvim
-set -gx VISUAL nvim
+set -gx EDITOR code
+set -gx VISUAL code
 
 # XDG
 set -gx XDG_CONFIG_HOME $HOME/.config
@@ -121,19 +122,6 @@ function extract -d "Extract any archive"
     else
         echo "'$argv[1]' is not a file"
     end
-end
- 
-# hypr-wallpaper - set wallpaper via awww
-function hypr-wallpaper -d "Set wallpaper with awww and a void-like transition"
-    if not command -q awww
-        echo "awww not found"
-        return 1
-    end
-    awww img $argv[1] \
-        --transition-type wipe \
-        --transition-angle 270 \
-        --transition-duration 2 \
-        --transition-fps 60
 end
 
 end # end is-interactive
