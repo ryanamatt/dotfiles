@@ -14,7 +14,7 @@ Scope {
             required property var modelData
             screen: modelData
 
-            exclusionMode: ExclusionMode.Ignore
+            // exclusionMode: ExclusionMode.Ignore
             
             color: "transparent"
 

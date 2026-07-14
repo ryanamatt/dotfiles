@@ -11,11 +11,11 @@ NC='\033[0m'
 
 echo -e "${GREEN}Upkeeping system...${NC}"
 
-yay -Syu --noconfirm
+yay -Syu
 
 # Check if there are any orphans first to avoid yay/pacman throwing an error if none exist.
 if [ -n "$(yay -Qdtq)" ]; then
-    yay -Rns $(yay -Qdtq) --noconfirm
+    yay -Rns $(yay -Qdtq)
 fi
 
-yay -Sc --noconfirm
+yay -Sc
