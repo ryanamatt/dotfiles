@@ -22,12 +22,14 @@ hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/ryan/.config/waybar/scripts/launch.sh"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 
+-- Screenshots
+hl.bind("PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh"))
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s"))
 
 -- Quick Shell Key binds
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/theme-switcher"))
