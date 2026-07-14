@@ -50,7 +50,7 @@ ShellRoot {
         switchProc.running = true
     }
 
-    // Point keyboard focus at the active theme once we know the list and
+    // Point keyboard focus at the active theme once known the list and
     // the current theme (order of arrival between the two isn't guaranteed).
     function syncFocusedIndex() {
         if (root.themeNames.length === 0) {
