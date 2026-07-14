@@ -50,10 +50,6 @@ link_config ".config/fish/config.fish"
 
 link_config ".config/kitty/kitty.conf"
 
-link_config ".config/waybar/config.jsonc"
-link_config ".config/waybar/style.css"
-link_config ".config/waybar/scripts/launch.sh"
-
 link_config ".config/rofi/app-launcher/launcher.sh"
 link_config ".config/rofi/app-launcher/style-9.rasi"
 link_config ".config/rofi/app-launcher/shared/colors.rasi"
@@ -77,9 +73,6 @@ link_config ".config/hypr/hypridle.conf"
 
 link_config ".config/Orpheus/orpheus.config"
 link_config ".config/Orpheus/templates/ch.tmpl"
-
-link_config ".config/theme-switcher/shell.qml"
-link_config ".config/powermenu/shell.qml"
 
 # Install custom scripts from the bin directory
 if [ -d "$DOTFILES/bin" ]; then
