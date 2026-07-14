@@ -172,12 +172,12 @@ def resolve(theme: dict) -> dict:
 # Map template path (relative to templates/) -> output path
 # (relative to themes/<Name>/), matching create_theme.sh's tree.
 FILE_MAP = {
-    "fish/fish_variables.j2":                            ".config/fish/fish_variables",
-    "hypr/hyprlock.conf.j2":                              ".config/hypr/hyprlock.conf",
-    "hypr/modules/colors.lua.j2":                         ".config/hypr/modules/colors.lua",
-    "kitty/theme_colors.conf.j2":                         ".config/kitty/theme_colors.conf",
-    "starship.toml.j2":                                   ".config/starship.toml",
-    "swaync/theme_colors.css.j2":                         ".config/swaync/colors/theme_colors.css",
+    ".config/fish/fish_variables.j2":                     ".config/fish/fish_variables",
+    ".config/hypr/hyprlock.conf.j2":                      ".config/hypr/hyprlock.conf",
+    ".config/hypr/modules/colors.lua.j2":                 ".config/hypr/modules/colors.lua",
+    ".config/kitty/theme_colors.conf.j2":                 ".config/kitty/theme_colors.conf",
+    ".config/starship.toml.j2":                           ".config/starship.toml",
+    ".config/swaync/theme_colors.css.j2":                 ".config/swaync/colors/theme_colors.css",
     "quickshell/colors.json.j2":                          "quickshell/colors.json",
 }
 

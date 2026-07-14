@@ -36,6 +36,5 @@ echo "Rendering colors from $YAML..."
 
 echo "Done! Structure + colors created in $BASE_DIR/"
 echo "Manual step: drop your ascii art at ${CONF_DIR}/fastfetch/<name>.txt"
-echo "(cp an existing theme's .txt as a starting point) and point your"
-echo "fastfetch config.jsonc at it -- layout/colors there aren't templated"
-echo "since you handle that by hand anyway."
+echo "cp an existing fastfetch config and drop in in your theme replacing"
+echo "the ascii art one liner with your own."
