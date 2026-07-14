@@ -591,7 +591,7 @@ Rectangle {
                     text: {
                         if (!root.activePlayer) return ""
                         const parts = [root.activePlayer.trackArtist, root.activePlayer.trackAlbum].filter(s => s && s.length > 0)
-                        return parts.length > 0 ? parts.join(" — ") : root.activePlayer.identity
+                        return parts.length > 0 ? parts.join(" -- ") : root.activePlayer.identity
                     }
                     color: Colors.colors.foregroundMuted
                     font.pixelSize: 12

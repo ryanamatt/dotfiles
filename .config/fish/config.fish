@@ -124,6 +124,18 @@ function extract -d "Extract any archive"
     end
 end
 
+function auto_activate_venv --on-variable PWD
+    if test -d venv
+        # Check if we are already in the venv to avoid redundant sourcing
+        if not string match -q "$PWD/venv*" "$VIRTUAL_ENV"
+            source venv/bin/activate.fish
+        end
+    else if test -n "$VIRTUAL_ENV"
+        # Deactivate if we leave the directory containing the venv
+        deactivate
+    end
+end
+
 end # end is-interactive
 
 # Starship

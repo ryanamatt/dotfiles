@@ -1,0 +1,77 @@
+# {{ name }} Shell Colors
+
+# --- Core ---
+foreground              {{ semantic.text_primary }}
+background              {{ semantic.background }}
+
+selection_foreground    {{ semantic.background }}
+selection_background    {{ semantic.cursor }}
+
+# --- Cursor ---
+cursor                  {{ semantic.cursor }}
+cursor_text_color       {{ semantic.background }}
+
+# --- URLs ---
+url_color               {{ semantic.url }}
+
+# --- Window borders ---
+active_border_color     {{ borders.kitty.active }}
+inactive_border_color   {{ borders.kitty.inactive }}
+bell_border_color       {{ semantic.warning }}
+
+# --- Title bar (Wayland / macOS) ---
+wayland_titlebar_color  {{ semantic.background }}
+macos_titlebar_color    {{ semantic.background }}
+
+# --- Tab bar ---
+active_tab_foreground   {{ semantic.background }}
+active_tab_background   {{ semantic.selected }}
+inactive_tab_foreground {{ semantic.text_secondary }}
+inactive_tab_background {{ semantic.surface }}
+tab_bar_background      {{ semantic.background }}
+
+# --- Marks ---
+mark1_foreground        {{ semantic.background }}
+mark1_background        {{ semantic.active_border }}
+
+mark2_foreground        {{ semantic.background }}
+mark2_background        {{ semantic.cursor }}
+
+mark3_foreground        {{ semantic.background }}
+mark3_background        {{ semantic.url }}
+
+# --- 16-color terminal palette ---
+# {{ name }} re-mapping: keeps semantic meaning (red = error, green = ok)
+# but pulls every hue through the purple void.
+
+# black  -- void / shadow
+color0   {{ ansi_by_index[0].hex }}
+color8   {{ ansi_by_index[8].hex }}
+
+# red  -- rose error
+color1   {{ ansi_by_index[1].hex }}
+color9   {{ ansi_by_index[9].hex }}
+
+# green  -- mint success (otherworldly, not earthy)
+color2   {{ ansi_by_index[2].hex }}
+color10  {{ ansi_by_index[10].hex }}
+
+# yellow  -- arcane gold
+color3   {{ ansi_by_index[3].hex }}
+color11  {{ ansi_by_index[11].hex }}
+
+# blue  -- deep void blue (shifted purple-ward)
+color4   {{ ansi_by_index[4].hex }}
+color12  {{ ansi_by_index[12].hex }}
+
+# magenta  -- fae / vivid purple (the heart of the palette)
+color5   {{ ansi_by_index[5].hex }}
+color13  {{ ansi_by_index[13].hex }}
+
+# cyan  -- mist teal
+color6   {{ ansi_by_index[6].hex }}
+color14  {{ ansi_by_index[14].hex }}
+
+# white  -- petal / silver
+color7   {{ ansi_by_index[7].hex }}
+color15  {{ ansi_by_index[15].hex }}

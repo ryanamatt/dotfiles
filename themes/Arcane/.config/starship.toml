@@ -40,10 +40,10 @@ void        = "#0d0010"      # near-black with a purple tinge
 deep        = "#1a0028"      # dark plum background
 shadow      = "#2a0e3a"      # medium-dark purple
 dusk        = "#3b1f4a"      # segment mid-tone
-mallow      = "#ac74ad"      # kitty cursor — muted violet
+mallow      = "#ac74ad"      # kitty cursor -- muted violet
 bloom       = "#c98fca"      # lighter lavender
 petal       = "#e8c5e9"      # pale blush lavender (text on dark)
-magenta     = "#b00ea2"      # hyprland border — vivid magenta
+magenta     = "#b00ea2"      # hyprland border -- vivid magenta
 fae         = "#d966f5"      # bright fae-light purple
 gold        = "#f5c842"      # arcane gold accent
 silver      = "#c8b8d4"      # muted silver-lilac
@@ -184,7 +184,7 @@ disabled = false
 # --- Exit status ---
 [status]
 format = "[$symbol$status ]($style)"
-symbol = " "          # skull — the spell failed
+symbol = " "          # skull -- the spell failed
 success_symbol = ""    # hidden on success
 not_executable_symbol = "󰌾 "
 not_found_symbol = "󰩺 "

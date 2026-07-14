@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# theme-switcher.sh — swap color/theme files in ~/.config and ~/dotfiles/quickshell
+# theme-switcher.sh -- swap color/theme files in ~/.config and ~/dotfiles/quickshell
 #
 # Layout expected:
 #   ~/dotfiles/themes/<ThemeName>/.config/kitty/theme_colors.conf
 #   ~/dotfiles/themes/<ThemeName>/.config/hypr/...      (mirrors ~/.config structure)
 #   ~/dotfiles/themes/<ThemeName>/quickshell/colors.json
 #
-#   ~/.config/kitty/theme_colors.conf     (live config — install.sh symlinks
+#   ~/.config/kitty/theme_colors.conf     (live config -- install.sh symlinks
 #   ~/.config/hypr/...                     most files here individually from
 #                                           dotfiles/.config; this script only
 #                                           overwrites paths that exist under
@@ -167,7 +167,7 @@ switch_theme() {
     fi
 
     c_blue "Switching to theme: $theme"
-    [[ "$dry_run" == true ]] && c_yellow "(dry run — no changes will be made)"
+    [[ "$dry_run" == true ]] && c_yellow "(dry run -- no changes will be made)"
 
     ~/dotfiles/change_wallpaper.sh "$theme"
 
@@ -183,7 +183,7 @@ switch_theme() {
     local count=$((config_count + quickshell_count))
 
     if [[ $count -eq 0 ]]; then
-        c_yellow "No files found under $theme_path/.config or $theme_path/quickshell — nothing linked."
+        c_yellow "No files found under $theme_path/.config or $theme_path/quickshell -- nothing linked."
         exit 1
     fi
 

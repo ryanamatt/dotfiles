@@ -40,10 +40,10 @@ abyss       = "#0a1a1d"      # near-black with a teal tinge
 deep        = "#123338"      # dark sea-green background
 shadow      = "#1e4b4f"      # medium-dark teal
 dusk        = "#2d6b66"      # segment mid-tone
-foam        = "#4fa88f"      # kitty cursor — sea-green
+foam        = "#4fa88f"      # kitty cursor -- sea-green
 sky         = "#8fc4d9"      # lighter sky-blue
 canvas      = "#ede3c8"      # pale sail-cream (text on dark)
-teal        = "#1f7a6c"      # hyprland border — deep anchor teal
+teal        = "#1f7a6c"      # hyprland border -- deep anchor teal
 aqua        = "#5fd9c4"      # bright aqua highlight
 brass       = "#c9a24a"      # windward brass accent
 silver      = "#b8c4c0"      # muted grey-green
@@ -60,7 +60,7 @@ disabled = false
 
 [os.symbols]
 Arch        = "󰣇"
-Unknown     = "󰬯"   # fallback icon — verify glyph renders in your Nerd Font
+Unknown     = "󰬯"   # fallback icon -- verify glyph renders in your Nerd Font
 
 # --- Username ---
 [username]
@@ -184,7 +184,7 @@ disabled = false
 # --- Exit status ---
 [status]
 format = "[$symbol$status ]($style)"
-symbol = "⛈ "          # storm — the voyage hit trouble
+symbol = "⛈ "          # storm -- the voyage hit trouble
 success_symbol = ""    # hidden on success
 not_executable_symbol = "󰌾 "
 not_found_symbol = "󰩺 "

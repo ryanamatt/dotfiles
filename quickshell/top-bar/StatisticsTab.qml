@@ -544,7 +544,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: root.uptimeText.length > 0 ? root.uptimeText : "—"
+                        text: root.uptimeText.length > 0 ? root.uptimeText : "--"
                         color: Colors.colors.foregroundMuted
                         font.pixelSize: 12
                         elide: Text.ElideRight
@@ -564,7 +564,7 @@ Rectangle {
                     }
 
                     Text {
-                        text: root.loadAvgText.length > 0 ? root.loadAvgText : "—"
+                        text: root.loadAvgText.length > 0 ? root.loadAvgText : "--"
                         color: Colors.colors.foregroundMuted
                         font.pixelSize: 12
                         horizontalAlignment: Text.AlignRight

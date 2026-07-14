@@ -22,7 +22,7 @@ ShellRoot {
 
     // Fallback palette, used until the active theme's colors.json loads
     // (or if it's missing). Matches the shape every theme's
-    // theme_colors.json should have — same file the theme-switcher reads,
+    // theme_colors.json should have -- same file the theme-switcher reads,
     // just with a few extra semantic roles added on top.
     property var colors: ({
         background: "#0d0010",
@@ -140,7 +140,7 @@ ShellRoot {
         }
     }
 
-    // Read a theme's colors.json — same file the theme-switcher uses.
+    // Read a theme's colors.json -- same file the theme-switcher uses.
     Process {
         id: colorsProc
         property string themeArg: ""

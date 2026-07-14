@@ -77,7 +77,7 @@ ShellRoot {
     Component.onCompleted: refreshAll()
 
     // ---------------------------------------------------------------
-    // Background processes — all the shelling-out lives here so the
+    // Background processes -- all the shelling-out lives here so the
     // UI below just reacts to plain QML properties.
     // ---------------------------------------------------------------
 
@@ -152,8 +152,8 @@ ShellRoot {
     //
     // workingDirectory matters here: switcher.sh internally calls
     // "./change_wallpaper.sh" using a relative path, so it must run with
-    // dotfiles/ as its cwd. Without this, that call — and the whole
-    // script, since it uses `set -e` — fails silently, which is why theme
+    // dotfiles/ as its cwd. Without this, that call -- and the whole
+    // script, since it uses `set -e` -- fails silently, which is why theme
     // switching wasn't doing anything.
     Process {
         id: switchProc

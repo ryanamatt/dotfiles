@@ -40,10 +40,10 @@ styx        = "#050a10"      # near-black with a cold blue tinge
 deep        = "#0d1b2b"      # dark blue background
 shadow      = "#16293d"      # medium-dark blue
 dusk        = "#1f3c54"      # segment mid-tone
-wisp        = "#5a7a94"      # kitty cursor — soft slate blue
+wisp        = "#5a7a94"      # kitty cursor -- soft slate blue
 frost       = "#a8c8d9"      # lighter fog-blue
 pale        = "#dceaf2"      # icy blue-white (text on dark)
-lantern     = "#f2a83c"      # hyprland border — lantern amber
+lantern     = "#f2a83c"      # hyprland border -- lantern amber
 flame       = "#ffcf6b"      # bright flame highlight
 rune        = "#f5c842"      # ferryman rune accent
 silver      = "#b8c4cc"      # muted silver-frost
@@ -184,7 +184,7 @@ disabled = false
 # --- Exit status ---
 [status]
 format = "[$symbol$status ]($style)"
-symbol = " "          # skull — the crossing failed
+symbol = " "          # skull -- the crossing failed
 success_symbol = ""    # hidden on success
 not_executable_symbol = "󰌾 "
 not_found_symbol = "󰩺 "

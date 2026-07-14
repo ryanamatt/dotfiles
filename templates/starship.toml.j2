@@ -1,0 +1,201 @@
+# {{ name }} Shell
+#
+# Requires: Nerd Fonts (any complete variant, e.g. JetBrainsMono Nerd Font)
+# Install : Copy to ~/.config/starship.toml
+
+# --- Prompt layout ---
+# Line 1:  [glyph] [os]  [directory]  [git_branch] [git_status]
+#          [language runtimes ...]
+# Line 2:  [time]  [status/character]
+
+format = """
+$os\
+$username\
+$hostname\
+[  ](fg:{{ semantic.hover }})\
+$directory\
+[](fg:{{ semantic.hover }} bg:{{ semantic.alt_surface }})\
+$git_branch\
+$git_status\
+[](fg:{{ semantic.alt_surface }} bg:none)\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$java\
+$lua\
+$package\
+$cmd_duration\
+$line_break\
+$time\
+$status\
+$character"""
+
+# --- Palette ---
+palette = "{{ slug }}"
+
+[palettes.{{ slug }}]
+{{ semantic.background.name }}        = "{{ semantic.background }}"      # near-black with a purple tinge
+{{ semantic.surface.name }}        = "{{ semantic.surface }}"      # dark plum background
+{{ semantic.alt_surface.name }}      = "{{ semantic.alt_surface }}"      # medium-dark purple
+{{ semantic.hover.name }}        = "{{ semantic.hover }}"      # segment mid-tone
+{{ semantic.cursor.name }}      = "{{ semantic.cursor }}"      # kitty cursor -- muted violet
+{{ semantic.fish_strings.name }}       = "{{ semantic.fish_strings }}"      # lighter lavender
+{{ semantic.text_primary.name }}       = "{{ semantic.text_primary }}"      # pale blush lavender (text on dark)
+{{ semantic.active_border.name }}     = "{{ semantic.active_border }}"      # hyprland border -- vivid magenta
+{{ semantic.fish_commands.name }}         = "{{ semantic.fish_commands }}"      # bright fae-light purple
+{{ semantic.warning.name }}        = "{{ semantic.warning }}"      # arcane gold accent
+{{ semantic.muted_text.name }}      = "{{ semantic.muted_text }}"      # muted silver-lilac
+{{ semantic.text_secondary.name }}        = "{{ semantic.text_secondary }}"      # desaturated mid-purple
+{{ semantic.error.name }}         = "{{ semantic.error }}"      # error rose
+green       = "{{ semantic.starship_green }}"      # success mint (otherworldly, not typical green)
+{{ semantic.escape_sequences.name }}        = "{{ semantic.escape_sequences }}"      # info teal
+
+# --- OS / entry glyph ---
+[os]
+format = "[$symbol]($style) "
+style = "bold fg:{{ semantic.active_border.name }}"
+disabled = false
+
+[os.symbols]
+Arch        = "{{ glyphs.os }}"
+Unknown     = "󰬯"   # crystal ball fallback
+
+# --- Username ---
+[username]
+format = "[$user]($style)"
+style_user = "bold fg:{{ semantic.fish_strings.name }}"
+style_root = "bold fg:{{ semantic.error.name }}"
+show_always = false
+
+# --- Hostname ---
+[hostname]
+format = "[@$hostname]($style) "
+style = "fg:{{ semantic.text_secondary.name }}"
+ssh_only = true
+
+# --- Directory ---
+[directory]
+format = "[ {{ glyphs.dir_prefix }} $path ]($style)[$read_only]($read_only_style)"
+style = "bold fg:{{ semantic.text_primary.name }} bg:{{ semantic.hover }}"
+read_only = " 󰌾 "
+read_only_style = "fg:{{ semantic.error.name }} bg:{{ semantic.hover }}"
+truncation_length = 4
+truncation_symbol = "󰇘 "
+home_symbol = "{{ glyphs.home }} ~"
+
+[directory.substitutions]
+"Documents" = "󰈙 Docs"
+"Downloads" = " DL"
+"Music"     = "󰝚 Music"
+"Pictures"  = "󰋩 Pics"
+"Videos"    = "󰕧 Vids"
+"Desktop"   = "󰟀 Desktop"
+".config"   = "󱁿 cfg"
+".local"    = "󰮂 local"
+"src"       = "󰅩 src"
+"projects"  = "󰏗 projects"
+
+# --- Git Branch ---
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+symbol = "{{ glyphs.git_branch }} "
+style = "bold fg:{{ semantic.fish_commands.name }} bg:{{ semantic.alt_surface }}"
+truncation_length = 24
+truncation_symbol = "󰇘"
+
+# --- Git Status ---
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "fg:{{ semantic.warning.name }} bg:{{ semantic.alt_surface }}"
+conflicted  = " 󱗃 "
+ahead       = " ⇡${count}"
+behind      = " ⇣${count}"
+diverged    = " 󰹺 ⇡${ahead_count}⇣${behind_count}"
+untracked   = " 󰐗${count}"
+stashed     = " 󰏗 "
+modified    = " 󰝶${count}"
+staged      = " 󰸞${count}"
+renamed     = " 󰑕${count}"
+deleted     = " 󰩺${count}"
+
+# --- Fill (right-align runtimes) ---
+[fill]
+symbol = " "
+style = "fg:{{ semantic.background.name }}"
+
+# --- Language runtimes ---
+[python]
+format = "[ $symbol$version ]($style)"
+symbol = "󰌠 "
+style = "fg:{{ semantic.cursor.name }}"
+version_format = "v${major}.${minor}"
+
+[nodejs]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "fg:green"
+version_format = "v${major}.${minor}"
+
+[rust]
+format = "[ $symbol$version ]($style)"
+symbol = "󱘗 "
+style = "fg:{{ semantic.fish_strings.name }}"
+version_format = "v${major}.${minor}"
+
+[golang]
+format = "[ $symbol$version ]($style)"
+symbol = "󰟓 "
+style = "fg:{{ semantic.escape_sequences.name }}"
+version_format = "v${major}.${minor}"
+
+[java]
+format = "[ $symbol$version ]($style)"
+symbol = "󰬷 "
+style = "fg:{{ semantic.warning.name }}"
+version_format = "v${major}.${minor}"
+
+[lua]
+format = "[ $symbol$version ]($style)"
+symbol = "󰢱 "
+style = "fg:{{ semantic.cursor.name }}"
+version_format = "v${major}.${minor}"
+
+[package]
+format = "[ 󰏗 $version ]($style)"
+style = "fg:{{ semantic.muted_text.name }}"
+version_format = "v${raw}"
+
+# --- Command duration ---
+[cmd_duration]
+format = "[ 󱞩 $duration ]($style)"
+style = "fg:{{ semantic.text_secondary.name }}"
+min_time = 2_000
+show_milliseconds = false
+
+# --- Time (second line, left) ---
+[time]
+format = "[󱑃 $time ]($style)"
+style = "fg:{{ semantic.text_secondary.name }}"
+time_format = "%H:%M"
+disabled = false
+
+# --- Exit status ---
+[status]
+format = "[$symbol$status ]($style)"
+symbol = " "          # skull -- the spell failed
+success_symbol = ""    # hidden on success
+not_executable_symbol = "󰌾 "
+not_found_symbol = "󰩺 "
+sigint_symbol = "󰆐 "
+style = "bold fg:{{ semantic.error.name }}"
+map_symbol = true
+disabled = false
+
+# --- Prompt character ---
+[character]
+format = "$symbol "
+success_symbol = "[{{ glyphs.prompt_success }}](bold fg:{{ semantic.active_border.name }})"   # arcane flower on success
+error_symbol   = "[{{ glyphs.prompt_error }}](bold fg:{{ semantic.error.name }})"       # lightning on error
+vimcmd_symbol  = "[{{ glyphs.vim_normal }}](bold fg:{{ semantic.fish_commands.name }})"       # crystal on vim normal mode

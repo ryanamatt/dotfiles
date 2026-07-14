@@ -24,3 +24,5 @@ fish_variables text eol=lf
 *.txt text eol=lf
 *.md text eol=lf
 *.qml text eol=lf
+*.j2 text eol=lf
+*.yaml text eol=lf

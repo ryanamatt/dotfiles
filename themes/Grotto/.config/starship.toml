@@ -40,10 +40,10 @@ hollow      = "#0a1512"      # near-black with a green cast
 deep        = "#122620"      # dark moss background
 shade       = "#1e3a30"      # medium-dark green
 dusk        = "#2f5245"      # segment mid-tone
-petal       = "#c97a97"      # kitty cursor — dusty pink
+petal       = "#c97a97"      # kitty cursor -- dusty pink
 bloom       = "#e3aec8"      # lighter pastel pink
 foam        = "#eaf5ec"      # pale mist white (text on dark)
-blossom     = "#d1467e"      # hyprland border — vivid pink
+blossom     = "#d1467e"      # hyprland border -- vivid pink
 orchid      = "#ff74ab"      # bright fuchsia-pink
 gold        = "#e8b84b"      # grotto gold accent
 silver      = "#b9c9bf"      # muted sage-silver
@@ -184,7 +184,7 @@ disabled = false
 # --- Exit status ---
 [status]
 format = "[$symbol$status ]($style)"
-symbol = " "          # skull — the crossing failed
+symbol = " "          # skull -- the crossing failed
 success_symbol = ""    # hidden on success
 not_executable_symbol = "󰌾 "
 not_found_symbol = "󰩺 "

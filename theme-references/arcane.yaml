@@ -1,0 +1,168 @@
+name: Arcane
+slug: Arcane          # used for dir names, wallpaper folder, etc.
+
+concept: >
+  A fantasy / otherworldly aesthetic built around the Cabin wallpaper in wallpapers/Arcane.
+
+feeling: >
+  A void between dimensions -- deep purple-black darkness, arcane magic
+  glowing in magenta and lavender, gold runes, mint-green success
+  signals, and rose-red warnings. Stars scattered through empty space.
+  Crystal towers. A world that exists just past the edge of sleep.
+
+# ---------------------------------------------------------------------------
+# RAW PALETTE -- every named color, its hex, and a small note about its usage.
+# ---------------------------------------------------------------------------
+palette:
+  void:        { hex: "#0d0010", role: "Primary background" }
+  deep:        { hex: "#1a0028", role: "Alt background / surfaces" }
+  shadow:      { hex: "#2a0e3a", role: "Segment midtone / borders" }
+  dusk:        { hex: "#3b1f4a", role: "Hover states / inactive" }
+  mist:        { hex: "#8a6f99", role: "Dimmed text / secondary" }
+  mallow:      { hex: "#ac74ad", role: "Cursor / accent" }
+  bloom:       { hex: "#c98fca", role: "Lighter lavender" }
+  petal:       { hex: "#e8c5e9", role: "Primary foreground / text" }
+  magenta:     { hex: "#b00ea2", role: "Active / border" }
+  dark_purple: { hex: "#470542", role: "Inactive / border" }
+  fae:         { hex: "#d966f5", role: "Bright accent / highlights" }
+  gold:        { hex: "#f5c842", role: "Operators / warnings / runes" }
+  silver:      { hex: "#c8b8d4", role: "Muted text" }
+  green:       { hex: "#5ecfa0", role: "Success / ok states" }
+  cyan:        { hex: "#9de8e8", role: "Escape sequences / info" }
+  red:         { hex: "#e05c7a", role: "Errors / critical / urgent" }
+  orange:      { hex: "#d9824a", role: "Ember (shifted warm)" }
+  mid_shadow:  { hex: "#221132", role: "Mid shadow -- swaync alt widget bg / notification bg" }
+  grey1:       { hex: "#6b5278", role: "Grey step between mist and dusk" }
+  bright_green: { hex: "#7de8b0", role: "Starship-only bright mint, brighter than standard success (#5ecfa0); same value as ANSI bright_green" }
+
+# Derived / readability tones -- lifted or desaturated versions of the raw
+# palette, used anywhere text is read continuously (see `notes.readability`).
+derived:
+  paper:         { hex: "#15131c", role: "Note-writing / editor pane bg" }
+  mist_text:     { hex: "#a08bb0", role: "Muted/secondary text (lifted mist)" }
+  border_soft:   { hex: "#443a52", role: "Inactive borders, hr, dividers" }
+  border_strong: { hex: "#5a4d6b", role: "Hover / visible borders" }
+  fae_accent:    { hex: "#c93dd6", role: "Primary interactive accent at text size" }
+  link_heading:  { hex: "#e58af8", role: "Links, h2, focus glow" }
+
+# one-off colors that don't fit the named-swatch pattern
+extra:
+  autosuggestions: "#4d3860"   # very dim dusk, fish autosuggestion text
+
+# ---------------------------------------------------------------------------
+# SEMANTIC ROLES -- every generator/template should reference THESE keys,
+# never raw palette names directly. Values are palette/derived/extra keys,
+# NOT hex codes, so re-theming = editing palette/derived above only.
+# ---------------------------------------------------------------------------
+semantic:
+  background:            void
+  surface:                deep
+  alt_surface:            shadow
+
+  active_border:          magenta
+  border_inactive_soft:   border_soft
+  border_hover_strong:    border_strong
+
+  hypr_border_active:     magenta
+  hypr_border_inactive:   dark_purple
+  hypr_shadow:            magenta
+
+  text_primary:           petal
+  text_secondary:         mist
+  cursor:                 mallow
+  fish_commands:          fae
+  fish_keywords:          mallow
+  fish_strings:           bloom
+  fish_comments:          dusk
+  
+  operators:              gold
+  escape_sequences:       cyan
+  autosuggestions:        autosuggestions
+  success:                green
+  warning:                gold
+  error:                  red
+  
+  hover:                  dusk
+  selected:               magenta
+  url:                    fae
+  
+  reading_text_secondary: mist_text
+
+  info:                   cyan
+  surface_mid:            mid_shadow
+  muted_text:             silver
+  ember_warm:             orange
+  starship_green:         bright_green
+
+glow:
+  color: magenta
+  alpha: 0.25
+
+# ---------------------------------------------------------------------------
+# ANSI 16-color terminal palette
+# ---------------------------------------------------------------------------
+ansi:
+  - { index: 0,  name: black,          hex: "#0d0010" }
+  - { index: 1,  name: red,            hex: "#e05c7a" }
+  - { index: 2,  name: green,          hex: "#5ecfa0" }
+  - { index: 3,  name: yellow,         hex: "#c8963a" }
+  - { index: 4,  name: blue,           hex: "#5a7ab0" }
+  - { index: 5,  name: magenta,        hex: "#b00ea2" }
+  - { index: 6,  name: cyan,           hex: "#5ec8c8" }
+  - { index: 7,  name: white,          hex: "#c8b8d4" }
+  - { index: 8,  name: bright_black,   hex: "#3b1f4a" }
+  - { index: 9,  name: bright_red,     hex: "#f07090" }
+  - { index: 10, name: bright_green,   hex: "#7de8b0" }
+  - { index: 11, name: bright_yellow,  hex: "#f5c842" }
+  - { index: 12, name: bright_blue,    hex: "#7da0d8" }
+  - { index: 13, name: bright_magenta, hex: "#d966f5" }
+  - { index: 14, name: bright_cyan,    hex: "#9de8e8" }
+  - { index: 15, name: bright_white,   hex: "#e8c5e9" }
+
+# ---------------------------------------------------------------------------
+# Transparency & blur
+# ---------------------------------------------------------------------------
+transparency:
+  swaync_center:     { alpha: 0.92 }
+  hyprlock_bg:       { brightness: 0.40, blur_passes: 4, blur_size: 8 }
+
+# ---------------------------------------------------------------------------
+# Typography
+# ---------------------------------------------------------------------------
+typography:
+  hyprlock:  "Iosevka Nerd Font Propo"
+
+# ---------------------------------------------------------------------------
+# Borders & rounding
+# ---------------------------------------------------------------------------
+borders:
+  kitty:             { active: magenta, inactive: dusk }
+
+# ---------------------------------------------------------------------------
+# Key glyphs (Nerd Font)
+# ---------------------------------------------------------------------------
+glyphs:
+  prompt_success: "󰧲"
+  prompt_error:   "󱐌"
+  vim_normal:     "󰮓"
+  git_branch:     "󰘬"
+  dir_prefix:     "󱞊"
+  home:           "󱂵"
+  flavor_star:    "✦"
+  os:             "󰣇"
+
+fastfetch_logo: dragon.txt
+
+# ---------------------------------------------------------------------------
+# Freeform notes about anything needing extra comments.
+# ---------------------------------------------------------------------------
+notes:
+  readability: >
+    Raw mist/dusk/shadow/magenta/void read fine on a terminal bar or status
+    line, but get muddy or tiring as body text / long borders / anything
+    read continuously. Use the derived tones (paper, mist_text, border_soft,
+    border_strong, fae_accent, link_heading) for those surfaces instead.
+  rules:
+    - "pure black (#000000) and pure white (#ffffff) are never used"
+    - "darkest point is void #0d0010, lightest is petal #e8c5e9"
+    - "every color has a purple undertone, even greens/cyans lean cool"

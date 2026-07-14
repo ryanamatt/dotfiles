@@ -3,17 +3,17 @@
 * {
 
     /* Backgrounds */
-    background:         #050a10ff;   /* styx — near-black cold blue cast  */
+    background:         #050a10ff;   /* styx -- near-black cold blue cast  */
     background-alt:     #0d1b2bff;   /* deep blue                         */
     background-alt2:    #16293dff;   /* shadow / dusk                     */
 
     /* Foregrounds */
-    foreground:         #dceaf2ff;   /* pale — primary text               */
-    foreground-alt:     #7e93a8ff;   /* mist  — secondary / dimmed text   */
+    foreground:         #dceaf2ff;   /* pale -- primary text               */
+    foreground-alt:     #7e93a8ff;   /* mist  -- secondary / dimmed text   */
 
     /* Semantic roles */
-    selected:           #f2a83cff;   /* hyprland lantern — active item    */
-    active:             #5a7a94ff;   /* wisp — alternate active           */
-    urgent:             #c9455aff;   /* blood — urgent / error            */
+    selected:           #f2a83cff;   /* hyprland lantern -- active item    */
+    active:             #5a7a94ff;   /* wisp -- alternate active           */
+    urgent:             #c9455aff;   /* blood -- urgent / error            */
 
 }

@@ -1,14 +1,14 @@
 /* Grotto Theme */
 
 /* --- Backgrounds --- */
-@define-color bg0        #0a1512;   /* hollow — near-black with green cast */
+@define-color bg0        #0a1512;   /* hollow -- near-black with green cast */
 @define-color bg1        #122620;   /* deep moss                           */
 @define-color bg2        #183028;   /* mid shade                           */
 @define-color bg3        #1e3a30;   /* shade                               */
-@define-color bg4        #2f5245;   /* dusk — segment mid-tone             */
+@define-color bg4        #2f5245;   /* dusk -- segment mid-tone             */
 
 /* --- Foregrounds --- */
-@define-color fg         #eaf5ec;   /* foam — pale mist white              */
+@define-color fg         #eaf5ec;   /* foam -- pale mist white              */
 @define-color silver     #b9c9bf;   /* muted sage-silver                   */
 @define-color mist       #7fa08f;   /* desaturated mid-green (haze)        */
 
@@ -19,8 +19,8 @@
 @define-color green      #6ea86a;   /* fern success                        */
 @define-color aqua       #7fc0ba;   /* spray teal                          */
 @define-color blue       #7db4d0;   /* pool blue (green-shifted)           */
-@define-color purple     #c97a97;   /* petal — kitty cursor                */
-@define-color dark-purple #d1467e;  /* hyprland border — vivid pink        */
+@define-color purple     #c97a97;   /* petal -- kitty cursor                */
+@define-color dark-purple #d1467e;  /* hyprland border -- vivid pink        */
 @define-color fae        #ff74ab;   /* bright orchid-light pink            */
 
 /* --- Greys (kept for any downstream use) --- */
@@ -29,12 +29,12 @@
 @define-color grey2      #24402f;
 
 /* --- Text --- */
-@define-color text              #eaf5ec;   /* foam — primary readable text     */
-@define-color text-alt          #7fa08f;   /* haze — secondary / body text     */
+@define-color text              #eaf5ec;   /* foam -- primary readable text     */
+@define-color text-alt          #7fa08f;   /* haze -- secondary / body text     */
 
 /* --- Backgrounds --- */
-@define-color background        #122620;   /* deep moss — widget surfaces      */
-@define-color background-alt    #183028;   /* mid shade — alt widget bg        */
+@define-color background        #122620;   /* deep moss -- widget surfaces      */
+@define-color background-alt    #183028;   /* mid shade -- alt widget bg        */
 
 /* --- Notification surfaces --- */
 @define-color notification-bg         #122620;
@@ -42,9 +42,9 @@
 @define-color center-notification-bg  #183028;
 
 /* --- Interactive states --- */
-@define-color hover             #2f5245;   /* dusk — button/item hover         */
-@define-color selected          #d1467e;   /* hyprland pink — active/toggled   */
+@define-color hover             #2f5245;   /* dusk -- button/item hover         */
+@define-color selected          #d1467e;   /* hyprland pink -- active/toggled   */
 
 /* --- Semantic accents --- */
-@define-color urgent            #d9506f;   /* coral — critical notifications   */
-@define-color accent            #c97a97;   /* petal — cursor pink              */
+@define-color urgent            #d9506f;   /* coral -- critical notifications   */
+@define-color accent            #c97a97;   /* petal -- cursor pink              */

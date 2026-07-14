@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# install.sh — Shell dotfiles installer/uninstaller
+# install.sh -- Shell dotfiles installer/uninstaller
 
 DOTFILES="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 UNINSTALL=false

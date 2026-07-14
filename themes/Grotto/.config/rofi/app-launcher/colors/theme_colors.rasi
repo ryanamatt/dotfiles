@@ -3,17 +3,17 @@
 * {
 
     /* Backgrounds */
-    background:         #0a1512ff;   /* hollow — near-black green cast    */
+    background:         #0a1512ff;   /* hollow -- near-black green cast    */
     background-alt:     #122620ff;   /* deep moss                         */
     background-alt2:    #1e3a30ff;   /* shade / dusk                      */
 
     /* Foregrounds */
-    foreground:         #eaf5ecff;   /* foam — primary text               */
-    foreground-alt:     #7fa08fff;   /* haze — secondary / dimmed text    */
+    foreground:         #eaf5ecff;   /* foam -- primary text               */
+    foreground-alt:     #7fa08fff;   /* haze -- secondary / dimmed text    */
 
     /* Semantic roles */
-    selected:           #d1467eff;   /* hyprland pink — active item       */
-    active:             #c97a97ff;   /* petal — alternate active          */
-    urgent:             #d9506fff;   /* coral — urgent / error            */
+    selected:           #d1467eff;   /* hyprland pink -- active item       */
+    active:             #c97a97ff;   /* petal -- alternate active          */
+    urgent:             #d9506fff;   /* coral -- urgent / error            */
 
 }
