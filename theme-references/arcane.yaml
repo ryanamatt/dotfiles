@@ -35,16 +35,6 @@ palette:
   grey1:       { hex: "#6b5278", role: "Grey step between mist and dusk" }
   bright_green: { hex: "#7de8b0", role: "Starship-only bright mint, brighter than standard success (#5ecfa0); same value as ANSI bright_green" }
 
-# Derived / readability tones -- lifted or desaturated versions of the raw
-# palette, used anywhere text is read continuously (see `notes.readability`).
-derived:
-  paper:         { hex: "#15131c", role: "Note-writing / editor pane bg" }
-  mist_text:     { hex: "#a08bb0", role: "Muted/secondary text (lifted mist)" }
-  border_soft:   { hex: "#443a52", role: "Inactive borders, hr, dividers" }
-  border_strong: { hex: "#5a4d6b", role: "Hover / visible borders" }
-  fae_accent:    { hex: "#c93dd6", role: "Primary interactive accent at text size" }
-  link_heading:  { hex: "#e58af8", role: "Links, h2, focus glow" }
-
 # one-off colors that don't fit the named-swatch pattern
 extra:
   autosuggestions: "#4d3860"   # very dim dusk, fish autosuggestion text

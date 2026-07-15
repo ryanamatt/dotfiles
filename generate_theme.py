@@ -14,7 +14,7 @@ Design:
   - templates/ holds one Jinja2 template per generated file, using the
     exact relative path it should land at under themes/<Name>/.
   - This script resolves every `semantic:` key to a concrete hex value
-    (following palette -> derived -> extra lookups), builds a flat
+    (following palette -> extra lookups), builds a flat
     context, and renders every template into the output tree.
   - create_theme.sh should call this after it creates the directory
     skeleton (or this script can create directories itself -- see
@@ -98,9 +98,9 @@ class ColorRef:
 
 
 def build_lookup(theme: dict) -> dict[str, str]:
-    """Map every palette/derived/extra name -> hex string."""
+    """Map every palette/extra name -> hex string."""
     lookup = {}
-    for section in ("palette", "derived"):
+    for section in ("palette"):
         for name, entry in (theme.get(section) or {}).items():
             lookup[name] = entry["hex"]
     for name, hex_str in (theme.get("extra") or {}).items():
@@ -117,7 +117,7 @@ def resolve(theme: dict) -> dict:
     def ref(name: str) -> ColorRef:
         if name not in lookup:
             raise KeyError(
-                f"'{name}' is not defined in palette/derived/extra"
+                f"'{name}' is not defined in palette/extra"
             )
         return ColorRef(name, lookup[name])
 
@@ -155,15 +155,11 @@ def resolve(theme: dict) -> dict:
             glow["color"] = ref(glow["color"])
         ctx["glow"] = glow
 
-    # raw palette/derived also available as ColorRef, for templates that
+    # raw palette also available as ColorRef, for templates that
     # want a raw swatch directly (e.g. fastfetch logo color)
     ctx["palette"] = {
         name: ColorRef(name, entry["hex"])
         for name, entry in (theme.get("palette") or {}).items()
-    }
-    ctx["derived"] = {
-        name: ColorRef(name, entry["hex"])
-        for name, entry in (theme.get("derived") or {}).items()
     }
 
     return ctx

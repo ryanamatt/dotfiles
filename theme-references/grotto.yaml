@@ -1,5 +1,5 @@
 name: Grotto
-slug: grotto
+slug: Grotto
 
 concept: >
   A hidden-waterfall / jungle-grotto aesthetic built around the colors
@@ -37,14 +37,6 @@ palette:
   mid_shadow:  { hex: "#183028", role: "Mid shadow -- swaync alt widget bg / notification bg" }
   grey1:       { hex: "#57796a", role: "Grey step between haze and dusk" }
   bright_green: { hex: "#8fd08c", role: "Starship-only bright mint (= ANSI bright_green)" }
-
-derived:
-  stone:          { hex: "#101f1a", role: "Note-writing / editor pane bg" }
-  haze_text:      { hex: "#9ab8ab", role: "Muted/secondary text (lifted haze)" }
-  border_soft:    { hex: "#2a463c", role: "Inactive borders, hr, dividers" }
-  border_strong:  { hex: "#3d6656", role: "Hover / visible borders" }
-  blossom_accent: { hex: "#e0568c", role: "Primary interactive accent at text size" }
-  link_heading:   { hex: "#f184ac", role: "Links, h2, focus glow" }
 
 extra:
   autosuggestions: "#24402f"

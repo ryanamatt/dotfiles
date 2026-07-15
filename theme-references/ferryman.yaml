@@ -1,5 +1,5 @@
 name: Ferryman
-slug: ferryman
+slug: Ferryman
 
 concept: >
   A death-and-water aesthetic built around a hooded reaper poling a
@@ -38,14 +38,6 @@ palette:
   mid_shadow:  { hex: "#122234", role: "Mid shadow -- swaync alt widget bg / notification bg" }
   grey1:       { hex: "#4e687e", role: "Grey step between mist and dusk" }
   bright_green: { hex: "#7de0b0", role: "Starship-only bright mint (= ANSI bright_green)" }
-
-derived:
-  hollow:        { hex: "#0f1a24", role: "Note-writing / editor pane bg" }
-  mist_text:     { hex: "#93a8ba", role: "Muted/secondary text (lifted mist)" }
-  border_soft:   { hex: "#2a3f52", role: "Inactive borders, hr, dividers" }
-  border_strong: { hex: "#3d5870", role: "Hover / visible borders" }
-  lantern_accent: { hex: "#f5b354", role: "Primary interactive accent at text size" }
-  link_heading:  { hex: "#ffc978", role: "Links, h2, focus glow" }
 
 extra:
   autosuggestions: "#253d52"

@@ -1,5 +1,5 @@
 name: Windward
-slug: windward
+slug: Windward
 
 concept: >
   A maritime / open-ocean aesthetic built around the colors of a tall
@@ -38,14 +38,6 @@ palette:
   mid_shadow:  { hex: "#183f44", role: "Mid shadow -- swaync alt widget bg / notification bg" }
   grey1:       { hex: "#568a82", role: "Grey step between mist and dusk" }
   bright_green: { hex: "#8fe093", role: "Starship-only bright mint (= ANSI bright_green)" }
-
-derived:
-  parchment:     { hex: "#14282a", role: "Note-writing / editor pane bg" }
-  mist_text:     { hex: "#9dbdb5", role: "Muted/secondary text (lifted mist)" }
-  border_soft:   { hex: "#2a4f4f", role: "Inactive borders, hr, dividers" }
-  border_strong: { hex: "#3a6863", role: "Hover / visible borders" }
-  teal_accent:   { hex: "#2a9683", role: "Primary interactive accent at text size" }
-  link_heading:  { hex: "#4fd0b8", role: "Links, h2, focus glow" }
 
 extra:
   autosuggestions: "#234d47"
@@ -138,9 +130,6 @@ glyphs:
 fastfetch_logo: ship.txt
 
 notes:
-  glyph_caveat: >
-    Nautical icon coverage varies by Nerd Font version -- verify each
-    codepoint renders before wiring it into configs.
   readability: >
     Raw mist/dusk/shadow/teal/abyss read fine on a terminal bar or
     status line, but get muddy or tiring as body text / long borders /
