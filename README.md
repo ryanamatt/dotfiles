@@ -42,7 +42,7 @@ editor I wrote myself: [Orpheus](https://github.com/ryanamatt/Orpheus).
 ## Installing
 
 ```bash
-git clone <this repo> ~/dotfiles
+git clone https://github.com/ryanamatt/dotfiles-PC.git ~/dotfiles
 cd ~/dotfiles
 ./install.sh
 ```
