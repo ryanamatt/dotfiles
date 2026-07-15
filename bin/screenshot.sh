@@ -6,10 +6,18 @@ mkdir -p "$SAVE_DIR"
 SAVE_FILE=false
 FILENAME=""
 
-while getopts "s" opt; do
+function usage() {
+  echo "Usage: $0 [-s [filename]] [-h|--help]"
+  echo "  -s [filename]  Save the screenshot to $SAVE_DIR"
+  echo "  -h, --help     Show this help message"
+  exit 0
+}
+
+while getopts "sh" opt; do
   case $opt in
     s) SAVE_FILE=true ;;
-    *) echo "Usage: $0 [-s [filename]]"; exit 1 ;;
+    h) usage ;;
+    *) usage ;;
   esac
 done
 
