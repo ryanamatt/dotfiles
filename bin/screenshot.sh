@@ -45,7 +45,7 @@ wl-copy < "$TMP_FILE"
 
 # If -s was passed, move/copy the file to the save location
 if [ "$SAVE_FILE" = true ]; then
-[ -z "$FILENAME" ] && FILENAME="$(date +%Y-%m-%d_%H-%M-%S).png"
+  [ -z "$FILENAME" ] && FILENAME="$(date +%Y-%m-%d_%H-%M-%S).png"
   [[ ! "$FILENAME" == *.png ]] && FILENAME="${FILENAME}.png"
   
   mv "$TMP_FILE" "$SAVE_DIR/$FILENAME"
