@@ -4,6 +4,7 @@ Personal Hyprland (Wayland) rice: fish, kitty, starship, swaync, rofi,
 Orpheus, quickshell, and a small YAML -> Jinja2 pipeline for generating
 consistent color themes across all of them.
 
+> [!Important]
 > **Heads up:** this is tailored to my system, my usernames, my paths,
 > and my exact package choices. It will very likely **not** work perfectly
 > out of the box if you clone it -- expect to edit paths, swap tools I
