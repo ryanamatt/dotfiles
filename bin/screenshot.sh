@@ -42,7 +42,9 @@ if [ "$SAVE_FILE" = true ]; then
   
   mv "$TMP_FILE" "$SAVE_DIR/$FILENAME"
   echo "Saved to $SAVE_DIR/$FILENAME"
+  notify-send "Screenshot Saved" "File saved to $SAVE_DIR/$FILENAME"
 else
   # Clean up if not saving
   rm "$TMP_FILE"
+  notify-send "Screenshot" "Screenshot copied to clipboard."
 fi
