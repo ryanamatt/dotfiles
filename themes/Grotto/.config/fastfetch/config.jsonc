@@ -173,6 +173,14 @@
 
         "break",
 
+        {
+            "type": "command",
+            "key": "Theme",
+            "text": "cat ~/dotfiles/themes/.current_theme"
+        },
+
+        "break",
+
         // --- Color swatches ---
         {
             "type": "colors",
