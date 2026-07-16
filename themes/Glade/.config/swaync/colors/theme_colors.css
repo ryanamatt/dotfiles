@@ -1,0 +1,50 @@
+/* Glade Theme */
+
+/* --- Backgrounds --- */
+@define-color bg0        #10160c;
+@define-color bg1        #1b2612;
+@define-color bg2        #1c2814;
+@define-color bg3        #2a3a1c;
+@define-color bg4        #3f5427;
+
+/* --- Foregrounds --- */
+@define-color fg         #f0efd8;
+@define-color silver     #b9c2a8;
+@define-color mist       #8a9d76;
+
+/* --- Accent colours (keep gruvbox semantic names for style.css) --- */
+@define-color red        #c05a3f;
+@define-color orange     #d1793f;
+@define-color yellow     #c9a24a;
+@define-color green      #6fbf73;
+@define-color aqua       #7fb0a8;
+@define-color blue       #7fa3ac;
+@define-color purple     #5f9142;
+@define-color dark-purple #3f7d3a;
+@define-color fae        #d9c268;
+
+/* --- Greys (kept for any downstream use) --- */
+@define-color grey0      #8a9d76;
+@define-color grey1      #5a7048;
+@define-color grey2      #2a3a1f;
+
+/* --- Text --- */
+@define-color text              #f0efd8;
+@define-color text-alt          #8a9d76;
+
+/* --- Backgrounds --- */
+@define-color background        #1b2612;
+@define-color background-alt    #1c2814;
+
+/* --- Notification surfaces --- */
+@define-color notification-bg         #1b2612;
+@define-color center-bg               alpha(#10160c, 0.92);
+@define-color center-notification-bg  #1c2814;
+
+/* --- Interactive states --- */
+@define-color hover             #3f5427;
+@define-color selected          #3f7d3a;
+
+/* --- Semantic accents --- */
+@define-color urgent            #c05a3f;
+@define-color accent            #5f9142;

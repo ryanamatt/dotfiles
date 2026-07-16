@@ -1,0 +1,201 @@
+# Glade Shell
+#
+# Requires: Nerd Fonts (any complete variant, e.g. JetBrainsMono Nerd Font)
+# Install : Copy to ~/.config/starship.toml
+
+# --- Prompt layout ---
+# Line 1:  [glyph] [os]  [directory]  [git_branch] [git_status]
+#          [language runtimes ...]
+# Line 2:  [time]  [status/character]
+
+format = """
+$os\
+$username\
+$hostname\
+[  ](fg:#3f5427)\
+$directory\
+[](fg:#3f5427 bg:#2a3a1c)\
+$git_branch\
+$git_status\
+[](fg:#2a3a1c bg:none)\
+$fill\
+$python\
+$nodejs\
+$rust\
+$golang\
+$java\
+$lua\
+$package\
+$cmd_duration\
+$line_break\
+$time\
+$status\
+$character"""
+
+# --- Palette ---
+palette = "Glade"
+
+[palettes.Glade]
+hollow        = "#10160c"
+deep        = "#1b2612"
+shadow      = "#2a3a1c"
+dusk        = "#3f5427"
+moss      = "#5f9142"
+dapple       = "#b8d17a"
+canvas       = "#f0efd8"
+fern     = "#3f7d3a"
+sunbeam         = "#d9c268" 
+brass        = "#c9a24a"
+silver      = "#b9c2a8"
+mist        = "#8a9d76"
+rust         = "#c05a3f"      # error rose
+green       = "#8fd45c"      # success mint (otherworldly, not typical green)
+haze        = "#8fb8ac" 
+
+# --- OS / entry glyph ---
+[os]
+format = "[$symbol]($style) "
+style = "bold fg:fern"
+disabled = false
+
+[os.symbols]
+Arch        = "󰣇"
+Unknown     = "󰬯"
+
+# --- Username ---
+[username]
+format = "[$user]($style)"
+style_user = "bold fg:dapple"
+style_root = "bold fg:rust"
+show_always = false
+
+# --- Hostname ---
+[hostname]
+format = "[@$hostname]($style) "
+style = "fg:mist"
+ssh_only = true
+
+# --- Directory ---
+[directory]
+format = "[ 🧺 $path ]($style)[$read_only]($read_only_style)"
+style = "bold fg:canvas bg:#3f5427"
+read_only = " 󰌾 "
+read_only_style = "fg:rust bg:#3f5427"
+truncation_length = 4
+truncation_symbol = "󰇘 "
+home_symbol = "󱂵 ~"
+
+[directory.substitutions]
+"Documents" = "󰈙 Docs"
+"Downloads" = " DL"
+"Music"     = "󰝚 Music"
+"Pictures"  = "󰋩 Pics"
+"Videos"    = "󰕧 Vids"
+"Desktop"   = "󰟀 Desktop"
+".config"   = "󱁿 cfg"
+".local"    = "󰮂 local"
+"src"       = "󰅩 src"
+"projects"  = "󰏗 projects"
+
+# --- Git Branch ---
+[git_branch]
+format = "[ $symbol$branch(:$remote_branch) ]($style)"
+symbol = "󰘬 "
+style = "bold fg:sunbeam bg:#2a3a1c"
+truncation_length = 24
+truncation_symbol = "󰇘"
+
+# --- Git Status ---
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "fg:brass bg:#2a3a1c"
+conflicted  = " 󱗃 "
+ahead       = " ⇡${count}"
+behind      = " ⇣${count}"
+diverged    = " 󰹺 ⇡${ahead_count}⇣${behind_count}"
+untracked   = " 󰐗${count}"
+stashed     = " 󰏗 "
+modified    = " 󰝶${count}"
+staged      = " 󰸞${count}"
+renamed     = " 󰑕${count}"
+deleted     = " 󰩺${count}"
+
+# --- Fill (right-align runtimes) ---
+[fill]
+symbol = " "
+style = "fg:hollow"
+
+# --- Language runtimes ---
+[python]
+format = "[ $symbol$version ]($style)"
+symbol = "󰌠 "
+style = "fg:moss"
+version_format = "v${major}.${minor}"
+
+[nodejs]
+format = "[ $symbol$version ]($style)"
+symbol = " "
+style = "fg:green"
+version_format = "v${major}.${minor}"
+
+[rust]
+format = "[ $symbol$version ]($style)"
+symbol = "󱘗 "
+style = "fg:dapple"
+version_format = "v${major}.${minor}"
+
+[golang]
+format = "[ $symbol$version ]($style)"
+symbol = "󰟓 "
+style = "fg:haze"
+version_format = "v${major}.${minor}"
+
+[java]
+format = "[ $symbol$version ]($style)"
+symbol = "󰬷 "
+style = "fg:brass"
+version_format = "v${major}.${minor}"
+
+[lua]
+format = "[ $symbol$version ]($style)"
+symbol = "󰢱 "
+style = "fg:moss"
+version_format = "v${major}.${minor}"
+
+[package]
+format = "[ 󰏗 $version ]($style)"
+style = "fg:silver"
+version_format = "v${raw}"
+
+# --- Command duration ---
+[cmd_duration]
+format = "[ 󱞩 $duration ]($style)"
+style = "fg:mist"
+min_time = 2_000
+show_milliseconds = false
+
+# --- Time (second line, left) ---
+[time]
+format = "[󱑃 $time ]($style)"
+style = "fg:mist"
+time_format = "%H:%M"
+disabled = false
+
+# --- Exit status ---
+[status]
+format = "[$symbol$status ]($style)"
+symbol = " "
+success_symbol = ""
+not_executable_symbol = "󰌾 "
+not_found_symbol = "󰩺 "
+sigint_symbol = "󰆐 "
+style = "bold fg:rust"
+map_symbol = true
+disabled = false
+
+# --- Prompt character ---
+[character]
+format = "$symbol "
+success_symbol = "[🌿](bold fg:fern)"
+error_symbol   = "[🍂](bold fg:rust)"
+vimcmd_symbol  = "[🌳](bold fg:sunbeam)"
