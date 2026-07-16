@@ -341,6 +341,7 @@ ShellRoot {
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         spacing: 18
+                        Layout.alignment: Qt.AlignHCenter
 
                         RowLayout {
                             Layout.fillWidth: true

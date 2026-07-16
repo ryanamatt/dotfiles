@@ -20,7 +20,7 @@ ShellRoot {
     property string lastError: ""
 
     // How many cards fit per row, used for up/down arrow navigation
-    property int columns: Math.max(1, Math.floor((flow.width + flow.spacing) / (200 + flow.spacing)))
+    property int columns: Math.max(1, Math.floor((cardArea.width + flow.spacing) / (200 + flow.spacing)))
 
     // Fallback palette, used until a theme's colors.json loads (or if it's
     // missing). Matches the shape every theme's colors.json should have.
@@ -270,6 +270,7 @@ ShellRoot {
                     }
 
                     Flickable {
+                        id: cardArea
                         Layout.fillWidth: true
                         Layout.fillHeight: true
                         contentWidth: width
@@ -278,7 +279,8 @@ ShellRoot {
 
                         Flow {
                             id: flow
-                            width: parent.width
+                            anchors.horizontalCenter: parent.horizontalCenter
+                            width: root.columns * (200 + spacing) - spacing
                             spacing: 14
 
                             Repeater {
