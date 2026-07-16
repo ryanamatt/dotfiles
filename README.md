@@ -74,10 +74,8 @@ never removes or overwrites anything else in `~/.config`. Any real
    and renders all the templated configs from the YAML.
 3. Drop an ASCII-art reference file into
    `themes/<NewThemeName>/.config/fastfetch/<name>.txt` by hand.
-   **Note:** fastfetch's `config.jsonc` doesn't actually read this file
-   -- the art gets manually flattened to one line and pasted directly
-   into the config. The `.txt` is kept purely so the art is easy to
-   find again later if you forget it.
+   Then cp an existing fastfetch.config replacing the logo with the
+   new themes ASCII art.
 4. `./switcher.sh <NewThemeName>` to activate it.
 
 ## License
