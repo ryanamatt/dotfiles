@@ -36,21 +36,21 @@ $character"""
 palette = "{{ slug }}"
 
 [palettes.{{ slug }}]
-{{ semantic.background.name }}        = "{{ semantic.background }}"      # near-black with a purple tinge
-{{ semantic.surface.name }}        = "{{ semantic.surface }}"      # dark plum background
-{{ semantic.alt_surface.name }}      = "{{ semantic.alt_surface }}"      # medium-dark purple
-{{ semantic.hover.name }}        = "{{ semantic.hover }}"      # segment mid-tone
-{{ semantic.cursor.name }}      = "{{ semantic.cursor }}"      # kitty cursor -- muted violet
-{{ semantic.fish_strings.name }}       = "{{ semantic.fish_strings }}"      # lighter lavender
-{{ semantic.text_primary.name }}       = "{{ semantic.text_primary }}"      # pale blush lavender (text on dark)
-{{ semantic.active_border.name }}     = "{{ semantic.active_border }}"      # hyprland border -- vivid magenta
-{{ semantic.fish_commands.name }}         = "{{ semantic.fish_commands }}"      # bright fae-light purple
-{{ semantic.warning.name }}        = "{{ semantic.warning }}"      # arcane gold accent
-{{ semantic.muted_text.name }}      = "{{ semantic.muted_text }}"      # muted silver-lilac
-{{ semantic.text_secondary.name }}        = "{{ semantic.text_secondary }}"      # desaturated mid-purple
+{{ semantic.background.name }}        = "{{ semantic.background }}"
+{{ semantic.surface.name }}        = "{{ semantic.surface }}"
+{{ semantic.alt_surface.name }}      = "{{ semantic.alt_surface }}"
+{{ semantic.hover.name }}        = "{{ semantic.hover }}"
+{{ semantic.cursor.name }}      = "{{ semantic.cursor }}"
+{{ semantic.fish_strings.name }}       = "{{ semantic.fish_strings }}"
+{{ semantic.text_primary.name }}       = "{{ semantic.text_primary }}"
+{{ semantic.active_border.name }}     = "{{ semantic.active_border }}"
+{{ semantic.fish_commands.name }}         = "{{ semantic.fish_commands }}" 
+{{ semantic.warning.name }}        = "{{ semantic.warning }}"
+{{ semantic.muted_text.name }}      = "{{ semantic.muted_text }}"
+{{ semantic.text_secondary.name }}        = "{{ semantic.text_secondary }}"
 {{ semantic.error.name }}         = "{{ semantic.error }}"      # error rose
 green       = "{{ semantic.starship_green }}"      # success mint (otherworldly, not typical green)
-{{ semantic.escape_sequences.name }}        = "{{ semantic.escape_sequences }}"      # info teal
+{{ semantic.escape_sequences.name }}        = "{{ semantic.escape_sequences }}" 
 
 # --- OS / entry glyph ---
 [os]
@@ -60,7 +60,7 @@ disabled = false
 
 [os.symbols]
 Arch        = "{{ glyphs.os }}"
-Unknown     = "󰬯"   # crystal ball fallback
+Unknown     = "󰬯"
 
 # --- Username ---
 [username]
@@ -184,8 +184,8 @@ disabled = false
 # --- Exit status ---
 [status]
 format = "[$symbol$status ]($style)"
-symbol = " "          # skull -- the spell failed
-success_symbol = ""    # hidden on success
+symbol = " "
+success_symbol = ""
 not_executable_symbol = "󰌾 "
 not_found_symbol = "󰩺 "
 sigint_symbol = "󰆐 "
@@ -196,6 +196,6 @@ disabled = false
 # --- Prompt character ---
 [character]
 format = "$symbol "
-success_symbol = "[{{ glyphs.prompt_success }}](bold fg:{{ semantic.active_border.name }})"   # arcane flower on success
-error_symbol   = "[{{ glyphs.prompt_error }}](bold fg:{{ semantic.error.name }})"       # lightning on error
-vimcmd_symbol  = "[{{ glyphs.vim_normal }}](bold fg:{{ semantic.fish_commands.name }})"       # crystal on vim normal mode
+success_symbol = "[{{ glyphs.prompt_success }}](bold fg:{{ semantic.active_border.name }})"
+error_symbol   = "[{{ glyphs.prompt_error }}](bold fg:{{ semantic.error.name }})"
+vimcmd_symbol  = "[{{ glyphs.vim_normal }}](bold fg:{{ semantic.fish_commands.name }})"

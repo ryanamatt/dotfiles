@@ -9,7 +9,7 @@ if [ -z "${1:-}" ]; then
 fi
 
 THEME=$1
-SLUG=$(echo "$THEME" | tr '[:upper:]' '[:lower:]')
+SLUG=$(echo "$THEME" | awk '{print toupper(substr($0,1,1)) tolower(substr($0,2))}')
 YAML="theme-references/${SLUG}.yaml"
 BASE_DIR="themes/$THEME"
 CONF_DIR="${BASE_DIR}/.config"

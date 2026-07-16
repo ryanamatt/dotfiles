@@ -14,6 +14,9 @@ palette:
 # one-off colors that don't fit the named-swatch pattern
 extra:
   autosuggestions:
+  mist_text:
+  border_soft:
+  border_strong:
 
 # ---------------------------------------------------------------------------
 # SEMANTIC ROLES -- every generator/template should reference THESE keys,

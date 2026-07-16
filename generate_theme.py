@@ -100,7 +100,7 @@ class ColorRef:
 def build_lookup(theme: dict) -> dict[str, str]:
     """Map every palette/extra name -> hex string."""
     lookup = {}
-    for section in ("palette"):
+    for section in ("palette",):
         for name, entry in (theme.get(section) or {}).items():
             lookup[name] = entry["hex"]
     for name, hex_str in (theme.get("extra") or {}).items():

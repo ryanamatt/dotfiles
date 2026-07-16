@@ -38,6 +38,9 @@ palette:
 # one-off colors that don't fit the named-swatch pattern
 extra:
   autosuggestions: "#4d3860"   # very dim dusk, fish autosuggestion text
+  mist_text:     { hex: "#a08bb0", role: "Muted/secondary text (lifted mist)" }
+  border_soft:   { hex: "#443a52", role: "Inactive borders, hr, dividers" }
+  border_strong: { hex: "#5a4d6b", role: "Hover / visible borders" }
 
 # ---------------------------------------------------------------------------
 # SEMANTIC ROLES -- every generator/template should reference THESE keys,

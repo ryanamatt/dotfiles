@@ -41,6 +41,9 @@ palette:
 
 extra:
   autosuggestions: "#234d47"
+  mist_text:     { hex: "#9dbdb5", role: "Muted/secondary text (lifted mist)" }
+  border_soft:   { hex: "#2a4f4f", role: "Inactive borders, hr, dividers" }
+  border_strong: { hex: "#3a6863", role: "Hover / visible borders" }
 
 # ---------------------------------------------------------------------------
 # SEMANTIC ROLES

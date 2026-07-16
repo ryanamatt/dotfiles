@@ -1,27 +1,27 @@
 /* {{ name }} Theme */
 
 /* --- Backgrounds --- */
-@define-color bg0        {{ semantic.background }};   /* void -- near-black with purple cast  */
-@define-color bg1        {{ semantic.surface }};   /* deep plum                           */
-@define-color bg2        {{ semantic.surface_mid }};   /* mid shadow                          */
-@define-color bg3        {{ semantic.alt_surface }};   /* shadow                              */
-@define-color bg4        {{ semantic.hover }};   /* dusk -- segment mid-tone             */
+@define-color bg0        {{ semantic.background }};
+@define-color bg1        {{ semantic.surface }};
+@define-color bg2        {{ semantic.surface_mid }};
+@define-color bg3        {{ semantic.alt_surface }};
+@define-color bg4        {{ semantic.hover }};
 
 /* --- Foregrounds --- */
-@define-color fg         {{ semantic.text_primary }};   /* petal -- pale blush lavender         */
-@define-color silver     {{ palette.silver }};   /* muted silver-lilac                  */
-@define-color mist       {{ semantic.text_secondary }};   /* desaturated mid-purple              */
+@define-color fg         {{ semantic.text_primary }};
+@define-color silver     {{ palette.silver }};
+@define-color mist       {{ semantic.text_secondary }};
 
 /* --- Accent colours (keep gruvbox semantic names for style.css) --- */
-@define-color red        {{ semantic.error }};   /* rose error                          */
-@define-color orange     {{ palette.orange }};   /* ember (shifted warm)                */
-@define-color yellow     {{ semantic.warning }};   /* arcane gold                         */
-@define-color green      {{ semantic.success }};   /* mint success                        */
-@define-color aqua       {{ ansi_by_index[6].hex }};   /* mist teal                           */
-@define-color blue       {{ ansi_by_index[12].hex }};   /* void blue (purple-shifted)          */
-@define-color purple     {{ semantic.cursor }};   /* mallow -- kitty cursor               */
-@define-color dark-purple {{ semantic.active_border }};  /* hyprland border -- vivid magenta     */
-@define-color fae        {{ semantic.fish_commands }};   /* bright fae-light purple             */
+@define-color red        {{ semantic.error }};
+@define-color orange     {{ palette.ember }};
+@define-color yellow     {{ semantic.warning }};
+@define-color green      {{ semantic.success }};
+@define-color aqua       {{ ansi_by_index[6].hex }};
+@define-color blue       {{ ansi_by_index[12].hex }};
+@define-color purple     {{ semantic.cursor }};
+@define-color dark-purple {{ semantic.active_border }};
+@define-color fae        {{ semantic.fish_commands }};
 
 /* --- Greys (kept for any downstream use) --- */
 @define-color grey0      {{ semantic.text_secondary }};
@@ -29,12 +29,12 @@
 @define-color grey2      {{ extra.autosuggestions }};
 
 /* --- Text --- */
-@define-color text              {{ semantic.text_primary }};   /* petal -- primary readable text   */
-@define-color text-alt          {{ semantic.text_secondary }};   /* mist  -- secondary / body text   */
+@define-color text              {{ semantic.text_primary }};
+@define-color text-alt          {{ semantic.text_secondary }};
 
 /* --- Backgrounds --- */
-@define-color background        {{ semantic.surface }};   /* deep plum -- widget surfaces      */
-@define-color background-alt    {{ semantic.surface_mid }};   /* mid shadow -- alt widget bg       */
+@define-color background        {{ semantic.surface }};
+@define-color background-alt    {{ semantic.surface_mid }};
 
 /* --- Notification surfaces --- */
 @define-color notification-bg         {{ semantic.surface }};
@@ -42,9 +42,9 @@
 @define-color center-notification-bg  {{ semantic.surface_mid }};
 
 /* --- Interactive states --- */
-@define-color hover             {{ semantic.hover }};   /* dusk -- button/item hover         */
-@define-color selected          {{ semantic.selected }};   /* hyprland magenta -- active/toggled */
+@define-color hover             {{ semantic.hover }};
+@define-color selected          {{ semantic.selected }};
 
 /* --- Semantic accents --- */
-@define-color urgent            {{ semantic.error }};   /* rose -- critical notifications    */
-@define-color accent            {{ semantic.cursor }};   /* mallow -- cursor purple           */
+@define-color urgent            {{ semantic.error }};
+@define-color accent            {{ semantic.cursor }};
