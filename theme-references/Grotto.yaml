@@ -80,7 +80,7 @@ semantic:
   selected:               blossom
   url:                    orchid
 
-  reading_text_secondary: haze_text
+  reading_text_secondary: mist_text
 
   info:                   mist
   surface_mid:            mid_shadow
@@ -139,7 +139,7 @@ notes:
   readability: >
     Raw haze/dusk/shade/blossom/hollow read fine on a terminal bar or
     status line, but get muddy or tiring as body text / long borders /
-    anything read continuously. Use the derived tones (stone, haze_text,
+    anything read continuously. Use the derived tones (stone,
     border_soft, border_strong, blossom_accent, link_heading) for those
     surfaces instead.
   rules:
