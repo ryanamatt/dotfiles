@@ -67,16 +67,13 @@ never removes or overwrites anything else in `~/.config`. Any real
 
 ## Adding a new theme
 
-1. Copy `theme-references/arcane.yaml` as a starting point, or write a
-   new one by hand -- it's just palette hex values, semantic role
-   mappings, ANSI colors, borders, and glyphs.
-2. `./create_theme.sh <NewThemeName>` -- builds `themes/<NewThemeName>/`
+1. Use Blank.yaml as a starting point to create your new theme. If you
+   need help first check out the other themes.
+3. `./create_theme.sh <NewThemeName>` -- builds `themes/<NewThemeName>/`
    and renders all the templated configs from the YAML.
-3. Drop an ASCII-art reference file into
-   `themes/<NewThemeName>/.config/fastfetch/<name>.txt` by hand.
-   Then cp an existing fastfetch.config replacing the logo with the
-   new themes ASCII art.
-4. `./switcher.sh <NewThemeName>` to activate it.
+4. Drop an ASCII-art reference file into
+   `themes/<NewThemeName>/.config/fastfetch/art.txt` by hand.
+5. `./switcher.sh <NewThemeName>` to activate it.
 
 ## License
 
