@@ -120,6 +120,9 @@ typography:
 borders:
   kitty:             { active: blossom, inactive: dusk }
 
+text:
+  hyprlock_text: "the grotto keeps its secrets"
+
 glyphs:
   prompt_success: "󰈸"
   prompt_error:   "⚡"

@@ -121,6 +121,9 @@ typography:
 borders:
   kitty:             { active: lantern, inactive: dusk }
 
+text:
+  hyprlock_text: "pay the ferryman's toll "
+
 glyphs:
   prompt_success: "⚱"
   prompt_error:   "☠"

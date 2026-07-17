@@ -131,6 +131,9 @@ typography:
 borders:
   kitty:             { active: magenta, inactive: dusk }
 
+text:
+  hyprlock_text: "speak the arcane word"
+
 # ---------------------------------------------------------------------------
 # Key glyphs (Nerd Font)
 # ---------------------------------------------------------------------------

@@ -135,6 +135,9 @@ typography:
 borders:
   kitty:             { active: fern, inactive: dusk }
 
+text:
+  hyprlock_text: "awaken the glade"
+
 # ---------------------------------------------------------------------------
 # Key glyphs (Nerd Font)
 # ---------------------------------------------------------------------------

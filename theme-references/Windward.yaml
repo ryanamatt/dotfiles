@@ -120,6 +120,9 @@ typography:
 borders:
   kitty:             { active: teal, inactive: dusk }
 
+text:
+  hyprlock_text: "state your bearings"
+
 glyphs:
   prompt_success: "⚓"
   prompt_error:   "⛈"
