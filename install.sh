@@ -69,7 +69,6 @@ link_config ".config/hypr/modules/window_rules.lua"
 link_config ".config/hypr/hypridle.conf"
 
 link_config ".config/Orpheus/orpheus.config"
-link_config ".config/Orpheus/templates/ch.tmpl"
 
 # Install custom scripts from the bin directory
 if [ -d "$DOTFILES/bin" ]; then
