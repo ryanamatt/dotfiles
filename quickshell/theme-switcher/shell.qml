@@ -239,6 +239,7 @@ ShellRoot {
                             font.pixelSize: 20
                             font.bold: true
                             Layout.fillWidth: true
+                            horizontalAlignment: Text.AlignHCenter
                         }
 
                         Rectangle {
