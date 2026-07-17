@@ -50,10 +50,7 @@ link_config ".config/fish/config.fish"
 
 link_config ".config/kitty/kitty.conf"
 
-link_config ".config/rofi/app-launcher/launcher.sh"
-link_config ".config/rofi/app-launcher/style-9.rasi"
-link_config ".config/rofi/app-launcher/shared/colors.rasi"
-link_config ".config/rofi/app-launcher/shared/fonts.rasi"
+link_config ".config/fastfetch/config.jsonc"
 
 link_config ".config/swaync/config.json"
 link_config ".config/swaync/style.css"

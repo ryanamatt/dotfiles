@@ -35,6 +35,4 @@ echo "Rendering colors from $YAML..."
 ./generate_theme.py "$YAML" --out "$BASE_DIR"
 
 echo "Done! Structure + colors created in $BASE_DIR/"
-echo "Manual step: drop your ascii art at ${CONF_DIR}/fastfetch/<name>.txt"
-echo "cp an existing fastfetch config and drop in in your theme replacing"
-echo "the ascii art one liner with your own."
+echo "Manual step: drop ascii art for theme at ${CONF_DIR}/fastfetch/art.txt"
