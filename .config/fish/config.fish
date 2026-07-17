@@ -129,10 +129,12 @@ function auto_activate_venv --on-variable PWD
         # Check if we are already in the venv to avoid redundant sourcing
         if not string match -q "$PWD/venv*" "$VIRTUAL_ENV"
             source venv/bin/activate.fish
+            echo -e "\e[32m(V) Activated Virtual Environment\e[0m"
         end
     else if test -n "$VIRTUAL_ENV"
         # Deactivate if we leave the directory containing the venv
         deactivate
+        echo -e "\e[31m(V) Deactivated Virtual Environment\e[0m"
     end
 end
 
