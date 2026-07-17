@@ -6,6 +6,7 @@ import Quickshell
 import Quickshell.Io
 import QtQuick
 import QtQuick.Layouts
+import QtQuick.Controls
 
 ShellRoot {
     id: root
@@ -270,7 +271,7 @@ ShellRoot {
                         Layout.fillWidth: true
                     }
 
-                    Flickable {
+                    ScrollView {
                         id: cardArea
                         Layout.fillWidth: true
                         Layout.fillHeight: true
@@ -334,6 +335,7 @@ ShellRoot {
                                                 font.bold: themeCard.active
                                                 Layout.fillWidth: true
                                                 elide: Text.ElideRight
+                                                horizontalAlignment: Text.AlignHCenter
                                             }
 
                                             Text {
