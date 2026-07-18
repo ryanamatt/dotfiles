@@ -20,7 +20,7 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
 hl.env("XDG_SESSION_TYPE", "wayland")
 hl.env("XDG_SESSION_DESKTOP", "Hyprland")
-hl.env("XDG_MENU_PREFIX", "plasma-")
+hl.env("XDG_MENU_PREFIX", "arch-")
 
 -- Qt
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
