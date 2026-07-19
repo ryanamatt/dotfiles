@@ -196,8 +196,14 @@ ShellRoot {
             Keys.onRightPressed: root.moveFocus(1)
             Keys.onUpPressed: root.moveFocus(-root.columns)
             Keys.onDownPressed: root.moveFocus(root.columns)
-            Keys.onReturnPressed: root.activateFocused()
-            Keys.onEnterPressed: root.activateFocused()
+            Keys.onReturnPressed: {
+                root.activateFocused()
+                win.visible = false
+            }
+            Keys.onEnterPressed: {
+                root.activateFocused()
+                win.visible = false
+            }
 
             // Dim scrim behind the card. Click it to dismiss.
             Rectangle {
