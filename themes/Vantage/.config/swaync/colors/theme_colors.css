@@ -1,0 +1,50 @@
+/* Vantage Theme */
+
+/* --- Backgrounds --- */
+@define-color bg0        #080c18;
+@define-color bg1        #0f1830;
+@define-color bg2        #16223e;
+@define-color bg3        #182644;
+@define-color bg4        #283c60;
+
+/* --- Foregrounds --- */
+@define-color fg         #eef2f5;
+@define-color silver     #a9b8cc;
+@define-color mist       #7e93b5;
+
+/* --- Accent colours (keep gruvbox semantic names for style.css) --- */
+@define-color red        #d9484f;
+@define-color orange     #d97a3c;
+@define-color yellow     #e8a23c;
+@define-color green      #5ecf9a;
+@define-color aqua       #6fc0c8;
+@define-color blue       #7fa8d8;
+@define-color purple     #d94f9e;
+@define-color dark-purple #e0479e;
+@define-color fae        #ff6ec7;
+
+/* --- Greys (kept for any downstream use) --- */
+@define-color grey0      #7e93b5;
+@define-color grey1      #4e6080;
+@define-color grey2      #1c2c4c;
+
+/* --- Text --- */
+@define-color text              #eef2f5;
+@define-color text-alt          #7e93b5;
+
+/* --- Backgrounds --- */
+@define-color background        #0f1830;
+@define-color background-alt    #16223e;
+
+/* --- Notification surfaces --- */
+@define-color notification-bg         #0f1830;
+@define-color center-bg               alpha(#080c18, 0.92);
+@define-color center-notification-bg  #16223e;
+
+/* --- Interactive states --- */
+@define-color hover             #283c60;
+@define-color selected          #e0479e;
+
+/* --- Semantic accents --- */
+@define-color urgent            #d9484f;
+@define-color accent            #d94f9e;

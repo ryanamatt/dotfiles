@@ -103,8 +103,8 @@ def build_lookup(theme: dict) -> dict[str, str]:
     for section in ("palette",):
         for name, entry in (theme.get(section) or {}).items():
             lookup[name] = entry["hex"]
-    for name, hex_str in (theme.get("extra") or {}).items():
-        lookup[name] = hex_str
+    for name, entry in (theme.get("extra") or {}).items():
+        lookup[name] = entry["hex"] if isinstance(entry, dict) else entry
     return lookup
 
 
