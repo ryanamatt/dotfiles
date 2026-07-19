@@ -13,9 +13,13 @@ echo -e "${GREEN}Upkeeping system...${NC}"
 
 yay -Syu
 
+flatpak update -y
+
 # Check if there are any orphans first to avoid yay/pacman throwing an error if none exist.
 if [ -n "$(yay -Qdtq)" ]; then
     yay -Rns $(yay -Qdtq)
 fi
+
+flatpak uninstall --unused -y
 
 yay -Sc
