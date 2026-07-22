@@ -245,8 +245,8 @@ ShellRoot {
                 height: root.confirming ? 220 : 220
                 radius: 18
                 color: root.colors.surface
-                border.color: root.colors.border
-                border.width: 2
+                border.color: root.colors.backgroundAlt
+                border.width: 4
 
                 Behavior on width { NumberAnimation { duration: 120 } }
 
