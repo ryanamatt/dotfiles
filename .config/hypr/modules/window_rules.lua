@@ -32,13 +32,6 @@ hl.window_rule({
 })
 
 hl.layer_rule({
-    name = "rofi-popup",
-    match = { namespace = "rofi"},
-    animation = "slide bottom",
-    dim_around = true
-})
-
-hl.layer_rule({
     name = "notification-animations",
     match = { namespace = "swaync-control-center" },
     animation = "slide top"
@@ -59,13 +52,6 @@ hl.window_rule({
 })
 
 hl.layer_rule({
-    name  = "waybar-blur",
-    match = { namespace = "waybar" },
-    blur  = true,
-    ignore_alpha = 0.5
-})
-
-hl.layer_rule({
     "swaync-blur",
     match = { namespace = "swaync-control-center" },
     blur = true,
@@ -77,4 +63,9 @@ hl.window_rule({
     match = { class = "^google-chrome$" },
     no_blur = true,
     opacity = "1.0 override 1.0 override"
+})
+
+hl.window_rule({
+    match = { class = "python3.14"},
+    float = true
 })

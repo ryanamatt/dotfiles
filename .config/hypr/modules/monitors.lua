@@ -49,3 +49,8 @@ for i = 6, 10 do
         monitor   = "DP-2",
     })
 end
+
+hl.workspace_rule({
+    workspace = "name:desktop",
+    monitor = "DP-3"
+})
