@@ -32,9 +32,11 @@ hl.window_rule({
 })
 
 hl.layer_rule({
-    name = "notification-animations",
+    name = "swaync-rules",
     match = { namespace = "swaync-control-center" },
-    animation = "slide top"
+    animation = "slide top",
+    blur = true,
+    ignore_alpha = 0.5
 })
 
 -- Float Rules
@@ -49,13 +51,6 @@ hl.window_rule({
     name = "float-dolphin-dialogs",
     match = { class = "dolphin", title = "^(Progress|Properties)|.*Copy.*|.*Move.*|.*Delete.*)$" },
     float = true
-})
-
-hl.layer_rule({
-    "swaync-blur",
-    match = { namespace = "swaync-control-center" },
-    blur = true,
-    ignore_alpha = 0.5
 })
 
 hl.window_rule({
