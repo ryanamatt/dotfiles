@@ -87,7 +87,7 @@ abbr -a tp "teleport"
 
 # mkcd - Make a directory and cd into it
 function mkcd -d "Crate a directory and cd into it"
-    mkdir =p $argv[1] && cd $argv[1]
+    mkdir -p $argv[1] && cd $argv[1]
 end
 
 # up N - go up N directories
@@ -135,6 +135,59 @@ function auto_activate_venv --on-variable PWD
         # Deactivate if we leave the directory containing the venv
         deactivate
         echo -e "\e[31m(V) Deactivated Virtual Environment\e[0m"
+    end
+end
+
+function teleport
+    set -l TP_FILE "$HOME/.config/.teleport_bookmarks"
+
+    # Ensure storage file exists
+    touch "$TP_FILE"
+
+    switch "$argv[1]"
+        case "add"
+            if test -z "$argv[2]"
+                echo -e "\033[0;31mError:\033[0m Please provide a tag name. Usage: teleport add [tag]"
+            else
+                # Remove tag if it already exists to prevent duplicates
+                sed -i "/^$argv[2] /d" "$TP_FILE"
+                echo "$argv[2] (pwd)" >> "$TP_FILE"
+                echo -e "\033[0;32mTagged:\033[0m $argv[2] -> (pwd)"
+            end
+
+        case "list"
+            echo -e "\033[0;34mTeleport Bookmarks:\033[0m"
+            if test ! -s "$TP_FILE"
+                echo "No tags saved yet."
+            else
+                column -t -s ' ' "$TP_FILE"
+            end
+
+        case "remove"
+            if test -z "$argv[2]"
+                echo -e "\033[0;31mError:\033[0m Specify a tag to remove."
+            else
+                sed -i "/^$argv[2] /d" "$TP_FILE"
+                echo -e "\033[0;32mRemoved tag:\033[0m $argv[2]"
+            end
+
+        case "clear"
+            "" > "$TP_FILE"
+            echo -e "\033[0;31mAll bookmarks cleared.\033[0m"
+
+        case ""
+            echo -e "\033[0;34mUsage:\033[0m teleport [tag | add <tag> | list | remove <tag> | clear]"
+
+        case "*"
+            # Default behavior: Attempt to teleport to the tag
+            set -l TARGET (grep "^$argv[1] " "$TP_FILE" | cut -d' ' -f2-)
+            if test -d "$TARGET"
+                echo -e "\033[0;32mTeleporting to:\033[0m $TARGET"
+                cd "$TARGET"
+            else
+                echo -e "\033[0;31mError:\033[0m Tag '$argv[1]' not found or directory no longer exists."
+                return 1
+            end
     end
 end
 
