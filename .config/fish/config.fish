@@ -33,14 +33,6 @@ abbr -a .. 'cd ..'
 abbr -a ... 'cd ../..'
 abbr -a .... 'cd ../../..'
 
-# Config Shortcuts
-abbr -a cdf 'cd ~/.config/fish && $EDITOR config.fish'
-abbr -a cdk 'cd ~/.config/kitty && $EDITOR kitty.conf'
-abbr -a cdw 'cd ~/.config/waybar && $EDITOR style.css'
-abbr -a cdh 'cd ~/.config/hypr && $EDITOR moldules/decorations.lua'
-abbr -a cds 'cd ~/.config && $EDITOR starship.toml'
-abbr -a cdr 'cd ~/.config/rofi/type-1 && $EDITOR style-9.rosi'
-
 # yay / pacman
 abbr -a y 'yay'
 abbr -a yi 'yay -S'
@@ -64,7 +56,7 @@ abbr -a gcb 'git checkout -b'
 
 # Hyprland
 abbr -a hypr-reload 'hyprctl reload'
-abbr -a hpyr-log 'journalctl --user -u hyprland -f'
+abbr -a hypr-log 'journalctl --user -u hyprland -f'
 
 # Swaync
 abbr -a swaync-reload 'swaync-client --reload-config'
@@ -92,7 +84,7 @@ end
 
 # up N - go up N directories
 function up -d "Go up N directories"
-    set n (math (count $argv) > 0 ? $argv[1] : 1)
+    set -l n (coalesce $argv[1] 1)
     set path ""
     for i in (seq $n)
         set path "../path"
