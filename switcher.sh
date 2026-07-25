@@ -194,6 +194,8 @@ switch_theme() {
     c_green "Theme '$theme' applied ($count file(s) linked)."
 
     reload_apps
+
+    notify-send -u normal -i preferences-desktop-theme "Theme Switched" "Successfully applied: <b>$theme</b>"
 }
 
 # --- arg parsing ---
