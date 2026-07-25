@@ -3,7 +3,6 @@
 
     // --- Logo ---
     "logo": {
-        // "source": "   .  *  .    *   .    *   .   *  .\n *   .    *  .  *   .    *   .    *\n  .    *    .    .  *    .  *   .  \n    *   .  *   .      .      *    .\n  .   *   .   *  \\/  /\\   .   *   \n *  .    .    |\\  \\/  /|    .    * \n   .  *    .  | >-/\\/-< |  .  *   .\n .    .  *    |/  /\\  \\|    *    . \n  *  .  .   * /  /  \\  \\  .   *  .\n   .    *   ./  / .  .\\  \\.  .    *\n  .  *    . /.-'  *  '-.\\ .  *  .  \n *  .  *   |   .  \\/  .  |   .    *\n   .    .  |  *  /||\\  * |  .   *  \n  *  .   . | .  / || \\  .|  *  .  .\n   .  *    |   / /|\\ \\  |    .  * \n  .    .  *\\  /_/ || \\_\\ /*  .    .\n *   .   .  \\/  / || \\  \\/  .  *  .\n   *  .  .   \\ /  ||  \\ /  .    *  \n  .    *   .  X   ||   X  .  *   . \n *   .   .   /|\\  ||  /|\\   .  *  .\n   .  *  .  / | \\ || / | \\  .    * \n  .    *   '  |  \\||/  |  '   *  . \n *  .   .     |   \\/   |    .    * \n   .  *    .  '   /\\   '  .   *  . \n  .    .  *      /  \\     *  .    .\n *   .   .      / ** \\      .  *  .\n   *  .  .     /  **  \\    .    *  \n  .    *   .  / * \\/ * \\  .  *   .\n *   .   .   '    ~~~~   '  .  *  .\n   .  *  .     *   ..   *    .    *",
         "source": "/home/ryan/.config/fastfetch/art.txt",
         "type": "file",
         "color": {
@@ -19,7 +18,7 @@
 
     // --- Display ---
     "display": {
-        "separator": "  \u276f  ",
+        "separator": "  ❯  ",
         "color": {
             "keys": "magenta",
             "title": "bright_magenta",
@@ -27,7 +26,7 @@
         },
         "brightColor": true,
         "key": {
-            "width": 12,
+            "width": 13,
             "type": "string"
         },
         "bar": {
@@ -75,7 +74,7 @@
         },
         {
             "type": "kernel",
-            "key": "󰌽  Kernel",
+            "key": "󰌽 Kernel",
             "keyColor": "magenta"
         },
         {
@@ -155,19 +154,35 @@
         },
         {
             "type": "disk",
-            "key": "󰋊  Disk",
+            "key": "󰋊  Root",
             "keyColor": "magenta",
             "folders": "/",
             "percent": { "type": 9 }
         },
         {
-            "type": "battery",
-            "key": "󰁹  Battery",
-            "keyColor": "magenta"
+            "type": "disk",
+            "key": "󰋊  Home",
+            "keyColor": "magenta",
+            "folders": "/home",
+            "percent": { "type": 9 }
         },
         {
-            "type": "localip",
-            "key": "󰀂  Local IP",
+            "type": "disk",
+            "key": "󰉉  Boot",
+            "keyColor": "magenta",
+            "folders": "/boot",
+            "percent": { "type": 9 }
+        },
+        {
+            "type": "disk",
+            "key": "󰒋  Storage",
+            "keyColor": "magenta",
+            "folders": "/mnt/storage",
+            "percent": { "type": 9 }
+        },
+        {
+            "type": "battery",
+            "key": "󰁹  Battery",
             "keyColor": "magenta"
         },
 
@@ -177,6 +192,12 @@
             "type": "command",
             "key": "Theme",
             "text": "cat ~/dotfiles/themes/.current_theme"
+        },
+
+        {
+            "type": "command",
+            "key": "󰄳 Todo",
+            "text": "todo list | awk 'NR<=4 { sub(/^ *[0-9]+  /, \"\"); if (NR>1) printf \"%31s\", \"\"; print }'"
         },
 
         "break",
