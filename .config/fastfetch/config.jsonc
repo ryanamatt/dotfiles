@@ -197,7 +197,7 @@
         {
             "type": "command",
             "key": "󰄳 Todo",
-            "text": "todo list | awk 'NR<=4 { sub(/^ *[0-9]+  /, \"\"); if (NR>1) printf \"%31s\", \"\"; print }'"
+            "text": "todo list --pending --compact --limit 4 --indent 36 --width 40"
         },
 
         "break",
