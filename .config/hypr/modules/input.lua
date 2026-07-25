@@ -18,6 +18,8 @@ hl.config({
             natural_scroll = true,
             scroll_factor = 1.0
         },
+
+        numlock_by_default = false
     },
 })
 

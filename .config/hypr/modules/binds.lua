@@ -17,13 +17,10 @@ hl.bind(mainMod .. " + Return", hl.dsp.exec_cmd(terminal))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close()
 )
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
-hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
-hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Screenshots
 hl.bind("PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh"))
@@ -71,11 +68,6 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
--- Resize the current window
-local resizeStep = 0.05 -- fraction of monitor width per press (5%)
-hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.layout("colresize -" .. resizeStep), { repeating = true })
-hl.bind(mainMod .. " + SHIFT + right", hl.dsp.layout("colresize +" .. resizeStep), { repeating = true })
-
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do
@@ -85,10 +77,6 @@ for i = 1, 10 do
 end
 
 hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:desktop"}))
-
--- Example special workspace (scratchpad)
-hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
