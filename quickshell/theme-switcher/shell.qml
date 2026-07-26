@@ -21,7 +21,26 @@ ShellRoot {
     property string lastError: ""
 
     // How many cards fit per row, used for up/down arrow navigation
-    property int columns: Math.max(1, Math.floor((cardArea.width + flow.spacing) / (200 + flow.spacing)))
+    property int columns: Math.max(1, Math.floor((cardArea.availableWidth + flow.spacing) / (200 + flow.spacing)))
+
+    // Scrolls cardArea so the currently-focused card is fully visible.
+    function scrollToFocused() {
+        if (root.focusedIndex < 0 || root.columns <= 0) return
+        const flick = cardArea.contentItem
+        if (!flick) return
+
+        const cardH = 160
+        const rowH = cardH + flow.spacing
+        const row = Math.floor(root.focusedIndex / root.columns)
+        const itemTop = row * rowH
+        const itemBottom = itemTop + cardH
+
+        if (itemTop < flick.contentY) {
+            flick.contentY = itemTop
+        } else if (itemBottom > flick.contentY + flick.height) {
+            flick.contentY = itemBottom - flick.height
+        }
+    }
 
     // Fallback palette, used until a theme's colors.json loads (or if it's
     // missing). Matches the shape every theme's colors.json should have.
@@ -74,6 +93,8 @@ ShellRoot {
             root.switchTo(root.themeNames[root.focusedIndex])
         }
     }
+
+    onFocusedIndexChanged: Qt.callLater(scrollToFocused)
 
     Component.onCompleted: refreshAll()
 
@@ -281,9 +302,20 @@ ShellRoot {
                         id: cardArea
                         Layout.fillWidth: true
                         Layout.fillHeight: true
-                        contentWidth: width
+                        contentWidth: availableWidth
                         contentHeight: flow.height
                         clip: true
+
+                        WheelHandler {
+                            target: null
+                            onWheel: (event) => {
+                                const flick = cardArea.contentItem
+                                const maxY = Math.max(0, flick.contentHeight - flick.height)
+                                flick.contentY = Math.max(0, Math.min(maxY,
+                                    flick.contentY - event.angleDelta.y / 2))
+                                event.accepted = true
+                            }
+                        }
 
                         Flow {
                             id: flow
