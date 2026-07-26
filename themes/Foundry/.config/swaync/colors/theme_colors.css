@@ -1,0 +1,50 @@
+/* Foundry Theme */
+
+/* --- Backgrounds --- */
+@define-color bg0        #101411;
+@define-color bg1        #18201a;
+@define-color bg2        #1d261f;
+@define-color bg3        #263328;
+@define-color bg4        #374a3b;
+
+/* --- Foregrounds --- */
+@define-color fg         #e8ecd8;
+@define-color silver     #b4bfc4;
+@define-color mist       #879983;
+
+/* --- Accent colours (keep gruvbox semantic names for style.css) --- */
+@define-color red        #d94838;
+@define-color orange     #d9824a;
+@define-color yellow     #e0b441;
+@define-color green      #6fbf85;
+@define-color aqua       #6fc2cf;
+@define-color blue       #70c2e8;
+@define-color purple     #9dae8f;
+@define-color dark-purple #e65c36;
+@define-color fae        #ff7b52;
+
+/* --- Greys (kept for any downstream use) --- */
+@define-color grey0      #879983;
+@define-color grey1      #546b50;
+@define-color grey2      #314234;
+
+/* --- Text --- */
+@define-color text              #e8ecd8;
+@define-color text-alt          #879983;
+
+/* --- Backgrounds --- */
+@define-color background        #18201a;
+@define-color background-alt    #1d261f;
+
+/* --- Notification surfaces --- */
+@define-color notification-bg         #18201a;
+@define-color center-bg               alpha(#101411, 0.92);
+@define-color center-notification-bg  #1d261f;
+
+/* --- Interactive states --- */
+@define-color hover             #374a3b;
+@define-color selected          #e65c36;
+
+/* --- Semantic accents --- */
+@define-color urgent            #d94838;
+@define-color accent            #9dae8f;
