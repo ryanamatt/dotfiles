@@ -18,15 +18,15 @@
 
     // --- Display ---
     "display": {
-        "separator": "  ❯  ",
+        "separator": " │ ",
         "color": {
             "keys": "magenta",
             "title": "bright_magenta",
-            "separator": "bright_magenta"
+            "separator": "magenta"
         },
         "brightColor": true,
         "key": {
-            "width": 13,
+            "width": 16,
             "type": "string"
         },
         "bar": {
@@ -60,144 +60,157 @@
             "key": " ",
             "format": "\u001b[1;95m{user-name}\u001b[0m\u001b[35m@\u001b[0m\u001b[1;95m{host-name}\u001b[0m"
         },
+
+        // Top border of the table
         {
-            "type": "separator",
-            "string": "─",
-            "length": 38
+            "type": "custom",
+            "format": "\u001b[35m╭─────────────┬──────────────────────╮\u001b[0m"
         },
 
         // --- System ---
         {
             "type": "os",
-            "key": "󰣇  OS",
+            "key": "│ 󰣇  OS      ",
             "keyColor": "magenta"
         },
         {
             "type": "kernel",
-            "key": "󰌽 Kernel",
+            "key": "│ 󰌽  Kernel  ",
             "keyColor": "magenta"
         },
         {
             "type": "uptime",
-            "key": "󱦟  Uptime",
+            "key": "│ 󱦟  Uptime  ",
             "keyColor": "magenta"
         },
         {
             "type": "packages",
-            "key": "󰏗  Pkgs",
+            "key": "│ 󰏗  Pkgs    ",
             "keyColor": "magenta"
         },
         {
             "type": "shell",
-            "key": "  Shell",
+            "key": "│   Shell   ",
             "keyColor": "magenta"
         },
 
-        "break",
+        // Section divider
+        {
+            "type": "custom",
+            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
+        },
 
         // --- Desktop ---
         {
             "type": "wm",
-            "key": "󱂬  WM",
+            "key": "│ 󱂬  WM      ",
             "keyColor": "magenta"
         },
         {
             "type": "terminal",
-            "key": "  Term",
+            "key": "│   Term    ",
             "keyColor": "magenta"
         },
         {
             "type": "terminalfont",
-            "key": "  Font",
+            "key": "│   Font    ",
             "keyColor": "magenta"
         },
         {
             "type": "theme",
-            "key": "󰟡  Theme",
+            "key": "│ 󰟡  Theme   ",
             "keyColor": "magenta"
         },
         {
             "type": "icons",
-            "key": "󰀻  Icons",
+            "key": "│ 󰀻  Icons   ",
             "keyColor": "magenta"
         },
         {
             "type": "cursor",
-            "key": "󰇀  Cursor",
+            "key": "│ 󰇀  Cursor  ",
             "keyColor": "magenta"
         },
 
-        "break",
+        // Section divider
+        {
+            "type": "custom",
+            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
+        },
 
         // --- Hardware ---
         {
             "type": "host",
-            "key": "󰌢  Host",
+            "key": "│ 󰌢  Host    ",
             "keyColor": "magenta"
         },
         {
             "type": "cpu",
-            "key": "  CPU",
+            "key": "│   CPU     ",
             "keyColor": "magenta",
             "showPeCoreCount": false
         },
         {
             "type": "gpu",
-            "key": "󰍛  GPU",
+            "key": "│ 󰍛  GPU     ",
             "keyColor": "magenta"
         },
         {
             "type": "memory",
-            "key": "󰘓  Memory",
+            "key": "│ 󰘓  Memory  ",
             "keyColor": "magenta",
             "percent": { "type": 9 }
         },
         {
             "type": "disk",
-            "key": "󰋊  Root",
+            "key": "│ 󰋊  Root    ",
             "keyColor": "magenta",
             "folders": "/",
             "percent": { "type": 9 }
         },
         {
             "type": "disk",
-            "key": "󰋊  Home",
+            "key": "│ 󰋊  Home    ",
             "keyColor": "magenta",
             "folders": "/home",
             "percent": { "type": 9 }
         },
         {
             "type": "disk",
-            "key": "󰉉  Boot",
+            "key": "│ 󰉉  Boot    ",
             "keyColor": "magenta",
             "folders": "/boot",
             "percent": { "type": 9 }
         },
         {
             "type": "disk",
-            "key": "󰒋  Storage",
+            "key": "│ 󰒋  Storage ",
             "keyColor": "magenta",
             "folders": "/mnt/storage",
             "percent": { "type": 9 }
         },
         {
             "type": "battery",
-            "key": "󰁹  Battery",
+            "key": "│ 󰁹  Battery ",
             "keyColor": "magenta"
         },
 
-        "break",
-
+        // Section divider
         {
-            "type": "command",
-            "key": "Theme",
-            "text": "cat ~/dotfiles/themes/.current_theme"
+            "type": "custom",
+            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
         },
 
         {
             "type": "command",
-            "key": "󰄳 Todo",
-            "text": "todo list --pending --compact --limit 4 --indent 36 --width 40"
+            "key": "│ Theme      ",
+            "text": "cat ~/dotfiles/themes/.current_theme"
+        },
+
+        // Bottom border of the table
+        {
+            "type": "custom",
+            "format": "\u001b[35m╰─────────────┴──────────────────────╯\u001b[0m"
         },
 
         "break",
