@@ -54,3 +54,11 @@ hl.workspace_rule({
     workspace = "name:desktop",
     monitor = "DP-3"
 })
+
+hl.workspace_rule({
+    workspace = "name:spotify"
+})
+
+hl.workspace_rule({
+    workspace = "name:discord"
+})

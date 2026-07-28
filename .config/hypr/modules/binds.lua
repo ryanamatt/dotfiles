@@ -77,6 +77,8 @@ for i = 1, 10 do
 end
 
 hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:desktop"}))
+hl.bind(mainMod .. " + S", hl.dsp.focus({ workspace = "name:spotify", on_current_monitor = true }))
+hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = "name:discord", on_current_monitor = true }))
 
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))

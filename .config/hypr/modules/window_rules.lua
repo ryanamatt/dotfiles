@@ -64,3 +64,10 @@ hl.window_rule({
     match = { class = "python3.14"},
     float = true
 })
+
+hl.window_rule({
+    match = { class = "qimgv" },
+    float = true,
+    no_blur = true,
+    decorate = false
+})
