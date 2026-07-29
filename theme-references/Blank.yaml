@@ -123,8 +123,6 @@ glyphs:
   flavor_star:    "✦"
   os:             "󰣇"
 
-fastfetch_logo: dragon.txt
-
 # ---------------------------------------------------------------------------
 # Freeform notes about anything needing extra comments.
 # ---------------------------------------------------------------------------
