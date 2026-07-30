@@ -271,6 +271,15 @@ ShellRoot {
                     anchors.fill: parent
                     onClicked: {}
                     onPressed: {}
+                    acceptedButtons: Qt.LeftButton | Qt.MiddleButton | Qt.RightButton
+                    onWheel: (wheel) => {
+                        if (wheel.angleDelta.y > 0) {
+                            root.moveFocus(-1)
+                        } else {
+                            root.moveFocus(1)
+                        }
+                        rolodexView.currentIndex = root.focusedIndex
+                    }
                 }
 
                 Text {
