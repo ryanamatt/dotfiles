@@ -53,23 +53,11 @@ Rectangle {
             fallback: "\uf03d" // video camera glyph
         },
         {
-            name: "Steam",
-            command: ["steam"],
-            icon: "steam",
-            fallback: "\uf1b6" // steam glyph
-        },
-        {
             name: "Dolphin",
             command: ["dolphin"],
             icon: "org.kde.dolphin",
             fallback: "\uf07c" // open folder glyph
         },
-        {
-            name: "Polychromatic",
-            command: ["polychromatic-controller"],
-            icon: "polychromatic",
-            fallback: "\uf0eb" // lightbulb/RGB glyph
-        }
     ]
 
     // Launches an app given its argv array

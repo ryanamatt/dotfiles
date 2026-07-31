@@ -22,3 +22,9 @@ hl.config({
         fullscreen_on_one_column = true,
     },
 })
+
+hl.config({
+    xwayland = {
+        force_zero_scaling = true
+    }
+})
