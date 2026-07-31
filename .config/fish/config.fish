@@ -183,7 +183,35 @@ function teleport
     end
 end
 
+function vscode_open_cwd
+
+    # Get the ID of the currently active workspace in Hyprland
+    set -l active_workspace (hyprctl activeworkspace -j | jq -r '.id' 2>/dev/null)
+
+    # Fetch the title of a VS Code window on the specific workspace
+    set -l vscode_title (hyprctl clients -j | jq -r --arg ws "$active_workspace" 'first(.[] | select((.class == "code" or .initialClass == "code" or .class == "code-url-handler") and (.workspace.id == ($ws | tonumber))) | .title)' 2>/dev/null)
+
+    if test -n "$vscode_title"; and test "$vscode_title" != "null"
+        set -l clean_path (string replace -r ' - Visual Studio Code$' '' $vscode_title)
+
+        set -l expanded_path (string replace -r '^~' "$HOME" $clean_path)
+
+        set -l target_dir
+        if test -f "$expanded_path"
+            set target_dir (dirname "$expanded_path")
+        else if test -d "$expanded_path"
+            set target_dir "$expanded_path"
+        end
+
+        if test -n "$target_dir"; and test -d "$target_dir"; and test "$target_dir" != "$PWD"
+            cd "$target_dir"
+        end
+    end
+end
+
 end # end is-interactive
 
 # Starship
 starship init fish | source
+
+vscode_open_cwd
