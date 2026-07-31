@@ -143,8 +143,8 @@ function teleport
             else
                 # Remove tag if it already exists to prevent duplicates
                 sed -i "/^$argv[2] /d" "$TP_FILE"
-                echo "$argv[2] (pwd)" >> "$TP_FILE"
-                echo -e "\033[0;32mTagged:\033[0m $argv[2] -> (pwd)"
+                echo "$argv[2] $PWD" >> "$TP_FILE"
+                echo -e "\033[0;32mTagged:\033[0m $argv[2] -> $PWD"
             end
 
         case "list"
@@ -164,7 +164,7 @@ function teleport
             end
 
         case "clear"
-            "" > "$TP_FILE"
+            true > "$TP_FILE"
             echo -e "\033[0;31mAll bookmarks cleared.\033[0m"
 
         case ""
