@@ -30,7 +30,7 @@ hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screensho
 
 -- Quick Shell Key binds
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/theme-switcher"))
-hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/powermenu"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/powermenu"))
 hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/switch-workspaces"))
 
 -- Game Mode
