@@ -71,3 +71,13 @@ hl.window_rule({
     no_blur = true,
     decorate = false
 })
+
+hl.window_rule({
+    workspace = "name:spotify",
+    match = { class = "Spotify" }
+})
+
+hl.window_rule({
+    workspace = "name:discord",
+    match = { class = "discord" }
+})
