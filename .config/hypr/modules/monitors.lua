@@ -31,7 +31,7 @@ hl.monitor({
 hl.on("hyprland.start", function()
     -- Move cursor to the middle of DP-3 (adjust coordinates as needed)
     -- DP-3 is at 0x0, 1920x1080 resolution
-    hl.exec_cmd("hyprctl dispatch movecursor 960 540")
+    hl.dsp.cursor.move({ x = 1920 / 2, y = 1080 / 2})
 end)
 
 -- Assign workspaces 1-5 to DP-3
