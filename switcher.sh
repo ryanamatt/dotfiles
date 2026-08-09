@@ -171,6 +171,8 @@ switch_theme() {
 
     ~/dotfiles/change_wallpaper.sh "$theme"
 
+    sleep 1;
+
     link_tree "$theme_path/.config" "$CONFIG_DIR" "$dry_run"
     local config_count=$LINK_COUNT
     link_tree "$theme_path/quickshell" "$QUICKSHELL_DIR" "$dry_run"
