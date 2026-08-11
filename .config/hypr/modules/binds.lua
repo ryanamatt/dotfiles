@@ -29,8 +29,6 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -w"))
 hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s -w"))
 
 -- Quick Shell Key binds
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/theme-switcher"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/powermenu"))
 hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/switch-workspaces"))
 
 -- Game Mode
