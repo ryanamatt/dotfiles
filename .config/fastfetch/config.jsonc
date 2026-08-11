@@ -64,78 +64,89 @@
         // Top border of the table
         {
             "type": "custom",
-            "format": "\u001b[35m╭─────────────┬──────────────────────╮\u001b[0m"
+            "format": "\u001b[35m╭─────────────┬────────────────────────╮\u001b[0m"
         },
 
         // --- System ---
         {
             "type": "os",
             "key": "│ 󰣇  OS      ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{2}              \u001b[35m│\u001b[0m"
         },
         {
             "type": "kernel",
             "key": "│ 󰌽  Kernel  ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{2}        \u001b[35m│\u001b[0m"
         },
         {
             "type": "uptime",
             "key": "│ 󱦟  Uptime  ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "lua:local u = ...; return string.format('%-4dh %02dm %02ds           \u001b[35m│\u001b[0m', (u.days * 24) + u.hours, u.minutes, u.seconds)"
         },
         {
             "type": "packages",
             "key": "│ 󰏗  Pkgs    ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{pacman} pkgs, {flatpak-system} (fp)       \u001b[35m│\u001b[0m"
         },
         {
             "type": "shell",
             "key": "│   Shell   ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{pretty-name} {version}              \u001b[35m│\u001b[0m"
         },
 
         // Section divider
         {
             "type": "custom",
-            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
+            "format": "\u001b[35m├─────────────┼────────────────────────┤\u001b[0m"
         },
 
         // --- Desktop ---
         {
             "type": "wm",
             "key": "│ 󱂬  WM      ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{pretty-name} {version}         \u001b[35m│\u001b[0m"
         },
         {
             "type": "terminal",
             "key": "│   Term    ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{pretty-name} {version}            \u001b[35m│\u001b[0m"
         },
         {
             "type": "terminalfont",
             "key": "│   Font    ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{name}\u001b[35m│\u001b[0m"
         },
         {
             "type": "theme",
             "key": "│ 󰟡  Theme   ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{name}\u001b[35m│\u001b[0m"
         },
         {
             "type": "icons",
             "key": "│ 󰀻  Icons   ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{name}\u001b[35m│\u001b[0m"
         },
         {
             "type": "cursor",
             "key": "│ 󰇀  Cursor  ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "{theme}                 \u001b[35m│\u001b[0m"
         },
 
         // Section divider
         {
             "type": "custom",
-            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
+            "format": "\u001b[35m├─────────────┼────────────────────────┤\u001b[0m"
         },
 
         // --- Hardware ---
@@ -148,46 +159,53 @@
             "type": "cpu",
             "key": "│   CPU     ",
             "keyColor": "magenta",
-            "showPeCoreCount": false
+            "showPeCoreCount": false,
+            "format": "13G Intel i9-13900KF    \u001b[35m│\u001b[0m"
         },
         {
             "type": "gpu",
             "key": "│ 󰍛  GPU     ",
-            "keyColor": "magenta"
+            "keyColor": "magenta",
+            "format": "GeForce TX 3090         \u001b[35m│\u001b[0m"
         },
         {
             "type": "memory",
             "key": "│ 󰘓  Memory  ",
             "keyColor": "magenta",
-            "percent": { "type": 9 }
+            "format": "{used} / {total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
         {
             "type": "disk",
             "key": "│ 󰋊  Root    ",
             "keyColor": "magenta",
             "folders": "/",
-            "percent": { "type": 9 }
+            "format": "{size-used} / {size-total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
         {
             "type": "disk",
             "key": "│ 󰋊  Home    ",
             "keyColor": "magenta",
             "folders": "/home",
-            "percent": { "type": 9 }
+            "format": "{size-used} / {size-total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
         {
             "type": "disk",
             "key": "│ 󰉉  Boot    ",
             "keyColor": "magenta",
             "folders": "/boot",
-            "percent": { "type": 9 }
+            "format": "{size-used} / {size-total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
         {
             "type": "disk",
             "key": "│ 󰒋  Storage ",
             "keyColor": "magenta",
             "folders": "/mnt/storage",
-            "percent": { "type": 9 }
+            "format": "{size-used} / {size-total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
         {
             "type": "battery",
@@ -195,22 +213,10 @@
             "keyColor": "magenta"
         },
 
-        // Section divider
-        {
-            "type": "custom",
-            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
-        },
-
-        {
-            "type": "command",
-            "key": "│ Theme      ",
-            "text": "cat ~/dotfiles/themes/.current_theme"
-        },
-
         // Bottom border of the table
         {
             "type": "custom",
-            "format": "\u001b[35m╰─────────────┴──────────────────────╯\u001b[0m"
+            "format": "\u001b[35m╰─────────────┴────────────────────────╯\u001b[0m"
         },
 
         "break",
