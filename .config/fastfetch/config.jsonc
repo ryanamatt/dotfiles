@@ -11,10 +11,11 @@
         },
         "padding": {
             "top": 1,
-            "right": 4,
+            "right": 0,
             "left": 1
         }
     },
+    // "logo": null,
 
     // --- Display ---
     "display": {
@@ -26,7 +27,7 @@
         },
         "brightColor": true,
         "key": {
-            "width": 16,
+            "width": 13,
             "type": "string"
         },
         "bar": {
@@ -64,153 +65,136 @@
         // Top border of the table
         {
             "type": "custom",
-            "format": "\u001b[35m╭─────────────┬──────────────────────╮\u001b[0m"
+            "format": "\u001b[35m╭──────────┬────────────────────────╮\u001b[0m"
         },
 
         // --- System ---
         {
             "type": "os",
-            "key": "│ 󰣇  OS      ",
-            "keyColor": "magenta"
+            "key": "│ 󰣇  OS   ",
+            "keyColor": "magenta",
+            "format": "{2}              \u001b[35m│\u001b[0m"
         },
         {
             "type": "kernel",
-            "key": "│ 󰌽  Kernel  ",
-            "keyColor": "magenta"
+            "key": "│ 󰌽 Kernel",
+            "keyColor": "magenta",
+            "format": "{2}           \u001b[35m│\u001b[0m"
         },
         {
             "type": "uptime",
-            "key": "│ 󱦟  Uptime  ",
-            "keyColor": "magenta"
+            "key": "│ 󱦟 Uptime",
+            "keyColor": "magenta",
+            "format": "lua:local u = ...; return string.format('%-4dh %02dm %02ds           \u001b[35m│\u001b[0m', (u.days * 24) + u.hours, u.minutes, u.seconds)"
         },
         {
             "type": "packages",
-            "key": "│ 󰏗  Pkgs    ",
-            "keyColor": "magenta"
+            "key": "│ 󰏗 Pkgs  ",
+            "keyColor": "magenta",
+            "format": "{pacman} pkgs, {flatpak-system} flatpak     \u001b[35m│\u001b[0m"
         },
         {
             "type": "shell",
-            "key": "│   Shell   ",
-            "keyColor": "magenta"
+            "key": "│  Shell ",
+            "keyColor": "magenta",
+            "format": "{pretty-name} {version}              \u001b[35m│\u001b[0m"
         },
 
         // Section divider
         {
             "type": "custom",
-            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
+            "format": "\u001b[35m├──────────┼────────────────────────┤\u001b[0m"
         },
 
         // --- Desktop ---
         {
             "type": "wm",
-            "key": "│ 󱂬  WM      ",
-            "keyColor": "magenta"
+            "key": "│ 󱂬 WM    ",
+            "keyColor": "magenta",
+            "format": "{pretty-name} {version}         \u001b[35m│\u001b[0m"
         },
         {
             "type": "terminal",
-            "key": "│   Term    ",
-            "keyColor": "magenta"
+            "key": "│  Term  ",
+            "keyColor": "magenta",
+            "format": "{pretty-name} {version}            \u001b[35m│\u001b[0m"
         },
         {
             "type": "terminalfont",
-            "key": "│   Font    ",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "theme",
-            "key": "│ 󰟡  Theme   ",
-            "keyColor": "magenta"
-        },
-        {
-            "type": "icons",
-            "key": "│ 󰀻  Icons   ",
-            "keyColor": "magenta"
+            "key": "│  Font  ",
+            "keyColor": "magenta",
+            "format": "{name}\u001b[35m│\u001b[0m"
         },
         {
             "type": "cursor",
-            "key": "│ 󰇀  Cursor  ",
-            "keyColor": "magenta"
+            "key": "│ 󰇀 Cursor",
+            "keyColor": "magenta",
+            "format": "{theme}                 \u001b[35m│\u001b[0m"
         },
 
         // Section divider
         {
             "type": "custom",
-            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
+            "format": "\u001b[35m├──────────┼────────────────────────┤\u001b[0m"
         },
 
         // --- Hardware ---
         {
             "type": "host",
-            "key": "│ 󰌢  Host    ",
-            "keyColor": "magenta"
+            "key": "│ 󰌢 Host  ",
+            "keyColor": "magenta",
+            "format": "{version}    \u001b[35m│\u001b[0m"
         },
         {
             "type": "cpu",
-            "key": "│   CPU     ",
+            "key": "│  CPU   ",
             "keyColor": "magenta",
-            "showPeCoreCount": false
+            "showPeCoreCount": false,
+            "format": "Intel Core Ultra 7 155H \u001b[35m│\u001b[0m"
         },
         {
             "type": "gpu",
-            "key": "│ 󰍛  GPU     ",
-            "keyColor": "magenta"
+            "key": "│ 󰍛 GPU   ",
+            "keyColor": "magenta",
+            "format": "Intel Arc Graphics      \u001b[35m│\u001b[0m"
         },
         {
             "type": "memory",
-            "key": "│ 󰘓  Memory  ",
+            "key": "│ 󰘓 Memory",
             "keyColor": "magenta",
-            "percent": { "type": 9 }
+            "format": "lua:local m = ...; return string.format('%4s / %-4s    \u001b[35m│\u001b[0m', m.used, m.total)",
+            "percent": { "type": 8 }
         },
         {
             "type": "disk",
-            "key": "│ 󰋊  Root    ",
+            "key": "│ 󰋊 Root  ",
             "keyColor": "magenta",
             "folders": "/",
-            "percent": { "type": 9 }
+            "format": "{size-used} / {size-total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
         {
             "type": "disk",
-            "key": "│ 󰋊  Home    ",
+            "key": "│ 󰋊 Home  ",
             "keyColor": "magenta",
             "folders": "/home",
-            "percent": { "type": 9 }
+            "format": "{size-used} / {size-total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
         {
             "type": "disk",
             "key": "│ 󰉉  Boot    ",
             "keyColor": "magenta",
             "folders": "/boot",
-            "percent": { "type": 9 }
-        },
-        {
-            "type": "disk",
-            "key": "│ 󰒋  Storage ",
-            "keyColor": "magenta",
-            "folders": "/mnt/storage",
-            "percent": { "type": 9 }
-        },
-        {
-            "type": "battery",
-            "key": "│ 󰁹  Battery ",
-            "keyColor": "magenta"
+            "format": "{size-used} / {size-total}   \u001b[35m│\u001b[0m",
+            "percent": { "type": 8 }
         },
 
-        // Section divider
-        {
-            "type": "custom",
-            "format": "\u001b[35m├─────────────┼──────────────────────┤\u001b[0m"
-        },
-
-        {
-            "type": "command",
-            "key": "│ Theme      ",
-            "text": "cat ~/dotfiles/themes/.current_theme"
-        },
 
         // Bottom border of the table
         {
             "type": "custom",
-            "format": "\u001b[35m╰─────────────┴──────────────────────╯\u001b[0m"
+            "format": "\u001b[35m╰──────────┴────────────────────────╯\u001b[0m"
         },
 
         "break",

@@ -61,6 +61,8 @@ abbr -a hypr-log 'journalctl --user -u hyprland -f'
 # Swaync
 abbr -a swaync-reload 'swaync-client --reload-config'
 
+abbr -a ff 'fastfetch'
+
 # gocryptfs
 abbr -a vo "gocryptfs ~/.vault ~/vault"
 abbr -a vc "fusermount3 -u ~/vault"
