@@ -29,7 +29,10 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -w"))
 hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s -w"))
 
 -- Quick Shell Key binds
-hl.bind(mainMod .. " + Tab", hl.dsp.exec_cmd("quickshell -p ~/dotfiles/quickshell/switch-workspaces"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml ipc call appLauncher toggle"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml ipc call powerMenu toggle"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml/ ipc call themeSwitcher toggle"))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml ipc call workspaceSwitcher toggle"))
 
 -- Game Mode
 hl.bind(

@@ -90,7 +90,7 @@
             "type": "packages",
             "key": "│ 󰏗  Pkgs    ",
             "keyColor": "magenta",
-            "format": "{pacman} pkgs, {flatpak-system} (fp)       \u001b[35m│\u001b[0m"
+            "format": "{pacman} pkgs, {flatpak-system} flatpak    \u001b[35m│\u001b[0m"
         },
         {
             "type": "shell",
@@ -166,13 +166,13 @@
             "type": "gpu",
             "key": "│ 󰍛  GPU     ",
             "keyColor": "magenta",
-            "format": "GeForce TX 3090         \u001b[35m│\u001b[0m"
+            "format": "GeForce RTX 3090        \u001b[35m│\u001b[0m"
         },
         {
             "type": "memory",
             "key": "│ 󰘓  Memory  ",
             "keyColor": "magenta",
-            "format": "{used} / {total}   \u001b[35m│\u001b[0m",
+            "format": "lua:local m = ...; return string.format('%4s / %-4s   \u001b[35m│\u001b[0m', m.used, m.total)",
             "percent": { "type": 8 }
         },
         {
