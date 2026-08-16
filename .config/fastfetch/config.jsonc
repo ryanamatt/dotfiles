@@ -71,7 +71,7 @@
         // --- System ---
         {
             "type": "os",
-            "key": "│ 󰣇  OS   ",
+            "key": "│ 󰣇 OS    ",
             "keyColor": "magenta",
             "format": "{2}              \u001b[35m│\u001b[0m"
         },
