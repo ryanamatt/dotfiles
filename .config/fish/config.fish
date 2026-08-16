@@ -216,4 +216,4 @@ end # end is-interactive
 # Starship
 starship init fish | source
 
-vscode_open_cwd
+# vscode_open_cwd
