@@ -29,10 +29,10 @@ hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -w"))
 hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s -w"))
 
 -- Quick Shell Key binds
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml ipc call appLauncher toggle"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml ipc call powerMenu toggle"))
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml/ ipc call themeSwitcher toggle"))
-hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("qs -c ~/Projects/wisp/qml ipc call workspaceSwitcher toggle"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle appLauncher"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wisp toggle powerMenu"))
+hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("wisp toggle themeSwitcher"))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("wisp toggle workspaceSwitcher"))
 
 -- Game Mode
 hl.bind(
@@ -79,6 +79,7 @@ for i = 1, 10 do
 end
 
 hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:desktop"}))
+hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "name:desktop" }) )
 hl.bind(mainMod .. " + S", hl.dsp.focus({ workspace = "name:spotify", on_current_monitor = true }))
 hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = "name:discord", on_current_monitor = true }))
 
