@@ -172,7 +172,7 @@
             "type": "memory",
             "key": "│ 󰘓  Memory  ",
             "keyColor": "magenta",
-            "format": "lua:local m = ...; return string.format('%4s / %-4s   \u001b[35m│\u001b[0m', m.used, m.total)",
+            "format": "lua:local m = ...; return string.format('%4s / %-4s    \u001b[35m│\u001b[0m', m.used, m.total)",
             "percent": { "type": 8 }
         },
         {
