@@ -1,0 +1,224 @@
+{
+  "main": {
+    "id": "191693cfd395c406",
+    "type": "split",
+    "children": [
+      {
+        "id": "427702d9a25a0572",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "16b270e52000791f",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4231692b4b4def11",
+    "type": "split",
+    "children": [
+      {
+        "id": "4642ecc9c5cc96b9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ed56458068842be8",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "14ced7dc9ba36650",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "2cd167ccdf67fc10",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "cab9ef940021f94f",
+    "type": "split",
+    "children": [
+      {
+        "id": "c8fe2eaa690fc1cc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e6e22940a84dedba",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Welcome.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "92bf1e92bcc01d36",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Welcome.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "347a1dc1281eaaf5",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "979755cdd4d21c5d",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "74b22b2b3d7c2dca",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Welcome.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "graph:Open graph view": false,
+      "publish:Publish changes...": false,
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "pdf-plus:PDF++: Toggle auto-copy": false,
+      "pdf-plus:PDF++: Toggle auto-focus": false,
+      "pdf-plus:PDF++: Toggle auto-paste": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "16b270e52000791f",
+  "lastOpenFiles": [
+    "01-Characters/Supporting/James Gordon.md",
+    "00-Meta/Templates/Issue.md",
+    "03-World/Locations/The Narrows.md",
+    "04-Stories/Arcs/Chain of Custody.md",
+    "04-Stories/Issues/Batman 005 - What the City Owes.md",
+    "00-Meta/Templates/Character.md",
+    "Glossary.md",
+    "Brief.md",
+    "04-Stories/Issues/Batman 001 - The Man in The Dark.md",
+    "03-World/Locations/Gotham City.md",
+    "04-Stories/Issues/Batman 004 - The Ledger.md",
+    "04-Stories/Issues/Batman 002 - Paper Trails.md",
+    "04-Stories/Issues/Batman 003 - Chain of Custody.md",
+    "04-Stories/Issues-Chapters/Batman.md",
+    "01-Characters/Heroes/Bruce Wayne.md",
+    "04-Stories/Issues",
+    "04-Stories/Arcs",
+    "03-World/Magic-Science",
+    "03-World/Organizations",
+    "03-World/Locations",
+    "02-Timeline/Events",
+    "02-Timeline/Eras",
+    "01-Characters/Teams",
+    "01-Characters/Supporting",
+    "01-Characters/Anti-Heroes",
+    "Gotham City.md",
+    "Untitled.md",
+    "Welcome.md"
+  ]
+}
