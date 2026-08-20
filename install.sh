@@ -47,7 +47,6 @@ link_config() {
 }
 
 link_config ".config/fish/config.fish"
-link_config ".config/fish/conf.d/fish-color.fish"
 
 link_config ".config/kitty/kitty.conf"
 
