@@ -28,7 +28,8 @@ hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s"
 hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -w"))
 hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s -w"))
 
--- Quick Shell Key binds
+-- Wisp Bindings
+hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd("wisp reload"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle appLauncher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wisp toggle powerMenu"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("wisp toggle themeSwitcher"))
