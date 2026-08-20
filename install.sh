@@ -47,10 +47,14 @@ link_config() {
 }
 
 link_config ".config/fish/config.fish"
+link_config ".config/fish/conf.d/fish-color.fish"
 
 link_config ".config/kitty/kitty.conf"
 
+link_config ".config/starship.toml"
+
 link_config ".config/fastfetch/config.jsonc"
+link_config ".config/fastfetch/art.txt"
 
 link_config ".config/swaync/config.json"
 link_config ".config/swaync/style.css"
