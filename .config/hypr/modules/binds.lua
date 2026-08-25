@@ -34,6 +34,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle appLauncher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wisp toggle powerMenu"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("wisp toggle themeSwitcher"))
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("wisp toggle workspaceSwitcher"))
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("wisp toggle commandCenter"))
 
 -- Game Mode
 hl.bind(
