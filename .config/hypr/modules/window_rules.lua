@@ -81,3 +81,8 @@ hl.window_rule({
     workspace = "name:discord",
     match = { class = "discord" }
 })
+
+hl.window_rule({
+    match = { title = "Command Center"},
+    float = true
+})
