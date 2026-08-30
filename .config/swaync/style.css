@@ -57,7 +57,7 @@
 }
 
 .notification-content {
-	color: @text;
+	color: @accent;
 	margin: 10px;
 	font-weight: 700;
 }
