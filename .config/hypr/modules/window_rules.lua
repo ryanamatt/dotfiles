@@ -86,3 +86,8 @@ hl.window_rule({
     match = { title = "Command Center"},
     float = true
 })
+
+hl.window_rule({
+    match = { title = "Wisp Screenshot" },
+    float = true
+})

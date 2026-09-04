@@ -82,7 +82,7 @@
 }
 
 .notification-content .body {
-	color: @text-alt;
+	color: @accent;
 	font-size: 0.8rem;
 }
 
