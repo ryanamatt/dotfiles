@@ -49,6 +49,12 @@ for i = 6, 10 do
         monitor   = "DP-2",
     })
 end
+for i = 6, 10 do
+    hl.workspace_rule({
+        workspace = tostring(i),
+        monitor   = "HDMI-A-1",
+    })
+end
 
 hl.workspace_rule({
     workspace = "name:desktop",
