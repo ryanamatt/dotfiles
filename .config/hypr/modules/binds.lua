@@ -23,10 +23,7 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
 -- Screenshots
-hl.bind("PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh"))
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s"))
-hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -w"))
-hl.bind(mainMod .. " + SHIFT + PRINT", hl.dsp.exec_cmd("~/dotfiles/bin/screenshot.sh -s -w"))
+hl.bind("PRINT", hl.dsp.exec_cmd("wisp toggle screenshot"))
 
 -- Wisp Bindings
 hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd("wisp reload"))
