@@ -22,6 +22,8 @@ fish_add_path $HOME/go/bin
 
 # --- Abbreviations ---
 
+abbr -a refish 'source ~/.config/fish/config.fish'
+
 # System
 abbr -a q 'exit'
 abbr -a c 'clear'
@@ -151,6 +153,7 @@ function teleport
 
         case "list"
             echo -e "\033[0;34mTeleport Bookmarks:\033[0m"
+            echo -e "\033[0;36mName   Bookmark\033[0m"
             if test ! -s "$TP_FILE"
                 echo "No tags saved yet."
             else
