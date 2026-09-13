@@ -22,9 +22,6 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
 
--- Screenshots
-hl.bind("PRINT", hl.dsp.exec_cmd("wisp toggle screenshot"))
-
 -- Wisp Bindings
 hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd("wisp reload"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle appLauncher"))
@@ -32,6 +29,7 @@ hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wisp toggle powerMenu"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("wisp toggle themeSwitcher"))
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("wisp toggle workspaceSwitcher"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("wisp toggle commandCenter"))
+hl.bind("PRINT", hl.dsp.exec_cmd("wisp toggle screenshot"))
 
 -- Game Mode
 hl.bind(
@@ -90,7 +88,7 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
--- Laptop multimedia keys for volume and LCD brightness
+-- Multimedia keys for volume and LCD brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
 hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
