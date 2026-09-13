@@ -41,37 +41,39 @@ else
     echo "Installing Arcane Shell dotfiles..."
 fi
 
-# Helper wrapper
+# Helper wrapper (kept around for one-off files outside .config)
 link_config() {
     link "$1" "$1"
 }
 
-link_config ".config/fish/config.fish"
+# Files under .config/ to skip (glob patterns, matched against path relative to .config/)
+EXCLUDE_PATTERNS=(
+    "swaync/README.md"
+)
 
-link_config ".config/kitty/kitty.conf"
+is_excluded() {
+    local rel="$1"
+    local pattern
+    for pattern in "${EXCLUDE_PATTERNS[@]}"; do
+        # shellcheck disable=SC2053
+        if [[ "$rel" == $pattern ]]; then
+            return 0
+        fi
+    done
+    return 1
+}
 
-link_config ".config/starship.toml"
-
-link_config ".config/fastfetch/config.jsonc"
-link_config ".config/fastfetch/art.txt"
-
-link_config ".config/swaync/config.json"
-link_config ".config/swaync/style.css"
-
-link_config ".config/hypr/hyprland.lua"
-link_config ".config/hypr/modules/autostart.lua"
-link_config ".config/hypr/modules/binds.lua"
-link_config ".config/hypr/modules/decorations.lua"
-link_config ".config/hypr/modules/env.lua"
-link_config ".config/hypr/modules/input.lua"
-link_config ".config/hypr/modules/layout.lua"
-link_config ".config/hypr/modules/misc.lua"
-link_config ".config/hypr/modules/monitors.lua"
-link_config ".config/hypr/modules/window_rules.lua"
-
-link_config ".config/hypr/hypridle.conf"
-
-link_config ".config/Orpheus/orpheus.config"
+# Link every file under .config/ to the matching path under ~/.config/
+if [ -d "$DOTFILES/.config" ]; then
+    while IFS= read -r -d '' file; do
+        rel="${file#"$DOTFILES/.config/"}"
+        if is_excluded "$rel"; then
+            echo "  skipping .config/$rel (excluded)"
+            continue
+        fi
+        link ".config/$rel" ".config/$rel"
+    done < <(find "$DOTFILES/.config" -type f -print0)
+fi
 
 # Install custom scripts from the bin directory
 if [ -d "$DOTFILES/bin" ]; then
@@ -91,9 +93,4 @@ if [ -d "$DOTFILES/bin" ]; then
             link "bin/$filename" ".local/bin/$cmd_name"
         fi
     done
-fi
-
-if [[ ! uninstall ]]; then
-    echo "Setting Theme to Arcane"
-    ./switcher.sh Arcane
 fi
