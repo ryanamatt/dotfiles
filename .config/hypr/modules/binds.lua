@@ -3,8 +3,9 @@
 ---------------------
 
 -- Set programs that you use
-local terminal    = "kitty"
-local fileManager = "dolphin"
+local terminal      = "kitty"
+local fileManager   = "dolphin"
+local browser       = "google-chrome-stable"
 
 ---------------------
 ---- KEYBINDINGS ----
@@ -21,6 +22,7 @@ hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("command -v hyprshutdown >/de
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 
 -- Wisp Bindings
 hl.bind(mainMod .. "+ R", hl.dsp.exec_cmd("wisp reload"))
