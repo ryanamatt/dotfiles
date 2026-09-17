@@ -39,21 +39,21 @@ $character"""
 palette = "dynamic"
 
 [palettes.dynamic]
-background           = "#14121c"              # page background
-background_alt        = "#211e29"       # background, one step up
-surface                = "#14121c"                 # segment background
-surface_alt            = "#2b2833"  # segment background, elevated
-secondary              = "#d6bee5"               # secondary accent
-secondary_container    = "#524060"     # secondary accent, lighter tone
-foreground              = "#e7e0ef"          # primary text
-primary                 = "#cebdff"                # main accent
-tertiary                = "#e7b7e8"               # secondary highlight
-warning                 = "#ffb95d"
-muted                   = "#948e9c"                # low-emphasis text
-muted_variant           = "#494551"        # low-emphasis text, softer
+background           = "#0a1519"              # page background
+background_alt        = "#162126"       # background, one step up
+surface                = "#0a1519"                 # segment background
+surface_alt            = "#212c30"  # segment background, elevated
+secondary              = "#abcae4"               # secondary accent
+secondary_container    = "#2b4a60"     # secondary accent, lighter tone
+foreground              = "#d9e4ea"          # primary text
+primary                 = "#4fd5ff"                # main accent
+tertiary                = "#aac8f7"               # secondary highlight
+warning                 = "#e1c700"
+muted                   = "#879398"                # low-emphasis text
+muted_variant           = "#3d484d"        # low-emphasis text, softer
 error                   = "#ffb4ab"
 success                 = "#00e298"
-info                    = "#54d5ff"
+info                    = "#00d9fc"
 
 # --- OS / entry glyph ---
 [os]
