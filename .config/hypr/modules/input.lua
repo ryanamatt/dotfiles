@@ -19,7 +19,7 @@ hl.config({
             scroll_factor = 1.0
         },
 
-        numlock_by_default = false
+        numlock_by_default = true
     },
 })
 
