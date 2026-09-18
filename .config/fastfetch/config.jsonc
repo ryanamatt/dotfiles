@@ -90,7 +90,7 @@
             "type": "packages",
             "key": "│ 󰏗  Pkgs    ",
             "keyColor": "magenta",
-            "format": "{pacman} pkgs, {flatpak-system} flatpak    \u001b[35m│\u001b[0m"
+            "format": "{pacman} pkgs, {flatpak-system} flatpak   \u001b[35m│\u001b[0m"
         },
         {
             "type": "shell",
