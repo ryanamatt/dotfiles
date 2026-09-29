@@ -1,14 +1,9 @@
 if status is-interactive
 
-if command -q fastfetch
-    fastfetch
-    set -g fish_greeting ""
-else
-    set fish_greeting
-end
+set -g fish_greeting ""
 
 # Editor
-set -gx EDITOR code
+set -gx EDITOR orp
 set -gx VISUAL code
 
 # XDG
@@ -28,7 +23,7 @@ abbr -a refish 'source ~/.config/fish/config.fish'
 abbr -a q 'exit'
 abbr -a c 'clear'
 abbr -a e '$EDITOR'
-abbr -a se 'sudo $EDTIOR'
+abbr -a se 'sudo $EDITOR'
 
 # Navigation
 abbr -a .. 'cd ..'
@@ -42,19 +37,52 @@ abbr -a yr 'yay -Rns'
 abbr -a yu 'yay -Syu'
 abbr -a yq 'yay -Q'
 abbr -a ys 'yay -Ss'
+abbr -a yqs 'yay -Qs'
 
 # Git
 abbr -a g 'git'
 abbr -a ga 'git add'
 abbr -a gaa 'git add -A'
+
 abbr -a gc 'git commit'
-abbr -a gcm 'git commit -m'
+abbr -a gcm --set-cursor 'git commit -m "%"'
+
 abbr -a gp 'git push'
-abbr -a gl 'git log --oneline --graph --decorate'
-abbr -a gs 'git status'
-abbr -a gd 'git diff'
+abbr -a gfp 'git fetch origin --prune && git pull'
+
 abbr -a gco 'git checkout'
 abbr -a gcb 'git checkout -b'
+abbr -a gst 'git stash'
+abbr -a gsp 'git stash pop'
+
+abbr -a gs 'git status'
+abbr -a gss 'git status --short --branch'
+abbr -a gd 'git diff'
+abbr -a gds 'git diff --staged'
+abbr -a gdc 'git diff --cached'
+
+abbr -a gb 'git branch'
+abbr -a gba 'git branch --all'
+abbr -a gbd 'git branch -d'
+abbr -a gbD 'git branch -D'
+
+# Commit history
+abbr -a glast 'git log -1 HEAD'
+abbr -a gshow 'git show --stat'
+abbr -a gl 'git log --oneline --graph --decorate'
+abbr -a glog 'git log --graph --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold green)%an%C(reset) %C(bold yellow)%s%C(reset)"'
+
+# Remote
+abbr -a gr 'git remote -v'
+abbr -a gfetch 'git fetch --all --prune'
+
+# Undo / restore
+abbr -a gunstage 'git restore --staged'
+abbr -a gdiscard 'git restore'
+
+# Python
+abbr -a mkvenv 'python -m venv venv && source venv/bin/activate.fish'
+abbr -a pipu 'pip install --upgrade pip'
 
 # Hyprland
 abbr -a hypr-reload 'hyprctl reload'
@@ -82,18 +110,24 @@ abbr -a tp "teleport"
 # --- Functions ---
 
 # mkcd - Make a directory and cd into it
-function mkcd -d "Crate a directory and cd into it"
+function mkcd -d "Create a directory and cd into it"
     mkdir -p $argv[1] && cd $argv[1]
 end
 
 # up N - go up N directories
 function up -d "Go up N directories"
-    set -l n (coalesce $argv[1] 1)
-    set path ""
-    for i in (seq $n)
-        set path "../path"
+    set -l n 1
+    if test (count $argv) -gt 0
+        set n $argv[1]
     end
-    cd $path
+
+    if string match -rq '^[0-9]+$' -- "$n"
+        set -l target (string repeat -n $n '../')
+        cd "$target"
+    else
+        echo "Usage: up [number]"
+        return 1
+    end
 end
 
 # extract - universal archive extractor
@@ -188,16 +222,18 @@ function teleport
     end
 end
 
+# If VSCode is open in a Workspace & Terminal opens on same workspace auto set cwd to VSCode file path
 function vscode_open_cwd
-
     # Get the ID of the currently active workspace in Hyprland
     set -l active_workspace (hyprctl activeworkspace -j | jq -r '.id' 2>/dev/null)
 
-    # Fetch the title of a VS Code window on the specific workspace
-    set -l vscode_title (hyprctl clients -j | jq -r --arg ws "$active_workspace" 'first(.[] | select((.class == "code" or .initialClass == "code" or .class == "code-url-handler") and (.workspace.id == ($ws | tonumber))) | .title)' 2>/dev/null)
+    # Fetch the title of a VS Code window matching your class on the active workspace
+    set -l vscode_title (hyprctl clients -j | jq -r --arg ws "$active_workspace" 'first(.[] | select(.class == "com.microsoft.VSCode" and (.workspace.id == ($ws | tonumber))) | .title)' 2>/dev/null)
 
     if test -n "$vscode_title"; and test "$vscode_title" != "null"
-        set -l clean_path (string replace -r ' - Visual Studio Code$' '' $vscode_title)
+        # Strip potential dirty indicators (like '●' or '*') if they appear
+        set -l clean_path (string replace -r '^[●\*\s]+' '' $vscode_title)
+        set -l clean_path (string trim $clean_path)
 
         set -l expanded_path (string replace -r '^~' "$HOME" $clean_path)
 
@@ -214,9 +250,39 @@ function vscode_open_cwd
     end
 end
 
+# Runs the Wisp tree
+function wtree
+    set -l exclude "docs|.git|build|assets"
+    echo "tree -aIF '$exclude' --filesfirst"
+    tree -aIF "$exclude" --filesfirst
+end
+
+function bak 
+    set -l file "$argv[1]"
+    set -l date (date '+%Y-%M-%d')
+    mv "$file" "$file.bak-$date"
+end
+
+function vault
+    if mountpoint -q ~/vault
+        fusermount3 -u ~/vault; and echo "locked"
+    else
+        gocryptfs -idle 15m ~/.vault ~/vault; and echo "unlocked"
+    end
+end
+
+function notify_long --on-event fish_postexec
+    if test $CMD_DURATION -gt 30000
+        notify-send -a fish "Command finished" "$argv[1] took "(math -s0 $CMD_DURATION / 1000)"s"
+    end
+end
+
 end # end is-interactive
-
-# Starship
-starship init fish | source
-
-# vscode_open_cwd
+    
+if test "$TERM_PROGRAM" != vscode 
+    if command -q fastfetch
+        fastfetch
+        starship init fish | source
+        vscode_open_cwd
+    end
+end
