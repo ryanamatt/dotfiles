@@ -18,13 +18,11 @@ text=auto eol=lf
 *.toml text eol=lf
 *.conf text eol=lf
 *.config text eol=lf
-*.fish text eol=lf
-fish_variables text eol=lf
+*.fish text eol=lf linguist-language=Fish
 *.rasi text eol=lf
 *.txt text eol=lf
 *.md text eol=lf
 *.qml text eol=lf
-*.j2 text eol=lf
 *.yaml text eol=lf
 
 .obsidan/** linguist-vendored
