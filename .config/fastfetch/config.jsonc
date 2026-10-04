@@ -129,7 +129,7 @@
             "type": "cursor",
             "key": "│ 󰇀 Cursor",
             "keyColor": "magenta",
-            "format": "{theme}                 \u001b[35m│\u001b[0m"
+            "format": "{theme}                  \u001b[35m│\u001b[0m"
         },
 
         // Section divider
