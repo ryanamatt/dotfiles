@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Counts the number of commits between consecutive git tags and since the last tag.
+# Counts the number of commits between consecutive git tags and since the last tag, including tag dates.
 
 if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     echo "Error: Not a git repository." >&2
@@ -16,8 +16,9 @@ fi
 
 first_tag="${tags[0]}"
 first_count=$(git rev-list --count "${first_tag}")
+first_date=$(git log -1 --format=%as "${first_tag}" 2>/dev/null || echo "unknown date")
 total_commits=$first_count
-echo "${first_tag}: ${first_count}"
+echo "${first_tag} (${first_date}): ${first_count}"
 
 for ((i=0; i<${#tags[@]}-1; i++)); do
     prev_tag="${tags[i]}"
@@ -25,8 +26,9 @@ for ((i=0; i<${#tags[@]}-1; i++)); do
     
     count=$(git rev-list --count "${prev_tag}..${curr_tag}")
     total_commits=$(( total_commits + count ))
+    curr_date=$(git log -1 --format=%as "${curr_tag}" 2>/dev/null || echo "unknown date")
     
-    echo "${curr_tag}: ${count}"
+    echo "${curr_tag} (${curr_date}): ${count}"
 done
 
 last_tag="${tags[-1]}"

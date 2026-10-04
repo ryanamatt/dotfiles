@@ -32,6 +32,7 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("wisp toggle themeSwitcher"))
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("wisp toggle workspaceSwitcher"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("wisp toggle commandCenter"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wisp toggle runner"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wisp toggle timer"))
 hl.bind("PRINT", hl.dsp.exec_cmd("wisp toggle screenshot"))
 
 -- Wisp Test Bindings
@@ -42,7 +43,11 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp 
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle workspaceSwitcher"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle commandCenter"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle runner"))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle timer"))
 hl.bind("PRINT", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle screenshot"))
+
+-- TEMP 
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml lock"))
 
 -- Game Mode
 hl.bind(
