@@ -46,9 +46,6 @@ hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp 
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle timer"))
 hl.bind("PRINT", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle screenshot"))
 
--- TEMP 
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml lock"))
-
 -- Game Mode
 hl.bind(
     mainMod .. " + G", function()
