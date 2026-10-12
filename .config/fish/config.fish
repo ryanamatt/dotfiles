@@ -20,7 +20,7 @@ if status is-interactive
         # Starship prompt
         command -q starship; and starship init fish | source
 
-        # If VS Code is open on this Hyprland workspace, start in its directory
         vscode_open_cwd
+        nvim_open_cwd
     end
 end

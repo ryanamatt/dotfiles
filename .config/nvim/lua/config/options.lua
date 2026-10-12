@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+opt.title = true
+opt.titlestring = "nvim: %{getcwd()}"
+
 opt.number = true          -- Show line numbers
 opt.relativenumber = true  -- Relative line numbers for easy jumping (e.g., 5k)
 opt.tabstop = 4            -- 4 spaces per tab
