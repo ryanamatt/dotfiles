@@ -3,37 +3,8 @@ return {
     event = "VimEnter",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-        -- Colors pulled from the tokyonight-night palette
-        local colors = {
-            blue = "#7aa2f7",
-            cyan = "#7dcfff",
-            purple = "#bb9af7",
-            green = "#9ece6a",
-            orange = "#ff9e64",
-            red = "#f7768e",
-            comment = "#565f89",
-            fg = "#c0caf5",
-        }
-
-        local function set_highlights()
-            local hl = vim.api.nvim_set_hl
-            hl(0, "DashboardHeader", { fg = colors.blue, bold = true })
-            hl(0, "DashboardIcon", { fg = colors.cyan })
-            hl(0, "DashboardDesc", { fg = colors.fg })
-            hl(0, "DashboardKey", { fg = colors.orange, bold = true })
-            hl(0, "DashboardShortCut", { fg = colors.orange, bold = true })
-            hl(0, "DashboardProjectTitle", { fg = colors.purple, bold = true })
-            hl(0, "DashboardProjectTitleIcon", { fg = colors.purple })
-            hl(0, "DashboardProjectIcon", { fg = colors.cyan })
-            hl(0, "DashboardMruTitle", { fg = colors.green, bold = true })
-            hl(0, "DashboardMruIcon", { fg = colors.green })
-            hl(0, "DashboardFiles", { fg = colors.fg })
-            hl(0, "DashboardFooter", { fg = colors.comment, italic = true })
-        end
-
-        set_highlights()
-        -- Re-apply if the colorscheme is reloaded
-        vim.api.nvim_create_autocmd("ColorScheme", { callback = set_highlights })
+        -- Dashboard* highlight groups are defined by the matugen colorscheme
+        -- (lua/matugen_theme.lua), so they follow the wallpaper automatically.
 
         local header = {
             "",

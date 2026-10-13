@@ -25,5 +25,8 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins" },
 	},
+	install = { colorscheme = { "matugen" } },
 })
 
+-- Colorscheme generated from matugen
+vim.cmd.colorscheme("matugen")
