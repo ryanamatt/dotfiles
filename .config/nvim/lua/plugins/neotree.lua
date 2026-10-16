@@ -19,6 +19,7 @@ return {
                 mappings = {
                 ["<leader>ee"] = "close_window",
                 },
+                width = 25
             },
         })
         vim.keymap.set("n", "<leader>ee", "<cmd>Neotree toggle<CR>", { desc = "Toggle file explorer" })
