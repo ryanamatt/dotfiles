@@ -20,6 +20,17 @@ vim.opt.rtp:prepend(lazypath)
 require("config.options")
 require("config.keymaps")
 
+-- Set up Spell Check on Text Files
+local spell_types = { "text", "markdown", "gitcommit" }
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = spell_types,
+	callback = function()
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = "en_us"
+	end,
+})
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
