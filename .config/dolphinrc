@@ -6,8 +6,8 @@ ViewPropsTimestamp=2026,7,6,11,57,59.976
 Places Icons Auto-resize=false
 Places Icons Static Size=22
 
-[MainWindow]
-MenuBar=Disabled
+[PreviewSettings]
+Plugins=glycin-image-rs,appimagethumbnail,audiothumbnail,glycin-heif,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,glycin-jxl,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,glycin-svg,svgthumbnail,ffmpegthumbs
 
 [UiSettings]
 ColorScheme=BreezeDark

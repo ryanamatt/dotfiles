@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "191693cfd395c406",
+    "id": "073037c59b4827cb",
     "type": "split",
     "children": [
       {
-        "id": "427702d9a25a0572",
+        "id": "8621d4bbbe4b26f0",
         "type": "tabs",
         "children": [
           {
-            "id": "16b270e52000791f",
+            "id": "7584cbe086923ba3",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -23,15 +23,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "4231692b4b4def11",
+    "id": "87fdecd77e8c0341",
     "type": "split",
     "children": [
       {
-        "id": "4642ecc9c5cc96b9",
+        "id": "d0c9f3f5efa59a16",
         "type": "tabs",
         "children": [
           {
-            "id": "ed56458068842be8",
+            "id": "427c20dd05cd7f69",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -46,7 +46,7 @@
             }
           },
           {
-            "id": "14ced7dc9ba36650",
+            "id": "feeea31ad8abfc9e",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -63,7 +63,7 @@
             }
           },
           {
-            "id": "2cd167ccdf67fc10",
+            "id": "fedae7c2786c6420",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -82,20 +82,19 @@
     "width": 300
   },
   "right": {
-    "id": "cab9ef940021f94f",
+    "id": "61e6538090a72627",
     "type": "split",
     "children": [
       {
-        "id": "c8fe2eaa690fc1cc",
+        "id": "31dc2f2729c5413f",
         "type": "tabs",
         "children": [
           {
-            "id": "e6e22940a84dedba",
+            "id": "8e2944a1926de8cc",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Welcome.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -109,12 +108,11 @@
             }
           },
           {
-            "id": "92bf1e92bcc01d36",
+            "id": "ddf98f149fcea093",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Welcome.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -123,7 +121,7 @@
             }
           },
           {
-            "id": "347a1dc1281eaaf5",
+            "id": "d392004c48fc1bd8",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -138,7 +136,7 @@
             }
           },
           {
-            "id": "979755cdd4d21c5d",
+            "id": "8ac705327299e3d9",
             "type": "leaf",
             "state": {
               "type": "all-properties",
@@ -152,12 +150,11 @@
             }
           },
           {
-            "id": "74b22b2b3d7c2dca",
+            "id": "f97b6242a5976bca",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -175,9 +172,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "graph:Open graph view": false,
       "publish:Publish changes...": false,
       "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
@@ -190,35 +187,12 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "16b270e52000791f",
+  "active": "7584cbe086923ba3",
   "lastOpenFiles": [
-    "01-Characters/Supporting/James Gordon.md",
-    "00-Meta/Templates/Issue.md",
-    "03-World/Locations/The Narrows.md",
-    "04-Stories/Arcs/Chain of Custody.md",
-    "04-Stories/Issues/Batman 005 - What the City Owes.md",
-    "00-Meta/Templates/Character.md",
-    "Glossary.md",
-    "Brief.md",
-    "04-Stories/Issues/Batman 001 - The Man in The Dark.md",
-    "03-World/Locations/Gotham City.md",
-    "04-Stories/Issues/Batman 004 - The Ledger.md",
-    "04-Stories/Issues/Batman 002 - Paper Trails.md",
-    "04-Stories/Issues/Batman 003 - Chain of Custody.md",
-    "04-Stories/Issues-Chapters/Batman.md",
-    "01-Characters/Heroes/Bruce Wayne.md",
-    "04-Stories/Issues",
-    "04-Stories/Arcs",
-    "03-World/Magic-Science",
-    "03-World/Organizations",
-    "03-World/Locations",
-    "02-Timeline/Events",
-    "02-Timeline/Eras",
-    "01-Characters/Teams",
-    "01-Characters/Supporting",
-    "01-Characters/Anti-Heroes",
-    "Gotham City.md",
-    "Untitled.md",
-    "Welcome.md"
+    "c1_d1.txt",
+    "Companion.md",
+    "Nations/Alvaren.md",
+    "United Kingdoms of Alvaren.md",
+    "Nations"
   ]
 }
