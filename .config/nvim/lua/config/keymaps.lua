@@ -10,3 +10,9 @@ keymap.set("n", "<leader>nh", "<cmd>nohlsearch<CR>", { desc = "Clear search high
 -- Window splitting
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split vertically" })
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split horizontally" })
+
+-- Move between windows
+keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
+keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
+keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
+keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
