@@ -68,3 +68,7 @@ hl.workspace_rule({
 hl.workspace_rule({
     workspace = "name:discord"
 })
+
+hl.workspace_rule({
+    workspace = "name:another"
+})
