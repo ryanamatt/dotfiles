@@ -79,7 +79,7 @@
             "type": "kernel",
             "key": "│ 󰌽 Kernel",
             "keyColor": "magenta",
-            "format": "{2}           \u001b[35m│\u001b[0m"
+            "format": "{2}          \u001b[35m│\u001b[0m"
         },
         {
             "type": "uptime",
@@ -129,7 +129,7 @@
             "type": "cursor",
             "key": "│ 󰇀 Cursor",
             "keyColor": "magenta",
-            "format": "{theme}                  \u001b[35m│\u001b[0m"
+            "format": "{theme}                 \u001b[35m│\u001b[0m"
         },
 
         // Section divider
@@ -162,7 +162,7 @@
             "type": "memory",
             "key": "│ 󰘓 Memory",
             "keyColor": "magenta",
-            "format": "lua:local m = ...; return string.format('%5s / %-4s   \u001b[35m│\u001b[0m', m.used, m.total)",
+            "format": "lua:local m = ...; return string.format('%9s / %-9s   \u001b[35m│\u001b[0m', m.used, m.total)",
             "percent": { "type": 8 }
         },
         {
