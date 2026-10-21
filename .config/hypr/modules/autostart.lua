@@ -17,6 +17,6 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("openrazer-daemon -Fv")
 
     -- Special Apps on Workspaces
-    hl.exec_cmd("spotify-launcher")
-    hl.exec_cmd("discord")
+    hl.exec_cmd("spotify-launcher silent")
+    hl.exec_cmd("discord silent")
 end)

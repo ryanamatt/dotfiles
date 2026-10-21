@@ -25,23 +25,21 @@ hl.bind(mainMod .. " + W", hl.dsp.exec_cmd(browser))
 
 -- Wisp Bindings
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("wisp reload"))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle appLauncher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("wisp toggle powerMenu"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("wisp toggle themeSwitcher"))
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("wisp toggle workspaceSwitcher"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("wisp toggle commandCenter"))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wisp toggle runner"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle runner"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wisp toggle timer"))
 hl.bind("PRINT", hl.dsp.exec_cmd("wisp toggle screenshot"))
 
 -- Wisp Test Bindings
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml reload"))
-hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle appLauncher"))
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle powerMenu"))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle themeSwitcher"))
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle workspaceSwitcher"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle commandCenter"))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle runner"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle runner"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle timer"))
 hl.bind("PRINT", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle screenshot"))
 
@@ -89,7 +87,10 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:desktop"}))
+hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:desktop" }))
+hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "name:desktop" }) )
+hl.bind(mainMod .. " + A", hl.dsp.focus({ workspace = "name:another"}))
+hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = "name:another" }) )
 hl.bind(mainMod .. " + S", hl.dsp.focus({ workspace = "name:spotify", on_current_monitor = true }))
 hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = "name:discord", on_current_monitor = true }))
 

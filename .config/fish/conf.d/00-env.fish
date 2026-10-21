@@ -2,7 +2,7 @@
 # Runs for every fish process, so scripts and non-interactive shells get these too.
 
 # --- Editors ---
-set -gx EDITOR orp
+set -gx EDITOR nvim
 set -gx VISUAL code
 
 # --- XDG base directories ---
