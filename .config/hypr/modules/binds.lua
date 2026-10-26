@@ -31,6 +31,7 @@ hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("wisp toggle workspaceSwitcher"))
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("wisp toggle commandCenter"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle runner"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wisp toggle timer"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wisp toggle windowRules"))
 hl.bind("PRINT", hl.dsp.exec_cmd("wisp toggle screenshot"))
 
 -- Wisp Test Bindings
@@ -41,36 +42,39 @@ hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wis
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle commandCenter"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle runner"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle timer"))
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle windowRules"))
 hl.bind("PRINT", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle screenshot"))
 
 -- Game Mode
-hl.bind(
-    mainMod .. " + G", function()
-        local game_mode = (hl.get_config("animations.enabled") == false)
+function gameMode()
+    local game_mode = (hl.get_config("animations.enabled") == false)
 
-        if game_mode then
-            hl.exec_cmd("hyprctl reload")
-            return
-        end
-
-        hl.config({
-            general = {
-                gaps_in = 0,
-                gaps_out = 0,
-                border_size = 0
-            },
-
-            animations = {
-                enabled = false
-            },
-
-            decoration = {
-                shadow = { enabled = false },
-                blur = { enabled = false },
-                rounding = 0
-            }
-        })
+    if game_mode then
+        hl.exec_cmd("hyprctl reload")
+        return
     end
+
+    hl.config({
+        general = {
+            gaps_in = 0,
+            gaps_out = 0,
+            border_size = 0
+        },
+
+        animations = {
+            enabled = false
+        },
+
+        decoration = {
+            shadow = { enabled = false },
+            blur = { enabled = false },
+            rounding = 0
+        }
+    })
+end
+
+hl.bind(
+    mainMod .. " + G", gameMode
 )
 
 -- Move focus with mainMod + arrow keys
@@ -91,6 +95,8 @@ hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:desktop" }))
 hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "name:desktop" }) )
 hl.bind(mainMod .. " + A", hl.dsp.focus({ workspace = "name:another"}))
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = "name:another" }) )
+hl.bind(mainMod .. " + N", hl.dsp.focus({ workspace = "name:writing"}))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.window.move({ workspace = "name:writing" }) )
 hl.bind(mainMod .. " + S", hl.dsp.focus({ workspace = "name:spotify", on_current_monitor = true }))
 hl.bind(mainMod .. " + D", hl.dsp.focus({ workspace = "name:discord", on_current_monitor = true }))
 

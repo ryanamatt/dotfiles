@@ -16,3 +16,15 @@ keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to left window" })
 keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to lower window" })
 keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to upper window" })
 keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to right window" })
+
+local opts = { noremap = true, silent = true }
+-- Normal Mode: Indent / Outdent a single line
+keymap.set("n", "<Tab>", ">>", opts)
+keymap.set("n", "<S-Tab>", "<<", opts)
+
+-- Insert Mode
+keymap.set("i", "<S-Tab>", "<C-d>", opts)
+
+-- Visual Mode: Indent / Outdent a block and keep the selection highlighted
+keymap.set("v", "<Tab>", ">gv", opts)
+keymap.set("v", "<S-Tab>", "<gv", opts)

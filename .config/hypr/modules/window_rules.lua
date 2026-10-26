@@ -86,3 +86,8 @@ hl.window_rule({
     match = { title = ".*Wisp.*"},
     float = true
 })
+
+hl.window_rule({
+    match = { title = "File Manager"},
+    float = true
+})
