@@ -72,3 +72,7 @@ hl.workspace_rule({
 hl.workspace_rule({
     workspace = "name:another"
 })
+
+hl.workspace_rule({
+    workspace = "name:writing"
+})
