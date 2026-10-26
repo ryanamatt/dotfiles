@@ -31,6 +31,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
+-- Cheat Sheet Command Open up
+vim.api.nvim_create_user_command('Cheat', function()
+    vim.cmd.vsplit(vim.fn.expand('~/dotfiles/docs/nvim.md'))
+end, {})
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
