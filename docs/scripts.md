@@ -23,6 +23,9 @@ Parses `~/.config/hypr/modules/binds.lua` and prints the Hyprland keybinds group
 ### lint-notes.awk
 Scans files or directories (default: cwd) for `TODO`, `FIXME` and `NOTE` comments. Prints a count summary followed by each finding as `tag | file:line | text`.
 
+### loc.py
+Given files or directories counts the lines of codes. Groups by language and gives the output back to the user in a pretty format.
+
 ### peek.awk
 Quick file previewer. Shows the first 5 lines of text files, dimensions for images (needs ImageMagick), and duration/format for audio (needs ffprobe).
 
