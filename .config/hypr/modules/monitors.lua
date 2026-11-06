@@ -57,7 +57,7 @@ for i = 6, 10 do
 end
 
 hl.workspace_rule({
-    workspace = "name:desktop",
+    workspace = "name:grave",
     monitor = "DP-3"
 })
 

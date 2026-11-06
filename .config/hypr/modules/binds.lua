@@ -91,8 +91,8 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
 
-hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:desktop" }))
-hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "name:desktop" }) )
+hl.bind(mainMod .. " + grave", hl.dsp.focus({ workspace = "name:grave" }))
+hl.bind(mainMod .. " + SHIFT + grave", hl.dsp.window.move({ workspace = "name:grave" }) )
 hl.bind(mainMod .. " + A", hl.dsp.focus({ workspace = "name:another"}))
 hl.bind(mainMod .. " + SHIFT + A", hl.dsp.window.move({ workspace = "name:another" }) )
 hl.bind(mainMod .. " + N", hl.dsp.focus({ workspace = "name:writing"}))
