@@ -11,7 +11,7 @@ hl.monitor({
 })
 
 hl.workspace_rule({
-    workspace = "name:desktop",
+    workspace = "name:grave",
 })
 
 hl.workspace_rule({
