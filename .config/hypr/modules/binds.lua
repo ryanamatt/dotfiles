@@ -32,6 +32,7 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("wisp toggle commandCenter"))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("wisp toggle runner"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("wisp toggle timer"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("wisp toggle windowRules"))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("wisp toggle graphingCalculator"))
 hl.bind("PRINT", hl.dsp.exec_cmd("wisp toggle screenshot"))
 
 -- Wisp Test Bindings
@@ -44,6 +45,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/w
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle timer"))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle windowRules"))
 hl.bind("PRINT", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle screenshot"))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd("/home/ryan/Projects/wisp/build/wisp -f /home/ryan/Projects/wisp/qml -m /home/ryan/Projects/wisp/build/qml toggle graphingCalculator"))
 
 -- Game Mode
 function gameMode()
@@ -74,7 +76,7 @@ function gameMode()
 end
 
 hl.bind(
-    mainMod .. " + G", gameMode
+    mainMod .. " + Shift + G", gameMode
 )
 
 -- Move focus with mainMod + arrow keys
